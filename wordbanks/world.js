@@ -247,7 +247,15 @@ window.TAG_BANK["world"] = {
       "纪念碑广场|Monument square",
       "末班电车|Last tram",
       "货运电梯|Freight lift",
-      "藏书地窖|Book cellar"
+      "藏书地窖|Book cellar",
+      "山间驿站|Mountain waystation",
+      "旧渡口|Old ferry landing",
+      "钟表工坊|Clockmaker’s workshop",
+      "集市广场|Market square",
+      "城墙缺口|Breach in the old wall",
+      "共用厨房|Communal kitchen",
+      "河边洗衣处|Riverside washing place",
+      "高塔书房|Study in a high tower"
     ],
     "气候时间": [
       "永冬|Eternal winter",
@@ -267,7 +275,15 @@ window.TAG_BANK["world"] = {
       "雾季漫长|Long fog season",
       "时间流速不均|Uneven time flow",
       "无历法可依|No calendar",
-      "倒流的季节|Reversing seasons"
+      "倒流的季节|Reversing seasons",
+      "梅雨漫长|Long rainy season",
+      "昼夜温差极大|Extreme day-night temperature swing",
+      "常年薄雾|Persistent mist",
+      "季风准时到来|Monsoon arrives on schedule",
+      "星空常年可见|Stars visible year-round",
+      "潮汐一天两次|Two tides a day",
+      "风向每日轮换|Wind direction rotates daily",
+      "花期只有三天|A three-day blooming season"
     ],
     "天文历法": [
       "单月单历|Single moon single calendar",
@@ -485,6 +501,58 @@ window.TAG_BANK["world"] = {
       "金属冷却的脆响|Cooling metal ticks",
       "消毒水味|Disinfectant",
       "篝火噼啪|Crackling campfire"
+    ],
+    "室内场所": [
+      "卧室|Bedroom",
+      "教室|Classroom",
+      "图书馆|Library",
+      "办公室|Office",
+      "厨房|Kitchen",
+      "客厅|Living room",
+      "长廊|Corridor",
+      "列车车厢|Train carriage",
+      "餐厅|Dining hall",
+      "咖啡馆|Cafe",
+      "旧书店|Secondhand bookshop",
+      "工作室|Workshop",
+      "实验室|Laboratory",
+      "温室|Greenhouse",
+      "剧院后台|Backstage",
+      "地下仓库|Underground storeroom"
+    ],
+    "室外地点": [
+      "海滩|Beach",
+      "森林|Forest",
+      "花园|Garden",
+      "公园|Park",
+      "街道|Street",
+      "城市广场|City square",
+      "屋顶|Rooftop",
+      "山地|Mountains",
+      "田野|Fields",
+      "草地|Meadow",
+      "沙漠|Desert",
+      "湖边|Lakeshore",
+      "河岸|Riverbank",
+      "瀑布旁|Near a waterfall",
+      "桥上|On a bridge",
+      "遗迹|Ruins",
+      "港口|Harbor",
+      "悬崖边|Cliff edge"
+    ],
+    "天气天象": [
+      "细雨|Light rain",
+      "暴雨|Heavy rain",
+      "落雪|Snowfall",
+      "薄雾|Mist",
+      "多云|Overcast sky",
+      "晴朗蓝天|Clear blue sky",
+      "阴天|Grey sky",
+      "风暴|Storm",
+      "晚霞|Sunset clouds",
+      "彩虹|Rainbow",
+      "流星雨|Meteor shower",
+      "月食|Lunar eclipse"
     ]
   }
 };

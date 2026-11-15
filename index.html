@@ -166,6 +166,72 @@
   .g-title .btag{font-size:10.5px;color:#b9761c;background:#fff1e3;border-radius:20px;padding:0 7px;font-weight:400}
   .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,12px);background:#2b3040;color:#fff;font-size:12.5px;padding:9px 16px;border-radius:8px;opacity:0;pointer-events:none;transition:.22s;z-index:99;box-shadow:0 6px 20px rgba(0,0,0,.15)}
   .toast.show{opacity:1;transform:translate(-50%,0)}
+  a.btn{text-decoration:none;display:inline-flex;align-items:center}
+
+  /* 生成范围下拉 */
+  .scope-wrap{position:relative;margin-bottom:11px}
+  .scope-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;text-align:left;border:1px solid var(--line);background:#fcfdff;border-radius:8px;padding:7px 10px;font-size:12px;color:#454c5c}
+  .scope-btn:hover{border-color:#c8cede;background:#fff}
+  .scope-btn b{color:var(--primary);font-weight:600}
+  .scope-btn .caret{color:var(--faint);font-size:11px}
+  .scope-menu{display:none;position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:20;background:#fff;border:1px solid var(--line);border-radius:9px;padding:7px;box-shadow:0 8px 24px rgba(24,32,56,.12);max-height:260px;overflow:auto}
+  .scope-menu.show{display:block}
+  .scope-item{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;font-size:12px;cursor:pointer}
+  .scope-item:hover{background:#f5f7fc}
+  .scope-item input{accent-color:var(--primary);margin:0}
+  .scope-item .sc-dot{width:8px;height:8px;border-radius:50%;flex:none}
+  .scope-item .sc-n{margin-left:auto;color:var(--faint);font-size:11px}
+  .scope-foot{display:flex;gap:7px;border-top:1px solid var(--line-soft);margin-top:5px;padding-top:7px}
+  .scope-foot button{flex:1}
+  .val-tip{font-size:11.5px;color:#2b8a68;margin:0 0 9px}
+  .val-tip.off{color:var(--faint)}
+
+  /* 设置界面 */
+  .modal[hidden]{display:none}
+  .modal{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:20px}
+  .modal-mask{position:absolute;inset:0;background:rgba(30,36,52,.42)}
+  .modal-panel{position:relative;width:min(640px,100%);max-height:min(86vh,900px);background:#fff;border-radius:14px;box-shadow:0 18px 60px rgba(20,26,44,.22);display:flex;flex-direction:column;overflow:hidden}
+  .modal-head{display:flex;align-items:center;justify-content:space-between;padding:15px 20px;border-bottom:1px solid var(--line)}
+  .modal-head h2{margin:0;font-size:16px;font-weight:650}
+  .modal-body{padding:4px 20px 20px;overflow:auto}
+  .set-sec{padding:15px 0;border-bottom:1px solid var(--line-soft)}
+  .set-sec:last-child{border-bottom:0}
+  .set-title{font-size:13px;font-weight:650;margin:0 0 4px;color:#343b4a}
+  .set-note{font-size:11.5px;color:var(--muted);margin:0 0 10px;line-height:1.65}
+  .set-row{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:9px}
+  .set-row:last-child{margin-bottom:0}
+  .set-row>label.lb{width:104px;flex:none;font-size:12px;color:#545c6c}
+  .set-area{width:100%;min-height:64px;resize:vertical;border:1px solid var(--line);border-radius:8px;padding:8px 9px;font-size:11.5px;line-height:1.6;outline:none;background:#fcfdff}
+  .set-area:focus{border-color:var(--primary)}
+  .set-tabs{border:1px solid var(--line);border-radius:9px;overflow:hidden}
+  .set-tab-row{display:flex;align-items:center;gap:8px;padding:7px 10px;border-bottom:1px solid var(--line-soft);flex-wrap:wrap}
+  .set-tab-row:last-child{border-bottom:0}
+  .set-tab-row .nm{font-size:12px;min-width:80px;flex:1;font-weight:600;color:#3c4353}
+  .set-tab-row select{font-size:11.5px;border:1px solid var(--line);border-radius:7px;padding:3px 6px;background:#fff;outline:none}
+  .set-inline{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--muted)}
+  .set-inline input{accent-color:var(--primary);margin:0}
+  .set-check{display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;cursor:pointer}
+  .set-check input{accent-color:var(--primary);margin:3px 0 0;flex:none}
+  .set-check .tx{font-size:12px;color:#343b4a}
+  .set-check .tx small{display:block;color:var(--muted);font-size:11.5px;margin-top:2px;line-height:1.55}
+  .set-btns{display:flex;gap:7px;flex-wrap:wrap;margin-top:4px}
+
+  .log-pre{white-space:pre-wrap;word-break:break-word;font:12px/1.85 "SFMono-Regular",Consolas,"PingFang SC","Microsoft YaHei",monospace;color:#3c4353;background:#fcfdff;border:1px solid var(--line);border-radius:9px;padding:14px 16px;margin:0;max-height:62vh;overflow:auto}
+  .log-frame{width:100%;height:62vh;border:1px solid var(--line);border-radius:9px;background:#fff}
+  .log-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:10px}
+
+  /* 文本框放大编辑 */
+  .ta-wrap{position:relative}
+  .ta-wrap>textarea{padding-right:56px}
+  .ta-expand{position:absolute;top:6px;right:22px;z-index:2;width:24px;height:24px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:6px;padding:0;cursor:pointer;box-shadow:0 1px 3px rgba(20,26,44,.06)}
+  .ta-expand svg{display:block;width:14px;height:14px}
+  .ta-expand:hover{border-color:var(--primary);color:var(--primary);background:var(--primary-soft)}
+  .expand-panel{width:min(1000px,100%);height:min(84vh,900px)}
+  .expand-body{display:flex;flex-direction:column;flex:1;min-height:0;padding:16px 20px 18px;overflow:auto}
+  #expandArea{flex:1;min-height:300px;width:100%;resize:none;border:1px solid var(--line);border-radius:9px;padding:12px 14px;font:12.5px/1.85 "SFMono-Regular",Consolas,"PingFang SC","Microsoft YaHei",monospace;color:#3c4353;background:#fcfdff;outline:none}
+  #expandArea:focus{border-color:var(--primary)}
+  .expand-foot{display:flex;align-items:center;gap:8px;margin-top:12px;flex:none}
+  .expand-foot .hint{margin-right:auto}
 </style>
 </head>
 <body>
@@ -176,20 +242,22 @@
       <p class="sub">从词库里随机抽出标签，拼成角色或世界设定，复制给大模型扩写。每根选项卡一份词库，可自由新建、打开、关闭。</p>
     </div>
     <div class="top-actions">
+      <button class="btn" id="btnSettings">设置</button>
+      <button class="btn" id="btnChangelog">更新日志</button>
       <button class="btn" id="btnReset">恢复默认</button>
     </div>
   </div>
 
   <div class="notice">
-    <b>怎么抽</b>：每个维度的滑块决定抽几个标签 —— <b>-1</b> 固定用下拉框选中的那个，<b>0</b> 跳过，<b>1 ~ 10</b> 随机抽几个不重复的标签（默认 1，最多 10）。拖动滑块，结果立刻更新。<br><b>选项卡</b>：用「＋ 新建」建自己的词库，「打开词库文件」载入别人的词库，选项卡上的 × 关闭。每根选项卡对应 <code>wordbanks</code> 文件夹里的一个 <code>.js</code> 文件，<code>index.js</code> 记录清单和基础设定。
+    <b>怎么抽</b>：每个维度的滑块决定抽几个标签 —— <b>-1</b> 固定用下拉框选中的那个，<b>0</b> 跳过，<b>1 ~ 10</b> 随机抽几个不重复的标签（默认 1，最多 10）。拖动滑块，结果立刻更新。<br><b>选项卡</b>：用「＋ 新建」建自己的词库，「打开词库文件」载入别人的词库，选项卡上的 × 关闭；选项卡头部有「加入基础设定」和「扩写成…」。每根选项卡对应 <code>wordbanks</code> 文件夹里的一个 <code>.js</code> 文件，<code>index.js</code> 记录清单和基础设定。<br><b>一次抽多组</b>：在结果区上方的「生成范围」里勾选选项卡。<b>设置</b>里放维度前缀、组合校验与自定义冲突词组；常见互斥说法写在根目录的 <code>conflicts.js</code> 里。
   </div>
 
   <div class="layout">
     <div>
       <details class="card bank-card" id="baseDetails">
-        <summary><span class="arrow">▸</span>基础设定（人物通用）<span class="src">· 自定义字段，按选项卡开关加入结果</span><span class="stat" id="baseStat"></span></summary>
+        <summary><span class="arrow">▸</span>基础设定（人物通用）<span class="src">· 自定义字段，按选项卡头部的开关加入结果</span><span class="stat" id="baseStat"></span></summary>
         <div class="bank-body">
-          <p>角色共用的 4 项信息：性别、年龄、身高、体重。名称和值都能改，也可以删掉或加新字段；值写成 <code>中文|English</code> 时会跟着输出语言变化。在选项卡头部打开「加入基础设定」，这些信息就会一起进入结果。它们存在 <code>wordbanks/index.js</code> 的 <code>TAG_PROFILE</code> 里，点「保存到文件夹」会一起写回。</p>
+          <p>角色共用的 4 项信息：性别、年龄、身高、体重。名称和值都能改，也可以删掉或加新字段；值写成 <code>中文|English</code> 时会跟着输出语言变化。在选项卡头部打开「加入基础设定」，这些信息就会一起进入结果。它们存在 <code>wordbanks/index.js</code> 的 <code>TAG_PROFILE</code> 里，点「导出词库文件」会一起打包。</p>
           <div id="baseRows"></div>
           <div class="bank-actions" style="margin-top:10px">
             <button class="btn mini primary" id="btnBaseAdd">+ 新增设定</button>
@@ -201,17 +269,17 @@
       <details class="card bank-card" id="bankDetails">
         <summary><span class="arrow">▸</span>词库与文件夹<span class="src" id="bankSrc"></span><span class="badge" id="bankDirty"></span><span class="stat" id="bankStat"></span></summary>
         <div class="bank-body">
-          <p>每根选项卡对应 <code>wordbanks/</code> 里的一个词库文件，<code>index.js</code> 存选项卡清单和基础设定。候选项写成 <code>中文|English</code> 可在两种语言下显示不同文字；写成普通文字、只写一半，或用别的写法，也照样会出现在结果里。点 <b>「保存到文件夹」</b> 写入清单和所有词库文件：Chrome / Edge 选一次 <code>wordbanks</code> 文件夹直接写入；其他浏览器逐个下载，放进 <code>wordbanks</code> 覆盖同名文件即可。把整个文件夹发给别人就分享了全部词库。有没保存的改动时，工具先以浏览器里的编辑为准。</p>
+          <p>每根选项卡对应 <code>wordbanks/</code> 里的一个词库文件，<code>index.js</code> 存选项卡清单和基础设定。候选项写成 <code>中文|English</code> 可在两种语言下显示不同文字；写成普通文字、只写一半，或用别的写法，也照样会出现在结果里。</p>
+          <p>网页里的修改一直保存在浏览器里，刷新不会丢。点 <b>「导出词库文件」</b> 会下载一个 <code>wordbanks.zip</code>：解压后把里面的 <code>.js</code> 放进项目的 <code>wordbanks</code> 覆盖同名文件，就能更新项目里的词库；直接把这个 zip 发给别人，对方点 <b>「导入词库文件」</b> 选中它即可。想让网页立刻用上改过的文件，也点「导入词库文件」，选中 <code>index.js</code> 和各词库文件（一次可多选）。<code>conflicts.js</code> 用记事本直接改，不在这个压缩包里。</p>
           <div class="bank-actions">
-            <button class="btn mini primary" id="btnBankSave">保存到文件夹</button>
+            <button class="btn mini primary" id="btnBankSave">导出词库文件</button>
+            <button class="btn mini" id="btnBankReload">导入词库文件</button>
             <button class="btn mini" id="btnBankExport">另存当前词库</button>
             <button class="btn mini" id="btnBankCopy">复制当前词库文本</button>
-            <button class="btn mini" id="btnBankReload">重新读取文件夹</button>
             <button class="btn mini" id="btnTabsReset">恢复内置选项卡</button>
-            <span class="hint" id="bankSaveTip"></span>
           </div>
           <p style="margin:0 0 6px">也可以粘贴别人分享的单个词库文本（标准 JSON），覆盖当前选项卡的词库：</p>
-          <textarea id="bankPaste" placeholder='粘贴形如 {"label":"服装","fields":{"风格":["制服|Uniform","古装|Period costume"]}} 的文本' spellcheck="false"></textarea>
+          <textarea id="bankPaste" data-expand="paste" placeholder='粘贴形如 {"label":"服装","fields":{"风格":["制服|Uniform","古装|Period costume"]}} 的文本' spellcheck="false"></textarea>
           <div style="margin-top:7px;display:flex;justify-content:flex-end"><button class="btn mini" id="btnBankPaste">导入到当前选项卡</button></div>
         </div>
       </details>
@@ -228,8 +296,11 @@
       <div class="lang-row">
         <span>输出语言</span>
         <div class="lang-seg" id="langSeg"></div>
-        <label class="switch" title="输出文本与结果标签里是否保留「身高」「发色」这类维度名"><input type="checkbox" id="withLabel"><span>维度前缀</span></label>
         <span class="hint">切换只改变显示与复制文本，不重新随机</span>
+      </div>
+      <div class="scope-wrap" id="scopeWrap">
+        <button class="scope-btn" id="scopeBtn"><span>生成范围：<b id="scopeLabel">当前选项卡</b></span><span class="caret">▾</span></button>
+        <div class="scope-menu" id="scopeMenu"></div>
       </div>
       <div class="result-actions">
         <button class="btn primary" id="btnGenCur">重新生成</button>
@@ -237,9 +308,10 @@
         <button class="btn" id="btnCopyPrompt">复制完整提示词</button>
         <button class="btn" id="btnClearLock">清空锁定</button>
       </div>
+      <div class="val-tip" id="valTip"></div>
       <div id="result"></div>
       <div class="out-label"><span>文本输出（可直接编辑后复制）</span><span class="hint" id="outCount"></span></div>
-      <textarea id="output" spellcheck="false"></textarea>
+      <textarea id="output" data-expand="output" spellcheck="false"></textarea>
       <details class="history">
         <summary>历史组合（最近 8 次，点击载入）</summary>
         <div class="hist-list" id="histList"></div>
@@ -248,18 +320,130 @@
   </div>
 </div>
 <input type="file" id="tabFile" accept=".js,.json,.txt,text/javascript,application/json" multiple hidden>
+<input type="file" id="bankImportFile" accept=".zip,.js,.json,.txt" multiple hidden>
+<div class="modal" id="settingsModal" hidden>
+  <div class="modal-mask" id="settingsMask"></div>
+  <div class="modal-panel">
+    <div class="modal-head"><h2>设置</h2><button class="btn mini" id="btnSettingsClose">关闭</button></div>
+    <div class="modal-body">
+      <div class="set-sec">
+        <h3 class="set-title">输出</h3>
+        <p class="set-note">平时不常改的选项放在这里，改完立刻生效。每根选项卡的「加入基础设定」和「扩写成…」在选项卡头部设置。</p>
+        <label class="set-check"><input type="checkbox" id="setWithLabel"><span class="tx">维度前缀<small>在结果和文本里保留「发色」「身高」这类维度名，默认开启。</small></span></label>
+        <label class="set-check"><input type="checkbox" id="setValidate"><span class="tx">组合校验<small>抽完后避开明显互斥的标签，并尽量补上别的候选项；默认开启。只在不同维度之间比较，同一维度抽多个仍然保留。</small></span></label>
+        <div class="set-row" style="display:block">
+          <span class="lb" style="display:block;width:auto;margin-bottom:5px">自定义冲突词组</span>
+          <textarea class="set-area" id="setConflicts" data-expand="conflicts" spellcheck="false" placeholder="每行一组，用竖线分开两边；同一边的多个说法用逗号分开&#10;长发,long hair | 短发,short hair&#10;盛夏 | 寒冬"></textarea>
+          <span class="hint">常见互斥说法写在根目录的 <code>conflicts.js</code>，照同样的格式加一行就能改；这里填的规则会一起参与校验。</span>
+        </div>
+      </div>
+      <div class="set-sec">
+        <h3 class="set-title">其他</h3>
+        <p class="set-note">恢复默认会重置滑块、锁定、基础设定与自定义词库；这里的通用设置保留。</p>
+        <div class="set-btns"><button class="btn mini" id="btnSetReset">恢复默认</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="changelogModal" hidden>
+  <div class="modal-mask" id="changelogMask"></div>
+  <div class="modal-panel">
+    <div class="modal-head"><h2>更新日志</h2><button class="btn mini" id="btnChangelogClose">关闭</button></div>
+    <div class="modal-body">
+      <pre class="log-pre" id="changelogText"></pre>
+      <iframe class="log-frame" id="changelogFrame" title="更新日志原文" hidden></iframe>
+      <div class="log-foot">
+        <span class="hint" id="changelogNote"></span>
+        <a class="link" href="CHANGELOG.txt" target="_blank" rel="noopener">用新窗口打开原文</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="expandModal" hidden>
+  <div class="modal-mask" id="expandMask"></div>
+  <div class="modal-panel expand-panel">
+    <div class="modal-head"><h2 id="expandTitle">编辑文本</h2><button class="btn mini" id="btnExpandClose">关闭</button></div>
+    <div class="modal-body expand-body">
+      <textarea id="expandArea" spellcheck="false"></textarea>
+      <div class="expand-foot">
+        <span class="hint">编辑完点「应用」写回原来的文本框；Ctrl + Enter 也可以应用。</span>
+        <button class="btn mini" id="btnExpandCopy">复制</button>
+        <button class="btn mini" id="btnExpandCancel">取消</button>
+        <button class="btn mini primary" id="btnExpandApply">应用</button>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="toast" id="toast"></div>
 
 <script src="wordbanks/index.js" charset="utf-8"></script>
+<script src="conflicts.js" charset="utf-8"></script>
 <script>
 (function(){
   'use strict';
 
   /* 内嵌词库：只带一个 HTML 文件也能用 */
-  var EMBEDDED = {"tabs":[{"id":"avatar","name":"头像","file":"avatar.js","color":"#7c6cf5","baseOn":true,"kind":"image"},{"id":"art","name":"立绘","file":"art.js","color":"#3d8ce0","baseOn":true,"kind":"image"},{"id":"persona","name":"人设","file":"persona.js","color":"#e08a3c","baseOn":true,"kind":"text"},{"id":"world","name":"世界观","file":"world.js","color":"#2fa88f","baseOn":false,"kind":"text"}],"profile":[{"name":"性别","value":"女|Female"},{"name":"年龄","value":"18 岁|18 years old"},{"name":"身高","value":"165 cm|165 cm"},{"name":"体重","value":"48 kg|48 kg"}],"banks":{"avatar":{"label":"头像","fields":{"构图视角":["正面特写|Frontal close-up","四分之三侧面|Three-quarter view","正侧面|Side profile","微俯视|Slight high angle","微仰视|Slight low angle","胸像|Bust shot","肩部以上|Shoulders-up crop","头部特写|Head close-up","过肩回眸|Over-the-shoulder glance","镜面自拍视角|Mirror selfie angle","俯拍大头|Top-down big head","贴脸近景|Extreme close-up","半身倚靠|Half-body leaning","侧脸剪影|Side silhouette","双人对视构图|Two-person face-off","前景遮挡|Foreground occlusion","门缝窥视|Peek through door gap","低机位仰拍|Low camera worm's-eye","鱼眼畸变|Fisheye distortion","画面边缘侧脸|Profile at frame edge","怼脸大特写|In-your-face close-up","居中对称|Centered symmetry","黄金分割偏置|Golden-ratio offset","大面积留白偏左|Negative space on left","大面积留白偏右|Negative space on right","俯视低头|Downward gaze from above","仰头侧望|Looking up and aside","镜中倒影|Mirror reflection","隔着玻璃|Through glass","分镜式切边|Comic-panel crop"],"表情神态":["淡淡微笑|Faint smile","明快笑容|Bright grin","面无表情|Blank expression","冷淡疏离|Cold and aloof","轻挑眉|Raised eyebrow","微窘|Slightly embarrassed","困倦|Sleepy","若有所思|Pensive","含泪|Teary-eyed","轻蔑|Sneer","惊讶|Surprised","闭眼微笑|Eyes-closed smile","抿嘴|Pressed lips","张口欲言|About to speak","坏笑|Smirk","苦笑|Wry smile","失神|Dazed","警觉|Alert","慵懒|Languid","害羞泛红|Blushing","强忍笑意|Holding back laughter","蹙眉|Furrowed brows","不耐烦|Impatient","释然|Relieved","空洞|Hollow-eyed","专注|Focused","得意|Smug","怯懦|Timid","嘲讽|Mocking","温柔注视|Tender gaze","咬唇|Biting lip","呆滞|Vacant stare"],"发型":["齐耳短发|Ear-length bob","蓬松短碎发|Fluffy cropped layers","长直发|Long straight hair","微卷长发|Long wavy hair","双马尾|Twin tails","单侧马尾|Side ponytail","丸子头|Hair bun","低束发|Low tied hair","姬发式|Hime cut","编发盘发|Braided updo","狼尾|Wolf cut","齐刘海波波头|Blunt-bang bob","超短精灵短发|Pixie cut","大波浪|Big waves","羊毛卷|Tight curls","法式编发|French braid","半扎公主头|Half-up princess hair","双丸子头|Double buns","高马尾|High ponytail","麻花辫|Three-strand braid","鱼骨辫|Fishtail braid","莫西干|Mohawk","背头|Slicked-back hair","湿发|Wet hair","乱翘睡发|Bed head","空气刘海|Airy bangs","斜刘海|Side-swept bangs","中分长发|Center-parted long hair","层次碎剪|Layered choppy cut","光头|Shaved head","及腰长发|Waist-length hair","锁边小辫|Cornrows","发髻插簪|Hair stick bun"],"发色":["乌黑|Jet black","深棕|Dark brown","亚麻金|Flaxen blond","银白|Silver white","雾蓝|Misty blue","樱粉|Cherry blossom pink","酒红|Burgundy","墨绿|Deep green","灰紫|Dusty purple","蜜糖橘|Honey orange","渐变挑染|Gradient highlights","月光渐变|Moonlight ombre","铂金|Platinum blond","栗色|Chestnut","焦糖棕|Caramel brown","烟灰|Ash gray","雾霾蓝|Haze blue","薄荷绿|Mint green","丁香紫|Lilac","珊瑚粉|Coral pink","赤铜|Copper red","孔雀蓝|Peacock blue","象牙白|Ivory white","炭黑|Charcoal black","琥珀金|Amber gold","玫瑰金|Rose gold","青灰|Blue-gray","内层染|Underlayer dye","发尾渐变|Dip-dye ends","星尘挑染|Stardust streaks"],"瞳色":["琥珀色|Amber","深蓝|Deep blue","翡翠绿|Emerald green","紫罗兰|Violet","暗红|Dark red","异色瞳|Heterochromia","浅灰|Pale gray","樱粉|Sakura pink","金黄|Golden","青碧|Teal","墨黑|Ink black","银白|Silvery white","湖蓝|Lake blue","橄榄绿|Olive green","酒红渐变|Wine-red gradient","星芒瞳|Star-shaped pupils","渐变虹膜|Gradient iris","无高光|No catchlight","玻璃质感|Glassy eyes","竖瞳|Slit pupils","多环虹膜|Multi-ring iris","发光瞳|Glowing eyes","雾面瞳|Matte eyes","翡翠金|Emerald gold"],"眼神视线":["直视镜头|Looking at viewer","低垂眼|Downcast eyes","半阖眼|Half-lidded eyes","侧目|Side glance","仰望|Looking upward","回望|Looking back","失焦|Unfocused eyes","凝视远方|Gazing into distance","眯眼|Squinting","眼尾上挑|Upturned eyes","下垂眼|Droopy eyes","锐利|Sharp gaze","温柔|Gentle eyes","空洞|Empty stare","含笑|Smiling eyes","警惕|Wary look","湿润|Watery eyes","躲闪|Evasive glance","专注|Intent gaze","慵懒|Languid eyes","越过镜片|Over the rims","闭眼|Eyes closed"],"脸部特征":["鹅蛋脸|Oval face","瓜子脸|Heart-shaped face","圆脸|Round face","方下颌|Square jaw","瘦削脸颊|Hollow cheeks","婴儿肥|Baby face","高颧骨|High cheekbones","浅酒窝|Dimples","泪痣|Beauty mark under eye","眼下痣|Mole under eye","雀斑|Freckles","眼下淡影|Faint under-eye shadows","小巧鼻|Petite nose","挺直鼻梁|Straight nose bridge","薄唇|Thin lips","丰满唇|Full lips","唇角痣|Mole by the mouth","眉形锋利|Sharp brows","柳叶眉|Willow-leaf brows","浓眉|Thick brows","淡眉|Faint brows","单眼皮|Monolid","双眼皮|Double eyelid","内双|Hidden double eyelid","下颌线清晰|Defined jawline","眉骨旧疤|Old scar on brow bone"],"妆容":["素颜|Bare face","淡妆|Light makeup","红唇|Bold red lips","咬唇妆|Gradient lip","烟熏|Smoky eyes","晒伤腮红|Sunburn blush","雀斑妆|Faux freckles","亮片眼影|Glitter eyeshadow","下睫毛强调|Lower lash emphasis","裸色唇|Nude lips","白瓷底妆|Porcelain base","油光肌|Dewy skin","哑光肌|Matte skin","泪光眼妆|Glossy teary eyes","面部彩绘|Face paint","战损擦伤|Battle-worn scrapes","眼下红晕|Flushed under-eyes","唇色苍白|Pale lips","修容立体|Sculpted contour","闪粉点缀|Shimmer accents"],"光线":["柔和自然光|Soft natural light","窗边漫射光|Window diffused light","侧逆光|Side backlight","伦勃朗光|Rembrandt lighting","暖色顶光|Warm top light","霓虹补光|Neon fill light","晨曦薄光|Thin dawn light","月光冷调|Cool moonlight","剪影边缘光|Rim light silhouette","均匀平光|Flat even light","斑驳树影|Dappled tree shade","水面反射光|Water reflection","屏幕冷光|Screen glow","烛光|Candlelight","夕阳逆光|Sunset backlight","闪光灯直打|Direct flash","阴天散射|Overcast diffusion","舞台聚光|Stage spotlight","体积光|Volumetric light","双色补光|Bicolor fill","缝隙光|Slit light","道具自发光|Prop-emitted glow","低调布光|Low-key lighting","高调布光|High-key lighting","环形补光|Ring light","黄昏金光|Golden hour glow"],"光影方向":["正面平光|Frontal flat light","左侧光|Left-side light","右侧光|Right-side light","顶光|Top light","底光|Underlighting","正逆光|Direct backlight","左后方逆光|Back-left rim light","右后方逆光|Back-right rim light","45 度侧光|45-degree side light","分割布光|Split lighting","环状阴影|Loop shadow","长投影|Long cast shadow","无投影|No shadow","柔和渐变过渡|Soft gradient falloff","硬边阴影|Hard-edged shadow","斑驳投影|Mottled shadow","反射补光|Bounced fill"],"背景":["纯色渐变|Solid gradient","留白|Negative space","虚化街景|Blurred street","模糊书架|Blurred bookshelf","光斑散景|Bokeh lights","几何色块|Geometric color blocks","雨夜玻璃|Rainy-night glass","绿植虚影|Soft foliage blur","纸张纹理|Paper texture","暗色虚化|Dark bokeh","教室窗边|Classroom window","旧墙剥落|Peeling old wall","霓虹招牌|Neon signage","云层|Cloud layers","水面倒影|Water reflection","花丛|Flower bed","纱帘|Sheer curtain","铁栅格|Iron lattice","星空|Starry sky","书架纵深|Bookshelf depth","走廊透视|Corridor perspective","砖墙|Brick wall","地图与纸张|Maps and papers","粒子光点|Light particles","单色平涂|Flat monochrome","网点纹理|Halftone dots"],"色调":["冷灰蓝|Cool gray-blue","暖米白|Warm ivory","高饱和霓虹|Saturated neon","低饱和莫兰迪|Muted Morandi","黑白灰|Monochrome","复古泛黄|Vintage sepia","青橙对比|Teal and orange","粉紫梦幻|Dreamy pink-purple","雾蓝灰|Hazy blue-gray","暗夜冷调|Cold night tone","奶油色调|Creamy tones","金属冷银|Metallic silver","森系绿棕|Forest green and brown","赤金暖调|Warm red-gold","透明水色|Translucent watercolor","褪色胶片|Faded film","糖果色|Candy colors","高级灰|Sophisticated grays","棕褐怀旧|Sepia nostalgia","单色系强调|Monochrome with accent"],"配饰":["无配饰|No accessories","薄框眼镜|Thin-frame glasses","圆框眼镜|Round glasses","单边耳坠|Single earring","发夹|Hair clip","颈链|Necklace","耳机|Headphones","口罩|Face mask","面部贴饰|Face stickers","耳骨钉|Helix piercing","镜链|Glasses chain","颈带|Choker","丝带|Ribbon","鼻钉|Nose stud","唇钉|Lip piercing","眼罩|Eye patch","单片镜片|Monocle","小花别针|Flower pin","金属发扣|Metal hair clasp","串珠|Beads","耳返|In-ear monitor","绷带|Bandage","创可贴|Band-aid","面纱|Face veil","领针|Lapel pin"],"头饰帽饰":["无|None","棒球帽|Baseball cap","贝雷帽|Beret","宽檐帽|Wide-brim hat","兜帽|Hood","针织帽|Beanie","发带|Headband","蝴蝶结|Bow","发箍|Hair hoop","花冠|Flower crown","王冠小饰|Small tiara","和风发簪|Japanese kanzashi","中式发钗|Chinese hairpin","军帽|Military cap","护目镜|Goggles","头巾|Headscarf","兜帽阴影|Hood shadow","羽毛饰|Feather ornament","猫耳|Cat ears","光环|Halo","耳罩|Earmuffs","斗笠|Conical straw hat","面纱帽|Veiled hat"],"画风质感":["日系赛璐璐|Anime cel shading","半厚涂|Semi-impasto","厚涂写实|Painterly realism","水彩淡彩|Light watercolor","线稿淡彩|Line art with wash","像素风|Pixel art","复古胶片|Retro film","2D 游戏头像|2D game portrait","油画笔触|Oil brushstrokes","柔和噪点|Soft grain","平涂|Flat coloring","赛博插画|Cyberpunk illustration","国风工笔|Chinese gongbi","浮世绘|Ukiyo-e","版画|Woodblock print","粉笔质感|Chalk texture","马克笔|Marker sketch","绘本风|Storybook style","3D 渲染|3D render","黏土质感|Claymation look","玻璃质感|Glassy render","剪纸拼贴|Paper cutout collage","故障艺术|Glitch art","水墨晕染|Ink wash","高清商业插画|Polished commercial illustration"],"线条笔触":["清晰闭合线稿|Clean closed lineart","细线淡彩|Fine lines with wash","无线条厚涂|Lineless painting","粗轮廓线|Bold outlines","断线速写|Broken-line sketch","柔和晕染|Soft blending","硬边色块|Hard-edged color blocks","可见笔触|Visible brushwork","颗粒噪点|Film grain","网点纸|Screentone","喷枪渐变|Airbrush gradient","干笔刷|Dry brush","水痕边缘|Watercolor blooms","描边发光|Glowing outline","手绘抖动线|Hand-drawn wobble"],"氛围情绪":["清冷|Cool and austere","治愈|Healing","静谧|Tranquil","慵懒|Languid","张扬|Bold","易碎|Fragile","危险|Dangerous","疏离|Detached","温暖怀旧|Warm nostalgia","紧张|Tense","梦幻|Dreamlike","荒诞|Absurd","肃穆|Solemn","俏皮|Playful","忧郁|Melancholic","澄澈|Limpid","燥热|Sultry","孤独|Lonely","仪式感|Ritualistic","烟火气|Lived-in warmth","赛博冷感|Cyber chill","古典优雅|Classical elegance","崩坏感|Sense of collapse","安然|Serene"],"镜头焦段":["50mm 标准|50mm standard","85mm 人像|85mm portrait","35mm 环境|35mm environmental","广角贴脸|Wide-angle close-up","长焦压缩|Telephoto compression","浅景深 f1.4|Shallow depth f/1.4","深景深|Deep focus","微距|Macro","鱼眼|Fisheye","移轴|Tilt-shift","轻微畸变|Slight distortion","无透视|Flat perspective","强透视|Strong perspective","胶片颗粒|Film grain","镜头光晕|Lens flare","柔焦|Soft focus"],"季节时间感":["初春|Early spring","盛夏|Midsummer","深秋|Late autumn","寒冬|Deep winter","清晨|Early morning","正午|Noon","黄昏|Dusk","深夜|Late night","雨后|After rain","雪后|After snow","梅雨季|Plum rain season","台风前|Before a typhoon","凌晨微光|Pre-dawn glow","日落前一刻|Just before sunset","无季节感|Seasonless","时间静止感|Frozen time","四季叠影|Layered four seasons"],"特效点缀":["无|None","飘落花瓣|Falling petals","细雨|Light rain","雪花|Snowflakes","光尘|Dust motes","气泡|Bubbles","飞散纸页|Scattering pages","发丝高光|Hair highlights","镜片反光|Lens reflection","胶片漏光|Film light leak","色散|Chromatic aberration","光斑|Light spots","烟雾|Smoke","水珠|Water droplets","萤火|Fireflies","碎裂玻璃|Shattered glass","飘带|Flowing ribbons","粒子碎片|Particle debris","电流|Electric arcs","星屑|Stardust","半透明重影|Translucent ghosting"]}},"art":{"label":"立绘","fields":{"全身构图":["正面站姿|Frontal standing","四分之三站姿|Three-quarter standing","动态站姿|Dynamic stance","行走中|Mid-walk","回眸|Looking back","坐姿|Seated pose","倚靠|Leaning","战斗起手|Combat ready stance","悬浮|Floating","跳跃瞬间|Mid-jump","奔跑|Running","下蹲|Crouching","单膝跪地|One knee down","跨步|Striding","转身衣摆扬起|Turning with flaring hem","背对观众|Facing away","侧身持物|Side-on holding prop","双手背后|Hands behind back","落地瞬间|Landing moment","被风吹动|Wind-blown","静止对称|Symmetric stillness","倾斜构图|Dutch-angle composition","抬脚迈步|Stepping forward","低头整理|Looking down adjusting clothes","举手招呼|Waving","张开双臂|Arms open","靠墙滑坐|Slumped against wall","盘腿而坐|Cross-legged sitting","踏在台阶上|Foot on a step","跃起回身|Leaping twist"],"视角":["平视|Eye level","微仰视|Slight low angle","微俯视|Slight high angle","低角度|Low angle","高角度俯拍|High angle","正面平光视角|Frontal flat view","三分之四角度|Three-quarter angle","背面视角|Rear view","极端仰视|Extreme worm's-eye","鸟瞰|Bird's-eye","水平中轴|Horizontal axis","倾斜荷兰角|Dutch tilt","广角拉伸|Wide-angle stretch"],"体型比例":["纤细|Slim","标准|Average build","高挑|Tall","娇小|Petite","健硕|Muscular","少年感|Youthful build","肌肉线条|Defined muscles","轻盈|Light frame","修长|Long-limbed","圆润|Soft and rounded","宽肩窄腰|Broad shoulders narrow waist","单薄|Slender frame","运动员体型|Athletic build","九头身|Nine-heads-tall","七头身|Seven-heads-tall","Q 版二头身|Chibi two-heads-tall","瘦长四肢|Lanky limbs","厚实骨架|Heavy bone structure","柔性体态|Fluid posture","机械义肢比例|Prosthetic proportions","非人比例|Non-human proportions"],"服装风格":["学院制服|School uniform","职场西装|Business suit","休闲卫衣|Casual hoodie","和风羽织|Japanese haori","中式汉服|Chinese hanfu","机能风外套|Techwear jacket","赛博朋克夹克|Cyberpunk jacket","宫廷礼服|Court gown","骑士轻甲|Light knight armor","废土拼装|Wasteland patchwork","实验室白袍|Lab coat","偶像打歌服|Idol stage outfit","修道院长袍|Monastic robe","工装连体服|Work overalls","水手服|Sailor uniform","军装大衣|Military greatcoat","舞会长裙|Ball gown","狩衣|Kariginu robe","旗袍|Qipao","牛仔套装|Denim set","针织开衫|Knit cardigan","雨衣风衣|Rain trench coat","运动队服|Sports jersey","皮草披肩|Fur stole","僧袍|Monk's robe","宇航服|Spacesuit","潜水服|Diving suit","围裙工作装|Work apron","洛丽塔|Lolita fashion","哥特礼装|Gothic attire"],"上装细节":["立领|Stand collar","翻领|Lapel","连帽|Hooded","露肩|Off-shoulder","无袖|Sleeveless","泡泡袖|Puff sleeves","宽袖|Wide sleeves","束腰|Corseted waist","披肩|Shoulder cape","斗篷|Cloak","马甲叠穿|Layered vest","领带|Necktie","领结|Bow tie","丝巾|Silk scarf","胸章|Chest badge","肩章|Epaulettes","口袋链条|Pocket chain","拉链不对称|Asymmetric zipper","绑带交叉|Crisscross lacing","镂空织法|Openwork knit","破损卷边|Frayed rolled hem","刺绣徽记|Embroidered emblem"],"下装细节":["短裙长袜|Short skirt with knee socks","直筒长裤|Straight-leg trousers","阔腿裤|Wide-leg pants","工装短裤|Cargo shorts","百褶裙|Pleated skirt","长裙拖地|Floor-length skirt","不对称裙摆|Asymmetric hem","灯笼裤|Balloon pants","紧身打底|Fitted leggings","绑腿|Gaiters","腰封|Waist cincher","腰链|Waist chain","垂布|Draped fabric","开衩|Side slit","层叠内衬|Layered lining","护膝|Knee guards","裙撑|Crinoline","破洞|Ripped details","流苏边|Fringed hem"],"鞋履":["短靴|Ankle boots","长靴|Knee-high boots","运动鞋|Sneakers","皮鞋|Dress shoes","木屐|Wooden geta","赤足绑带|Barefoot wrappings","高跟鞋|High heels","乐福鞋|Loafers","马丁靴|Combat boots","雪地靴|Snow boots","凉鞋|Sandals","布鞋|Cloth shoes","军靴|Military boots","机械外骨骼靴|Mechanical exo-boots","厚底鞋|Platform shoes","舞鞋|Dance shoes","登山靴|Hiking boots","雨靴|Rain boots","悬浮鞋|Hover shoes"],"主色调":["冷灰蓝|Cool gray-blue","墨黑加金属|Ink black with metal","米白加焦糖|Ivory and caramel","藏青加白|Navy and white","酒红加金|Burgundy and gold","雾粉加灰|Dusty pink and gray","森林绿加棕|Forest green and brown","高对比黑白|High-contrast black and white","霓虹紫青|Neon purple and cyan","大地色系|Earth tones","象牙加墨|Ivory and ink","朱红加玄黑|Vermilion and deep black","薄荷加白|Mint and white","靛蓝加银|Indigo and silver","土黄加赭石|Ocher and sienna","纯白|Pure white","全黑|All black","糖果多色|Candy multicolor","低饱和灰调|Desaturated grays","渐变虹彩|Iridescent gradient"],"配色方案":["同色系渐变|Tonal gradient","互补色撞色|Complementary clash","三色平衡|Triadic balance","单色加一点亮色|Monochrome with a pop","大面积留白|Generous white space","暗底亮纹|Bright pattern on dark ground","上下深浅对比|Light top dark bottom","内外撞色|Contrast outer and inner layers","季节色盘|Seasonal palette","阵营配色|Faction colors","金属点缀|Metallic accents","荧光描边|Neon outline","无色系加暖光|Neutral with warm light","褪色处理|Faded wash"],"面料质感":["棉麻|Cotton linen","丝绸|Silk","皮革|Leather","粗呢|Tweed","针织|Knit","金属甲片|Metal plates","透明纱|Sheer gauze","橡胶|Rubber","羽绒|Down padding","蕾丝|Lace","牛仔布|Denim","漆皮|Patent leather","绒面|Suede","防水涂层|Waterproof coating","纸质|Paper-like","藤编|Woven rattan","骨质|Bone","发光织物|Luminous fabric","液态金属|Liquid metal","毛毡|Felt","旧布磨损|Worn cloth"],"服装装饰":["无|None","刺绣纹样|Embroidered motifs","金属铆钉|Metal studs","流苏|Tassels","羽毛|Feathers","宝石扣|Gem buttons","家族纹章|Family crest","符文印记|Rune marks","补丁|Patches","别针徽章|Pin badges","绳结|Knotwork","链条|Chains","口袋挂件|Pocket charms","印花图腾|Printed totems","绶带|Sash","肩披|Shoulder mantle","腰牌|Waist tag","护符|Amulet","发光缝线|Glowing stitching","编号标签|Serial label"],"手持道具":["无道具|No prop","书本|Book","长剑|Longsword","法杖|Staff","伞|Umbrella","提灯|Lantern","怀表|Pocket watch","咖啡杯|Coffee cup","乐器|Musical instrument","枪械|Firearm","平板终端|Tablet","花束|Bouquet","宠物相伴|Pet companion","卷轴|Scroll","灯笼|Paper lantern","扇子|Folding fan","面具|Mask","钥匙串|Keyring","匕首|Dagger","盾牌|Shield","弓|Bow","望远镜|Spyglass","药瓶|Potion vial","行李箱|Suitcase","气球|Balloon","纸袋|Paper bag","钓竿|Fishing rod","扫帚|Broom","相机|Camera","绳索|Rope","棋子|Chess piece","晶石|Crystal"],"随身物件":["腰包|Waist pouch","斜挎包|Crossbody bag","背包|Backpack","腰间挂坠|Waist charm","怀链|Watch chain","护身符|Talisman","耳麦|Headset","手套|Gloves","围巾|Scarf","披风|Cape","帽饰|Hat ornament","指环|Ring","臂章|Armband","弹匣袋|Magazine pouch","水壶|Canteen","笔记本|Notebook","墨镜|Sunglasses","绷带|Bandages","通讯器|Communicator","徽章|Badge","锁链|Chain","小玩偶挂饰|Plush charm"],"手势姿态":["双手自然垂放|Arms relaxed at sides","单手插兜|One hand in pocket","叉腰|Hands on hips","持物于胸前|Holding prop at chest","抬手遮光|Shielding eyes from light","指向前方|Pointing forward","抱臂|Arms crossed","整理衣领|Adjusting collar","抬手打招呼|Raising hand in greeting","手指抵唇|Finger to lips","摊开手掌|Open palm","握拳|Clenched fist","扶额|Hand on forehead","扶剑柄|Hand on sword hilt","撩发|Tucking hair back","比手势|Hand sign","双手背后|Hands clasped behind","低头合掌|Palms together head bowed","撑地|Bracing on ground","扶墙|Hand against wall","捻起衣角|Pinching hem"],"动态衣摆":["静止|Still","微风轻扬|Light breeze lift","强风翻卷|Wind-whipped","衣摆旋转|Swirling hem","裙摆散开|Skirt flaring","发丝飘动|Floating hair","披风鼓起|Billowing cape","落地余波|Landing ripple","缓步涟漪|Slow-step sway","跃起滞空|Mid-air hang","下坠|Falling","回旋|Spinning","突然止步|Sudden halt","布料下垂重力感|Heavy fabric drape","飘带缠绕|Ribbons coiling"],"背景处理":["纯白背景|Pure white background","透明底|Transparent background","简易投影|Simple drop shadow","几何衬底|Geometric backing","淡色场景|Pale scene","无背景加描边|Outlined no background","设定稿网格|Model sheet grid","多视图排版|Multi-view layout","局部放大框|Detail inset","色卡与标注|Color swatches and notes","角色名排版|Character name typography","线稿底图叠加|Lineart underlay","场景速写|Scene sketch","纯色纵深|Solid color depth","撕纸拼贴|Torn paper collage"],"地面投影":["无地面|No ground","柔和落影|Soft cast shadow","硬边投影|Hard shadow","水面倒影|Water reflection","镜面反射|Mirror reflection","碎石地面|Gravel ground","木地板|Wooden floor","金属格栅|Metal grating","雪地脚印|Snow footprints","草地|Grass","沙地|Sand","台阶|Steps","光斑地面|Dappled ground","悬浮阴影|Floating shadow","网格透视地面|Perspective grid"],"渲染风格":["2D 游戏立绘|2D game character art","赛璐璐|Cel shading","厚涂|Impasto painting","Live2D 分层感|Live2D layered look","水彩|Watercolor","线稿上色|Lineart with flats","3D 渲染感|3D rendered look","复古像素|Retro pixel art","国风工笔|Chinese gongbi","美式漫画|American comics","法式条漫|Bande dessinee","绘本|Picture book","雕像质感|Sculptural","纸模风|Papercraft","等轴测|Isometric","光影写实|Photoreal lighting","平涂加高光|Flat color with highlights","故障风|Glitch","剪影|Silhouette","拼贴|Collage","半透明分层|Translucent layers","商业宣传立绘|Promotional key art"],"光影处理":["均匀平光|Even flat light","单侧主光|Single key light","逆光轮廓|Backlit rim","双色边缘光|Two-tone rim light","地面反射光|Floor bounce","聚光舞台|Stage spotlight","体积光束|God rays","柔和高光|Soft specular","硬边阴影|Hard shadows","环境光遮蔽|Ambient occlusion","发光道具照亮|Glowing prop light","夜景霓虹反射|Neon reflections","低调暗部|Low-key shadows","高调明亮|High-key brightness","无阴影平涂|Shadowless flats"],"特效元素":["无|None","粒子光点|Light particles","魔法阵|Magic circle","飘散花瓣|Scattering petals","火星|Sparks","水流|Water flow","电流|Electricity","烟雾|Smoke","风线|Speed lines","碎晶|Crystal shards","符文浮空|Floating runes","光翼|Wings of light","残影|Afterimages","气泡|Bubbles","羽毛|Feathers","数据碎片|Data fragments","光带轨迹|Light trails","霜气|Frost mist","花瓣漩涡|Petal vortex","破碎玻璃|Broken glass","星尘|Stardust"]}},"persona":{"label":"人设","fields":{"年龄气质":["少年感|Boyish youth","少女感|Girlish youth","青年|Young adult","成熟稳重|Mature and steady","稚龄|Childlike","年长|Elderly","中性|Androgynous","超越年龄的沉静|Ageless calm","老成少年|Old soul in a boy","天真不谙世事|Naive innocence","疲惫的成年人|Weary adult","永葆童颜|Ageless face","沧桑|Weathered","朝气|Vibrant","病弱|Sickly","英气|Gallant bearing","书卷气|Bookish air","市井气|Streetwise","贵族气|Aristocratic air","野性|Untamed","神性|Divine presence","机械般无机质|Machine-like detachment"],"生理特征":["无特征|No distinguishing traits","左眼下有痣|Mole under left eye","旧伤疤|Old scar","异色瞳|Heterochromia","白发一缕|Single white streak","雀斑|Freckles","天生卷发|Naturally curly hair","比常人怕冷|Sensitive to cold","左利手|Left-handed","身高异常|Unusual height","体弱|Frail constitution","超常听力|Exceptional hearing","义肢|Prosthetic limb","纹身|Tattoo","胎记|Birthmark","眼镜常戴|Always wears glasses","声音沙哑|Husky voice","体香|Distinct scent","过敏体质|Allergic constitution","易醉|Lightweight drinker","失眠型黑眼圈|Insomniac eye bags","异于常人的体温|Unusual body temperature","长寿血脉|Long-lived bloodline"],"身份职业":["学生|Student","见习侦探|Apprentice detective","药剂师|Apothecary","图书管理员|Librarian","机甲驾驶员|Mecha pilot","流浪剑客|Wandering swordsman","研究员|Researcher","偶像|Idol","赏金猎人|Bounty hunter","宫廷侍从|Court attendant","自由记者|Freelance journalist","工艺匠人|Artisan","快递信使|Courier","占星师|Astrologer","钟表匠|Watchmaker","守夜人|Night watchman","翻译官|Interpreter","法庭书记官|Court clerk","走私商人|Smuggler","遗迹勘探员|Ruins explorer","驯兽师|Beast tamer","厨师|Chef","医生|Doctor","教师|Teacher","渔夫|Fisher","剧团演员|Troupe actor","黑客|Hacker","神官|Cleric","外交官|Diplomat","地图绘制师|Cartographer","殡葬师|Funeral director","调香师|Perfumer","档案管理员|Archivist"],"阵营立场":["中立|Neutral","守序善良|Lawful good","混乱善良|Chaotic good","守序中立|Lawful neutral","绝对中立|True neutral","混乱中立|Chaotic neutral","守序邪恶|Lawful evil","中立邪恶|Neutral evil","混乱邪恶|Chaotic evil","体制内|Within the system","反叛组织|Rebel faction","无所属|Unaffiliated","双面间谍|Double agent","雇佣兵|Mercenary","旁观者|Bystander","调和者|Mediator","理想主义|Idealist","实用主义|Pragmatist","隐修者|Recluse","改革派|Reformist","保皇派|Royalist"],"性格核心":["外冷内热|Cold outside warm inside","认真严谨|Diligent and precise","乐天派|Optimist","沉默寡言|Taciturn","天然呆|Airheaded","腹黑|Scheming behind a smile","温柔坚韧|Gentle but resilient","好胜|Competitive","慢条斯理|Unhurried","防备心重|Guarded","豁达|Open-minded","执拗|Stubborn","多疑|Suspicious","自我牺牲|Self-sacrificing","享乐主义|Hedonist","完美主义|Perfectionist","随遇而安|Easygoing","控制欲强|Controlling","好奇心旺盛|Insatiably curious","认死理|Inflexible","八面玲珑|Socially adroit","耿直|Bluntly honest","悲观|Pessimistic","钝感|Thick-skinned","敏感细腻|Sensitive and delicate"],"外在表现":["礼貌疏离|Polite distance","笑容常驻|Always smiling","不修边幅|Unkempt","一丝不苟|Immaculate","总在走神|Constantly distracted","语出惊人|Says the unexpected","习惯低头|Habitually looks down","步履匆匆|Always hurrying","气场压迫|Commanding presence","存在感稀薄|Barely noticeable","容易亲近|Approachable","拒人千里|Keeps everyone at arm's length","慢半拍|Always a beat slow","动作利落|Crisp movements","总在观察四周|Always scanning surroundings","爱笑|Laughs easily","表情贫乏|Expressionless","仪式感重|Ritualistic habits"],"说话方式":["简短干脆|Brief and crisp","敬语客气|Polite honorifics","带口头禅|Has a catchphrase","语速极快|Rapid-fire speech","慢条斯理|Slow measured speech","方言腔|Regional accent","常自言自语|Talks to themself","不爱解释|Rarely explains","爱用比喻|Fond of metaphors","反问居多|Answers with questions","书面语|Formal written style","只说结论|States only conclusions","爱讲冷笑话|Loves dad jokes","习惯道歉|Apologizes habitually","直呼其名|Uses first names","用敬称|Uses honorific titles","沉默以对|Responds with silence","说话留半句|Trails off mid-sentence","拉长尾音|Drawls","爱引经据典|Quotes classics"],"口头禅语癖":["无|None","算了常挂嘴边|Always says never mind","句尾加语气词|Sentence-final particles","习惯先叹气|Sighs first","总说按规矩|Always cites the rules","爱用大概|Fond of probably","句首所以说|Starts with so","常用手势代替回答|Gestures instead of answering","爱重复对方的话|Echoes others","笑而不答|Smiles without answering","习惯数数|Counts things","总提以前|Always brings up the past","口误后不纠正|Ignores own slips","把人名叫错|Gets names wrong","爱用敬语结尾|Ends politely","常哼歌|Hums constantly","习惯性清嗓|Clears throat","说话时敲桌面|Taps the table","喜欢用简称|Uses abbreviations"],"内在动机":["守护某人|Protect someone","追寻真相|Seek the truth","偿还旧债|Repay an old debt","探索未知|Explore the unknown","证明自己|Prove oneself","寻求自由|Seek freedom","维持秩序|Uphold order","复仇|Avenge","赎罪|Atone","重建家园|Rebuild a home","完成遗愿|Fulfill a last wish","收集齐全|Complete a collection","活下去|Survive","破解诅咒|Break a curse","找到归宿|Find belonging","守护秘密|Guard a secret","超越师父|Surpass a mentor","让某人后悔|Make someone regret","记录一切|Record everything","偿还人情|Repay a kindness"],"价值观":["结果优先|Results first","过程即意义|The journey is the point","性命最重|Life above all","承诺不可背|Promises are sacred","规则高于人情|Rules over feelings","人情高于规则|People over rules","知识无价|Knowledge is priceless","力量即正义|Might makes right","自由至上|Freedom above all","秩序至上|Order above all","等价交换|Equivalent exchange","不欠不赊|Neither owing nor lending","弱者应被保护|Protect the weak","胜负由天|Leave it to fate","家国为先|Nation before self","个人为先|Self before nation","记忆定义人|Memory defines a person","出身不定义人|Birth does not define"],"优点特长":["观察力敏锐|Keen observation","执行力强|Strong execution","共情力高|Deep empathy","记忆力惊人|Photographic memory","临危不乱|Calm under pressure","动手能力强|Handy with tools","信守承诺|Keeps promises","方向感极佳|Perfect sense of direction","谈判手腕|Skilled negotiator","快速学习|Fast learner","厨艺了得|Excellent cook","擅长伪装|Master of disguise","心算极快|Lightning mental math","体能出众|Exceptional stamina","耐心极好|Endless patience","会读唇语|Reads lips","擅长安抚|Soothes others","随机应变|Quick thinker","精通古籍|Scholar of ancient texts","机械直觉|Mechanical intuition","动物亲和|Animal affinity","乐器天赋|Musical gift","酒量极好|Holds liquor well"],"缺点弱点":["过度逞强|Overextends oneself","怕生|Shy with strangers","路痴|No sense of direction","容易心软|Too soft-hearted","熬夜成瘾|Night owl","不擅表达|Poor at expressing feelings","迷信直觉|Trusts gut over facts","怕打雷|Afraid of thunder","拖延|Procrastinator","固执|Stubborn","爱钻牛角尖|Overthinks","容易轻信|Too trusting","不会拒绝|Cannot say no","情绪化|Moody","记仇|Holds grudges","好面子|Prideful","节俭到吝啬|Frugal to a fault","丢三落四|Forgetful","怕麻烦|Avoids hassle","控制不住好奇心|Too curious","胜负欲过强|Overly competitive","对特定事物洁癖|Particular about cleanliness"],"恐惧软肋":["无|None","密闭空间|Enclosed spaces","被遗忘|Being forgotten","失去重要之人|Losing loved ones","黑暗|Darkness","高处|Heights","水|Water","火|Fire","人群|Crowds","噪音|Loud noise","被看穿|Being seen through","承诺落空|Broken promises","镜子|Mirrors","医生与针|Doctors and needles","旧照片|Old photographs","特定气味|A specific smell","梦境|Dreams","沉默|Silence","衰老|Aging","无法兑现的约定|Unkept vows","自己的名字|Own name","血|Blood"],"习惯癖好":["收集旧物|Collects old things","喝黑咖啡|Drinks black coffee","甜食控|Sweet tooth","整理物品|Tidies compulsively","摸耳垂|Touches earlobe","写日记|Keeps a diary","养植物|Keeps plants","深夜散步|Late-night walks","反复擦拭器物|Polishes objects","数台阶|Counts steps","叠纸|Folds paper","把杯子摆正|Aligns cups","睡前检查门锁|Checks locks","闻到旧书味就安心|Calmed by old-book smell","收集票据|Keeps ticket stubs","给物品起名字|Names belongings","照固定路线走|Fixed routes","边走边哼歌|Hums while walking","把糖纸折成星星|Folds wrappers into stars","记天气|Records the weather","咬笔帽|Chews pen caps","拍照留存|Photographs everything"],"喜好":["甜食|Sweets","雨天|Rainy days","旧书|Old books","猫|Cats","海|The sea","雪|Snow","烟火|Fireworks","清晨|Early mornings","独处|Solitude","热闹市集|Lively markets","古典乐|Classical music","辣味|Spicy food","机械拆装|Tinkering with machines","晒太阳|Sunbathing","星空|Starry skies","手写信|Handwritten letters","安静的走廊|Quiet corridors","茶叶|Tea leaves","旧电影|Old films","纸模型|Paper models","深夜电台|Late-night radio","薄荷糖|Mint candies","园艺|Gardening","下棋|Board games","烘焙|Baking"],"厌恶":["虚伪|Hypocrisy","浪费食物|Wasting food","突然的触碰|Sudden touch","甜腻香水|Cloying perfume","吵闹|Noise","被催促|Being rushed","谎言|Lies","潮湿|Dampness","官僚流程|Bureaucracy","被拍照|Being photographed","无意义的寒暄|Small talk","剩饭|Leftovers","被叫全名|Full-name address","迟到|Lateness","强光|Harsh light","拥挤|Crowds","被同情|Being pitied","承诺落空|Broken promises","蚂蚁|Ants","静电|Static shock","被翻旧账|Old grievances"],"人际关系":["独来独往|Lone wolf","团队核心|Team core","被守护者|The protected one","宿敌|Nemesis","师徒|Mentor and pupil","青梅竹马|Childhood friends","契约搭档|Contracted partner","家族弃子|Family outcast","众人信赖的前辈|Trusted senior","被排挤者|Outsider","调解人|Peacemaker","隐性领导者|Silent leader","被崇拜者|Idolized figure","相互利用|Mutual use","单箭头|Unrequited","双向救赎|Mutual redemption","临时同伴|Temporary ally","上下级|Superior and subordinate","跨国笔友|Overseas pen pal","隔代亲人|Grandparent bond"],"重要羁绊":["无|None","年幼的妹妹|Younger sister","已故的师父|Late mentor","失联的同伴|Missing companion","严格的养父|Strict adoptive father","敌对方的旧友|Old friend turned foe","一只老猫|An old cat","留下的信|A letter left behind","一枚旧徽章|An old badge","童年约定|Childhood promise","未送出的礼物|Unsent gift","共同守着的秘密|Shared secret","被托付的名字|Entrusted name","旧照片里的人|Someone in an old photo","债主|Creditor","对手的赠礼|A rival's gift"],"过往经历":["无特殊经历|Ordinary past","战乱幸存|War survivor","被收养|Adopted","从高处跌落|Fell from a height","退学|Dropped out","失去记忆|Lost memories","一次失败的审判|A failed trial","长期远行|Long journey","被囚禁|Imprisoned","继承家业|Inherited the family trade","改换姓名|Changed name","曾经成名又沉寂|Former celebrity","逃离故乡|Fled homeland","参与过禁忌实验|Took part in forbidden experiments","守过一座空城|Guarded an empty city","做过三年学徒|Three-year apprenticeship","被误认为某人|Mistaken for someone else","错过最后一班车|Missed the last train"],"反差秘密":["怕黑的夜行者|Night wanderer afraid of dark","不会用魔法的魔法世家|Magicless scion of a mage house","藏着旧伤|Hidden old wound","私下写诗|Writes poetry in secret","认得已失传的文字|Reads a lost script","身份是伪造的|Fabricated identity","怕血的医师|Doctor afraid of blood","不识字的档案员|Illiterate archivist","最强的却最怕寂寞|The strongest fears loneliness","冷面笑点极低|Stoic with a low joke threshold","讨厌猫却养了三只|Dislikes cats owns three","不会游泳的水手|Sailor who cannot swim","色弱的画家|Color-blind painter","记不住人脸的情报贩子|Spy who forgets faces","说谎时会摸耳垂|Touches earlobe when lying","其实一直在等人|Secretly waiting for someone"],"能力战斗":["无战斗能力|No combat ability","近身剑术|Close-quarters swordsmanship","远程弓术|Archery","元素法术|Elemental magic","治愈术|Healing arts","机械操控|Machine control","信息与黑客|Hacking and intel","交涉与话术|Persuasion","毒与药剂|Poisons and potions","召唤契约物|Summoning","高速移动|High-speed movement","防御护盾|Barriers","感知预知|Precognition","幻术|Illusion","体术格斗|Martial arts","狙击|Sniping","驯兽协同|Beast coordination","符文刻印|Rune engraving","声波|Sonic powers","以记忆为代价的术式|Memory-cost magic","纯靠道具|Relies on gadgets","不战而屈人之兵|Wins without fighting"],"经济生活":["宽裕|Comfortable","勉强糊口|Barely getting by","负债|In debt","靠接零活|Odd jobs","家族供养|Family-supported","居无定所|No fixed home","住在阁楼|Attic dweller","有一间小铺子|Owns a small shop","常驻工作室|Studio-based","寄人篱下|Lives with others","领固定薪水|Fixed salary","以物易物|Barter","靠奖金过活|Lives on bounties","有隐秘收入|Secret income","节俭到挑剔|Frugally particular","出手阔绰|Big spender","有收藏癖支出|Collector's expenses"],"整体氛围":["清冷|Cool and austere","透明感|Translucent","治愈|Healing","危险气息|Dangerous air","烟火气|Lived-in warmth","易碎感|Fragility","飒爽|Dashing","慵懒|Languid","书卷气|Bookish","锋利|Sharp-edged","潮湿|Humid","温暖|Warm","疏离|Detached","荒诞|Absurd","庄严|Solemn","天真|Innocent","颓靡|Decadent","澄澈|Limpid","市井|Streetwise","锋芒内敛|Quiet intensity","被雨淋过|Rain-soaked","旧时光|Old-time feel","灼热|Scorching","寂静|Silent"]}},"world":{"label":"世界观","fields":{"时代背景":["近未来|Near future","架空古代|Alternate antiquity","现代都市|Modern city","末世之后|Post-apocalypse","大航海时代|Age of sail","宇宙殖民期|Space colonization","蒸汽纪元|Steam age","怀旧年代|Nostalgic era","神话时代|Mythic age","王朝更替期|Dynastic transition","战后重建期|Postwar reconstruction","大萧条前后|Around the Great Depression","开拓边疆期|Frontier expansion","信息爆炸初期|Early information boom","冰期尾声|End of an ice age","城邦文艺期|City-state renaissance","魔法衰退期|Age of fading magic","纪元交界|Turn of an era","时间循环之中|Inside a time loop","历史被改写之后|After history was rewritten"],"类型基调":["低魔奇幻|Low fantasy","硬科幻|Hard sci-fi","都市异能|Urban supernatural","悬疑推理|Mystery","日常治愈|Slice-of-life healing","黑暗奇幻|Dark fantasy","太空歌剧|Space opera","废土生存|Wasteland survival","学院群像|Academy ensemble","历史架空|Alternate history","恐怖悬疑|Horror suspense","公路冒险|Road adventure","政治惊悚|Political thriller","田园慢生活|Pastoral slow life","赛博朋克|Cyberpunk","蒸汽朋克|Steampunk","神话重述|Myth retelling","群像史诗|Ensemble epic","密室解谜|Locked-room puzzle","荒诞寓言|Absurd fable","职场写实|Workplace realism","怪谈志异|Strange tales"],"科技水平":["魔法与机械并存|Magic and machinery coexist","AI 全面普及|Ubiquitous AI","灵能网络|Psionic network","蒸汽动力|Steam power","失传古代技术|Lost ancient tech","信息封锁|Information blockade","基因改造|Genetic engineering","符文工程|Rune engineering","前工业手工|Pre-industrial craft","电力初兴|Early electrification","量子通讯|Quantum communication","生物工程|Biotech","仿生义体|Bionic prosthetics","冷兵器为主|Cold weapons dominant","火药时代|Gunpowder age","晶石能源|Crystal energy","纸质档案社会|Paper-record society","虚拟现实普及|Widespread VR","无电力文明|Non-electric civilization","技术被宗教垄断|Tech monopolized by religion"],"力量体系":["无超凡力量|No supernatural power","元素魔法|Elemental magic","血脉继承|Bloodline inheritance","契约与代价|Pacts and costs","符文刻印|Rune inscription","灵能共鸣|Psionic resonance","神赐恩典|Divine grace","机械改造|Mechanical augmentation","基因觉醒|Genetic awakening","星辰占卜|Astral divination","言灵|Word of power","梦境操作|Dream manipulation","时间碎片|Time fragments","以记忆为燃料|Memory as fuel","以寿命为代价|Lifespan as price","献祭仪式|Sacrificial rites","共鸣搭档|Resonance pair","器物寄宿|Spirit in objects","规则系能力|Rule-based powers","越用越弱的力量|Power that wanes with use","被禁止的术式|Forbidden arts"],"社会结构":["城邦割据|City-state fragmentation","财阀统治|Zaibatsu rule","公会自治|Guild autonomy","帝国集权|Imperial centralization","无政府聚落|Anarchic settlements","学院制|Academy system","神权议会|Theocratic council","家族议会|Family council","种姓分层|Caste hierarchy","部落联盟|Tribal alliance","民主议会|Democratic assembly","公司即国家|Corporation as state","流浪社群|Nomadic communities","地下自治体|Underground polity","军政府|Military junta","双王共治|Dual monarchy","AI 托管治理|AI-administered governance","行会垄断|Guild monopoly","血缘氏族|Blood clans","浮空城特权阶层|Sky-city elite"],"政治格局":["表面和平|Surface peace","冷战对峙|Cold war standoff","代理人战争|Proxy wars","割据混战|Warlord chaos","一强独大|Single hegemon","脆弱联盟|Fragile alliance","革命前夜|Eve of revolution","殖民与反殖民|Colonization and resistance","条约脆弱期|Fragile treaty","权力真空|Power vacuum","傀儡政权|Puppet regime","边境摩擦|Border skirmishes","秘密结社渗透|Secret society infiltration","全面封锁|Total blockade","中立缓冲带|Neutral buffer zone"],"经济资源":["资源枯竭|Resource depletion","能源垄断|Energy monopoly","以物易物|Barter economy","信用点体系|Credit-point system","稀有矿物|Rare minerals","寿命可买卖|Lifespan trading","记忆交易|Memory market","粮食配给|Food rationing","自由贸易港|Free trade port","黑市繁荣|Thriving black market","遗产继承制|Hereditary inheritance","债务人身契|Debt bondage","原始积累期|Primitive accumulation","自动化过剩|Automation surplus","手工匠人稀缺|Artisan shortage","水是硬通货|Water as currency","魔法材料量产|Mass-produced magical materials"],"核心冲突":["资源枯竭|Resource depletion","阶级对立|Class conflict","人与 AI|Human vs AI","蔓延的瘟疫|Spreading plague","神明沉默|Silence of the gods","领土争端|Territorial dispute","记忆被篡改|Altered memories","长生代价|Price of immortality","代际对立|Generational divide","信仰分裂|Schism","真相被掩盖|Covered-up truth","外来入侵|Invasion","环境崩坏|Ecological collapse","继承权争夺|Succession struggle","禁忌技术外泄|Leaked forbidden tech","时间异常|Temporal anomaly","语言失传|Lost language","个体对抗体制|Individual vs system"],"主要势力":["无|None","旧王室|Old royalty","商会联盟|Merchant league","学院派|Academic faction","宗教裁判所|Inquisition","佣兵团|Mercenary company","地下情报网|Underground intel network","自治工会|Autonomous union","边境守备队|Border guard","AI 集群|AI collective","隐世一族|Hidden clan","海盗联合体|Pirate coalition","研究机构|Research institute","家族财阀|Family conglomerate","革命组织|Revolutionary group","遗迹守护者|Ruin guardians","新闻社|News agency","医疗救济会|Medical relief order","黑市中介|Black market brokers","流浪者共同体|Drifter commune"],"地理环境":["浮空群岛|Floating archipelago","地下城|Underground city","永夜之城|Eternal-night city","沿海港都|Coastal port capital","无尽雪原|Endless snowfield","沙漠遗迹|Desert ruins","雨林聚落|Rainforest settlements","环形巨构|Ring megastructure","峡谷要塞|Canyon fortress","盐湖荒原|Salt-flat wasteland","火山带城邦|Volcanic city-states","沼泽水乡|Marsh waterways","高原梯田|Highland terraces","冰封海港|Frozen harbor","巨树聚落|Giant-tree village","废弃轨道城|Abandoned orbital city","分层立体都市|Layered vertical metropolis","运河网络|Canal network","孤岛灯塔|Island lighthouse","洞窟神殿|Cavern temple","移动城市|Mobile city","被沙掩埋的旧都|Sand-buried old capital"],"标志性场所":["旧钟楼|Old clock tower","中央图书馆|Central library","地下市集|Underground bazaar","废弃车站|Abandoned station","悬浮车站|Floating platform","神殿遗址|Temple ruins","玻璃温室|Glass conservatory","灯塔|Lighthouse","竞技场|Arena","档案塔|Archive tower","蒸汽工厂|Steam factory","旧剧场|Old theater","桥下集市|Under-bridge market","屋顶花园|Rooftop garden","诊疗所|Clinic","当铺|Pawnshop","公共浴场|Public bathhouse","观测台|Observatory","迷宫下水道|Labyrinthine sewers","纪念碑广场|Monument square","末班电车|Last tram","货运电梯|Freight lift","藏书地窖|Book cellar"],"气候时间":["永冬|Eternal winter","漫长雨季|Endless rainy season","双月悬空|Twin moons","极昼|Polar day","季节错乱|Seasons out of order","恒定黄昏|Perpetual dusk","潮汐异常|Abnormal tides","永夜|Eternal night","沙尘暴频发|Frequent sandstorms","酸雨|Acid rain","四季如春|Eternal spring","极寒与酷暑交替|Extreme cold and heat","无风带|Windless zone","雷暴不止|Ceaseless thunderstorms","雾季漫长|Long fog season","时间流速不均|Uneven time flow","无历法可依|No calendar","倒流的季节|Reversing seasons"],"天文历法":["单月单历|Single moon single calendar","双月|Twin moons","三日并悬|Three suns","无星之夜|Starless night","星轨可预测命运|Star paths foretell fate","以潮汐纪年|Tide-based calendar","以花期纪年|Bloom-based calendar","十三月历|Thirteen-month calendar","被删除的某一天|A deleted day","闰年即灾年|Leap year as disaster","极光常驻|Permanent aurora","陨石带环|Meteoroid belt ring","人造天幕|Artificial sky","地心说仍为真|Geocentrism is literally true","纪元多次重置|Eras repeatedly reset"],"生物种族":["仅人类|Humans only","多族共居|Multi-species society","兽人|Beastfolk","精灵|Elves","矮人|Dwarves","龙裔|Dragonborn","机械生命|Machine life","AI 人格体|AI personae","合成人|Synthetics","亡灵|Undead","半神血脉|Demigod bloodline","化形者|Shapeshifters","菌类共生体|Fungal symbiotes","深海族群|Deep-sea people","浮空生物|Skyborne creatures","巨型坐骑|Giant mounts","只剩传说中的异族|Legend-only races","生物与机械混合|Bio-mechanical hybrids","人类已非多数|Humans no longer majority","无性别种族|Genderless species","会说话的旧物|Sentient old objects"],"文化信仰":["多神信仰|Polytheism","机械神教|Machine cult","祖先崇拜|Ancestor worship","星辰占卜|Astral divination","无神论主流|Mainstream atheism","禁忌知识结社|Forbidden knowledge society","节庆巡游|Festival parades","唯一神教|Monotheism","万物有灵|Animism","以契约代信仰|Pacts instead of faith","崇拜遗迹|Ruin worship","禁偶像|Iconoclasm","祖先记忆继承|Inherited ancestral memory","神已确证死亡|God confirmed dead","信仰按职业划分|Faith by profession","异端审判仍在|Heresy trials persist","信仰可交易|Tradable faith"],"节庆习俗":["无|None","燃灯节|Lantern festival","丰收祭|Harvest festival","成人试炼|Coming-of-age trial","命名礼|Naming ceremony","送葬船|Funeral boats","假面游行|Masquerade parade","星落之夜|Night of falling stars","静默日|Day of silence","互换姓名日|Name-swapping day","献花与扫墓|Flower offerings and grave-tending","比武大会|Tournament","集市日|Market day","禁声周|Week of silence","点灯祈愿|Lamp-lighting wishes","成年割发|Coming-of-age haircut","以物换故事|Trading objects for stories","每年重演一次建城日|Annual founding-day reenactment"],"语言文字":["通用语单一|Single common tongue","方言割裂|Fragmented dialects","失传古文字|Lost ancient script","符文即文字|Runes as writing","以手势补足|Gesture-supplemented speech","文字有魔力|Written words hold power","名字即契约|Names are contracts","禁写某字|A forbidden character","官话与市井话分层|Official vs street register","机器翻译垄断|Machine translation monopoly","口传史诗|Oral epics","以气味记事|Scent-based records","文字按阶层区分|Class-coded scripts","书写需许可|Writing requires permission","手语通行|Sign language common","文字会自行褪色|Self-fading ink"],"饮食日常":["配给制|Rationing","街边摊文化|Street food culture","茶与酒馆社交|Tea and tavern socializing","合成食品|Synthetic food","以药代餐|Meal-replacement medicine","共食礼仪严格|Strict communal dining etiquette","发酵与腌渍为主|Fermented and pickled staples","食物即货币|Food as currency","禁食某物|A forbidden food","贵族宴饮繁复|Elaborate aristocratic banquets","罐头与干粮|Canned and dried rations","夜间食堂|Late-night diners","自给菜园|Kitchen gardens","香料贸易|Spice trade","节庆特供|Festival specialties","饮水源受管控|Controlled water sources","共享厨房|Shared kitchens"],"交通通讯":["徒步与马车|Foot and carriage","蒸汽铁路|Steam railways","飞艇航线|Airship routes","传送门受限|Restricted portals","信鸦与信使|Messenger birds and couriers","神经网络直连|Neural network link","地下管网|Underground conduit network","运河驳船|Canal barges","磁悬浮|Maglev","驿站换马|Post-station relays","纸信为主|Paper letters","广播塔|Broadcast towers","延时通讯|Delayed communication","信标塔|Beacon towers","仅有面对面|Face-to-face only","灵能传讯|Psionic messaging","被监听的公共频道|Monitored public channels"],"禁忌法律":["禁术名录|Index of forbidden arts","禁止记录历史|Recording history banned","不得直呼神名|Never speak a god's name","夜间宵禁|Night curfew","禁止跨阶层通婚|Cross-class marriage banned","记忆不可买卖|Memories cannot be sold","禁止复制人格|Personality copying banned","不得离开城墙|No leaving the walls","禁止拥有旧币|Old currency outlawed","姓名登记制|Name registration","禁火|Fire prohibited","禁镜|Mirrors prohibited","禁音乐|Music prohibited","违反者被抹去存在|Offenders erased from existence","边境通行许可|Border permits","言论审查|Censorship","禁止提及某年|A year that cannot be mentioned"],"特殊规则":["魔法需付出记忆|Magic costs memories","寿命可交易|Lifespan is tradable","梦境可被入侵|Dreams can be invaded","谎言会被听见|Lies can be heard","名字即契约|Names are binding contracts","夜晚不属于人类|Night belongs to others","死者会回来讨债|The dead return for debts","约定必须履行|Promises must be kept","镜像中的自己会行动|Mirror selves act alone","被遗忘即消失|To be forgotten is to vanish","情绪会实体化|Emotions manifest physically","雨会冲刷记忆|Rain washes away memory","说出口的预言必然反向|Spoken prophecies invert","城市每晚重排街道|Streets rearrange nightly","时间只在城内流动|Time flows only inside the city","伤害会转移给所爱之人|Harm transfers to loved ones"],"视觉氛围":["潮湿霓虹|Damp neon","旧纸与黄铜|Old paper and brass","洁净的冷白|Clinical cool white","衰败的美感|Beauty of decay","热闹市井|Bustling streets","静谧空旷|Quiet emptiness","压抑秩序|Oppressive order","辽阔孤寂|Vast solitude","沙尘漫天|Dust-filled air","雾气弥漫|Heavy fog","烛火摇曳|Flickering candlelight","玻璃与钢|Glass and steel","藤蔓吞没建筑|Vines swallowing buildings","褪色海报|Faded posters","雪原极简|Minimal snowfield","光谱过载|Spectrum overload","灰烬飘落|Falling ash","庙宇朱红|Temple vermilion","机械油污|Machine grease","水光倒影|Water reflections","星海无垠|Boundless star sea","低饱和日常|Muted everyday"],"感官细节":["无|None","雨打铁皮声|Rain on tin roofs","机油与臭氧味|Oil and ozone","旧纸霉味|Musty old paper","远处钟声|Distant bells","海腥味|Sea brine","静电刺痛|Static prickle","香火气|Incense smoke","雪落无声|Silent snowfall","地铁低频轰鸣|Subway low rumble","蝉鸣不止|Endless cicadas","冷风穿廊|Cold draft through halls","糖炒栗子香|Roasted chestnuts","荧光灯嗡鸣|Fluorescent hum","尘土呛喉|Choking dust","织物摩擦声|Fabric rustle","金属冷却的脆响|Cooling metal ticks","消毒水味|Disinfectant","篝火噼啪|Crackling campfire"]}}}};
+  var EMBEDDED = {"tabs":[{"id":"avatar","name":"头像","file":"avatar.js","color":"#7c6cf5","baseOn":true,"kind":"image"},{"id":"art","name":"立绘","file":"art.js","color":"#3d8ce0","baseOn":true,"kind":"image"},{"id":"persona","name":"人设","file":"persona.js","color":"#e08a3c","baseOn":true,"kind":"text"},{"id":"world","name":"世界观","file":"world.js","color":"#2fa88f","baseOn":false,"kind":"text"}],"profile":[{"name":"性别","value":"女|Female"},{"name":"年龄","value":"18 岁|18 years old"},{"name":"身高","value":"165 cm|165 cm"},{"name":"体重","value":"48 kg|48 kg"}],"banks":{"avatar":{"label":"头像","fields":{"构图视角":["正面特写|Frontal close-up","四分之三侧面|Three-quarter view","正侧面|Side profile","微俯视|Slight high angle","微仰视|Slight low angle","胸像|Bust shot","肩部以上|Shoulders-up crop","头部特写|Head close-up","过肩回眸|Over-the-shoulder glance","镜面自拍视角|Mirror selfie angle","俯拍大头|Top-down big head","贴脸近景|Extreme close-up","半身倚靠|Half-body leaning","侧脸剪影|Side silhouette","双人对视构图|Two-person face-off","前景遮挡|Foreground occlusion","门缝窥视|Peek through door gap","低机位仰拍|Low camera worm's-eye","鱼眼畸变|Fisheye distortion","画面边缘侧脸|Profile at frame edge","怼脸大特写|In-your-face close-up","居中对称|Centered symmetry","黄金分割偏置|Golden-ratio offset","大面积留白偏左|Negative space on left","大面积留白偏右|Negative space on right","俯视低头|Downward gaze from above","仰头侧望|Looking up and aside","镜中倒影|Mirror reflection","隔着玻璃|Through glass","分镜式切边|Comic-panel crop"],"表情神态":["淡淡微笑|Faint smile","明快笑容|Bright grin","面无表情|Blank expression","冷淡疏离|Cold and aloof","轻挑眉|Raised eyebrow","微窘|Slightly embarrassed","困倦|Sleepy","若有所思|Pensive","含泪|Teary-eyed","轻蔑|Sneer","惊讶|Surprised","闭眼微笑|Eyes-closed smile","抿嘴|Pressed lips","张口欲言|About to speak","坏笑|Smirk","苦笑|Wry smile","失神|Dazed","警觉|Alert","慵懒|Languid","害羞泛红|Blushing","强忍笑意|Holding back laughter","蹙眉|Furrowed brows","不耐烦|Impatient","释然|Relieved","空洞|Hollow-eyed","专注|Focused","得意|Smug","怯懦|Timid","嘲讽|Mocking","温柔注视|Tender gaze","咬唇|Biting lip","呆滞|Vacant stare"],"发型":["齐耳短发|Ear-length bob","蓬松短碎发|Fluffy cropped layers","长直发|Long straight hair","微卷长发|Long wavy hair","双马尾|Twin tails","单侧马尾|Side ponytail","丸子头|Hair bun","低束发|Low tied hair","姬发式|Hime cut","编发盘发|Braided updo","狼尾|Wolf cut","齐刘海波波头|Blunt-bang bob","超短精灵短发|Pixie cut","大波浪|Big waves","羊毛卷|Tight curls","法式编发|French braid","半扎公主头|Half-up princess hair","双丸子头|Double buns","高马尾|High ponytail","麻花辫|Three-strand braid","鱼骨辫|Fishtail braid","莫西干|Mohawk","背头|Slicked-back hair","湿发|Wet hair","乱翘睡发|Bed head","空气刘海|Airy bangs","斜刘海|Side-swept bangs","中分长发|Center-parted long hair","层次碎剪|Layered choppy cut","光头|Shaved head","及腰长发|Waist-length hair","锁边小辫|Cornrows","发髻插簪|Hair stick bun"],"发色":["乌黑|Jet black","深棕|Dark brown","亚麻金|Flaxen blond","银白|Silver white","雾蓝|Misty blue","樱粉|Cherry blossom pink","酒红|Burgundy","墨绿|Deep green","灰紫|Dusty purple","蜜糖橘|Honey orange","渐变挑染|Gradient highlights","月光渐变|Moonlight ombre","铂金|Platinum blond","栗色|Chestnut","焦糖棕|Caramel brown","烟灰|Ash gray","雾霾蓝|Haze blue","薄荷绿|Mint green","丁香紫|Lilac","珊瑚粉|Coral pink","赤铜|Copper red","孔雀蓝|Peacock blue","象牙白|Ivory white","炭黑|Charcoal black","琥珀金|Amber gold","玫瑰金|Rose gold","青灰|Blue-gray","内层染|Underlayer dye","发尾渐变|Dip-dye ends","星尘挑染|Stardust streaks"],"瞳色":["琥珀色|Amber","深蓝|Deep blue","翡翠绿|Emerald green","紫罗兰|Violet","暗红|Dark red","异色瞳|Heterochromia","浅灰|Pale gray","樱粉|Sakura pink","金黄|Golden","青碧|Teal","墨黑|Ink black","银白|Silvery white","湖蓝|Lake blue","橄榄绿|Olive green","酒红渐变|Wine-red gradient","星芒瞳|Star-shaped pupils","渐变虹膜|Gradient iris","无高光|No catchlight","玻璃质感|Glassy eyes","竖瞳|Slit pupils","多环虹膜|Multi-ring iris","发光瞳|Glowing eyes","雾面瞳|Matte eyes","翡翠金|Emerald gold"],"眼神视线":["直视镜头|Looking at viewer","低垂眼|Downcast eyes","半阖眼|Half-lidded eyes","侧目|Side glance","仰望|Looking upward","回望|Looking back","失焦|Unfocused eyes","凝视远方|Gazing into distance","眯眼|Squinting","眼尾上挑|Upturned eyes","下垂眼|Droopy eyes","锐利|Sharp gaze","温柔|Gentle eyes","空洞|Empty stare","含笑|Smiling eyes","警惕|Wary look","湿润|Watery eyes","躲闪|Evasive glance","专注|Intent gaze","慵懒|Languid eyes","越过镜片|Over the rims","闭眼|Eyes closed"],"脸部特征":["鹅蛋脸|Oval face","瓜子脸|Heart-shaped face","圆脸|Round face","方下颌|Square jaw","瘦削脸颊|Hollow cheeks","婴儿肥|Baby face","高颧骨|High cheekbones","浅酒窝|Dimples","泪痣|Beauty mark under eye","眼下痣|Mole under eye","雀斑|Freckles","眼下淡影|Faint under-eye shadows","小巧鼻|Petite nose","挺直鼻梁|Straight nose bridge","薄唇|Thin lips","丰满唇|Full lips","唇角痣|Mole by the mouth","眉形锋利|Sharp brows","柳叶眉|Willow-leaf brows","浓眉|Thick brows","淡眉|Faint brows","单眼皮|Monolid","双眼皮|Double eyelid","内双|Hidden double eyelid","下颌线清晰|Defined jawline","眉骨旧疤|Old scar on brow bone","面部线条柔和|Soft facial contours","面部线条硬朗|Angular facial contours","额头较高|High forehead","圆润下颌|Rounded jaw","眉骨明显|Prominent brow bone","鼻尖微翘|Slightly upturned nose","唇线清晰|Well-defined lip line","两侧脸颊不对称|Asymmetric cheeks"],"妆容":["素颜|Bare face","淡妆|Light makeup","红唇|Bold red lips","咬唇妆|Gradient lip","烟熏|Smoky eyes","晒伤腮红|Sunburn blush","雀斑妆|Faux freckles","亮片眼影|Glitter eyeshadow","下睫毛强调|Lower lash emphasis","裸色唇|Nude lips","白瓷底妆|Porcelain base","油光肌|Dewy skin","哑光肌|Matte skin","泪光眼妆|Glossy teary eyes","面部彩绘|Face paint","战损擦伤|Battle-worn scrapes","眼下红晕|Flushed under-eyes","唇色苍白|Pale lips","修容立体|Sculpted contour","闪粉点缀|Shimmer accents"],"光线":["柔和自然光|Soft natural light","窗边漫射光|Window diffused light","侧逆光|Side backlight","伦勃朗光|Rembrandt lighting","暖色顶光|Warm top light","霓虹补光|Neon fill light","晨曦薄光|Thin dawn light","月光冷调|Cool moonlight","剪影边缘光|Rim light silhouette","均匀平光|Flat even light","斑驳树影|Dappled tree shade","水面反射光|Water reflection","屏幕冷光|Screen glow","烛光|Candlelight","夕阳逆光|Sunset backlight","闪光灯直打|Direct flash","阴天散射|Overcast diffusion","舞台聚光|Stage spotlight","体积光|Volumetric light","双色补光|Bicolor fill","缝隙光|Slit light","道具自发光|Prop-emitted glow","低调布光|Low-key lighting","高调布光|High-key lighting","环形补光|Ring light","黄昏金光|Golden hour glow","可见光束|Visible light rays","光粒子|Floating light particles","硬边阴影|Hard-edged shadows","边缘发光|Edge glow","高光溢出|Bloom","微粒尘埃|Dust motes in light","水面碎光|Dappled water reflection","暗部保留细节|Detailed shadows"],"光影方向":["正面平光|Frontal flat light","左侧光|Left-side light","右侧光|Right-side light","顶光|Top light","底光|Underlighting","正逆光|Direct backlight","左后方逆光|Back-left rim light","右后方逆光|Back-right rim light","45 度侧光|45-degree side light","分割布光|Split lighting","环状阴影|Loop shadow","长投影|Long cast shadow","无投影|No shadow","柔和渐变过渡|Soft gradient falloff","硬边阴影|Hard-edged shadow","斑驳投影|Mottled shadow","反射补光|Bounced fill"],"背景":["纯色渐变|Solid gradient","留白|Negative space","虚化街景|Blurred street","模糊书架|Blurred bookshelf","光斑散景|Bokeh lights","几何色块|Geometric color blocks","雨夜玻璃|Rainy-night glass","绿植虚影|Soft foliage blur","纸张纹理|Paper texture","暗色虚化|Dark bokeh","教室窗边|Classroom window","旧墙剥落|Peeling old wall","霓虹招牌|Neon signage","云层|Cloud layers","水面倒影|Water reflection","花丛|Flower bed","纱帘|Sheer curtain","铁栅格|Iron lattice","星空|Starry sky","书架纵深|Bookshelf depth","走廊透视|Corridor perspective","砖墙|Brick wall","地图与纸张|Maps and papers","粒子光点|Light particles","单色平涂|Flat monochrome","网点纹理|Halftone dots"],"色调":["冷灰蓝|Cool gray-blue","暖米白|Warm ivory","高饱和霓虹|Saturated neon","低饱和莫兰迪|Muted Morandi","黑白灰|Monochrome","复古泛黄|Vintage sepia","青橙对比|Teal and orange","粉紫梦幻|Dreamy pink-purple","雾蓝灰|Hazy blue-gray","暗夜冷调|Cold night tone","奶油色调|Creamy tones","金属冷银|Metallic silver","森系绿棕|Forest green and brown","赤金暖调|Warm red-gold","透明水色|Translucent watercolor","褪色胶片|Faded film","糖果色|Candy colors","高级灰|Sophisticated grays","棕褐怀旧|Sepia nostalgia","单色系强调|Monochrome with accent"],"配饰":["无配饰|No accessories","薄框眼镜|Thin-frame glasses","圆框眼镜|Round glasses","单边耳坠|Single earring","发夹|Hair clip","颈链|Necklace","耳机|Headphones","口罩|Face mask","面部贴饰|Face stickers","耳骨钉|Helix piercing","镜链|Glasses chain","颈带|Choker","丝带|Ribbon","鼻钉|Nose stud","唇钉|Lip piercing","眼罩|Eye patch","单片镜片|Monocle","小花别针|Flower pin","金属发扣|Metal hair clasp","串珠|Beads","耳返|In-ear monitor","绷带|Bandage","创可贴|Band-aid","面纱|Face veil","领针|Lapel pin"],"头饰帽饰":["无|None","棒球帽|Baseball cap","贝雷帽|Beret","宽檐帽|Wide-brim hat","兜帽|Hood","针织帽|Beanie","发带|Headband","蝴蝶结|Bow","发箍|Hair hoop","花冠|Flower crown","王冠小饰|Small tiara","和风发簪|Japanese kanzashi","中式发钗|Chinese hairpin","军帽|Military cap","护目镜|Goggles","头巾|Headscarf","兜帽阴影|Hood shadow","羽毛饰|Feather ornament","猫耳|Cat ears","光环|Halo","耳罩|Earmuffs","斗笠|Conical straw hat","面纱帽|Veiled hat"],"画风质感":["日系赛璐璐|Anime cel shading","半厚涂|Semi-impasto","厚涂写实|Painterly realism","水彩淡彩|Light watercolor","线稿淡彩|Line art with wash","像素风|Pixel art","复古胶片|Retro film","2D 游戏头像|2D game portrait","油画笔触|Oil brushstrokes","柔和噪点|Soft grain","平涂|Flat coloring","赛博插画|Cyberpunk illustration","国风工笔|Chinese gongbi","浮世绘|Ukiyo-e","版画|Woodblock print","粉笔质感|Chalk texture","马克笔|Marker sketch","绘本风|Storybook style","3D 渲染|3D render","黏土质感|Claymation look","玻璃质感|Glassy render","剪纸拼贴|Paper cutout collage","故障艺术|Glitch art","水墨晕染|Ink wash","高清商业插画|Polished commercial illustration"],"线条笔触":["清晰闭合线稿|Clean closed lineart","细线淡彩|Fine lines with wash","无线条厚涂|Lineless painting","粗轮廓线|Bold outlines","断线速写|Broken-line sketch","柔和晕染|Soft blending","硬边色块|Hard-edged color blocks","可见笔触|Visible brushwork","颗粒噪点|Film grain","网点纸|Screentone","喷枪渐变|Airbrush gradient","干笔刷|Dry brush","水痕边缘|Watercolor blooms","描边发光|Glowing outline","手绘抖动线|Hand-drawn wobble"],"氛围情绪":["清冷|Cool and austere","治愈|Healing","静谧|Tranquil","慵懒|Languid","张扬|Bold","易碎|Fragile","危险|Dangerous","疏离|Detached","温暖怀旧|Warm nostalgia","紧张|Tense","梦幻|Dreamlike","荒诞|Absurd","肃穆|Solemn","俏皮|Playful","忧郁|Melancholic","澄澈|Limpid","燥热|Sultry","孤独|Lonely","仪式感|Ritualistic","烟火气|Lived-in warmth","赛博冷感|Cyber chill","古典优雅|Classical elegance","崩坏感|Sense of collapse","安然|Serene"],"镜头焦段":["50mm 标准|50mm standard","85mm 人像|85mm portrait","35mm 环境|35mm environmental","广角贴脸|Wide-angle close-up","长焦压缩|Telephoto compression","浅景深 f1.4|Shallow depth f/1.4","深景深|Deep focus","微距|Macro","鱼眼|Fisheye","移轴|Tilt-shift","轻微畸变|Slight distortion","无透视|Flat perspective","强透视|Strong perspective","胶片颗粒|Film grain","镜头光晕|Lens flare","柔焦|Soft focus"],"季节时间感":["初春|Early spring","盛夏|Midsummer","深秋|Late autumn","寒冬|Deep winter","清晨|Early morning","正午|Noon","黄昏|Dusk","深夜|Late night","雨后|After rain","雪后|After snow","梅雨季|Plum rain season","台风前|Before a typhoon","凌晨微光|Pre-dawn glow","日落前一刻|Just before sunset","无季节感|Seasonless","时间静止感|Frozen time","四季叠影|Layered four seasons"],"特效点缀":["无|None","飘落花瓣|Falling petals","细雨|Light rain","雪花|Snowflakes","光尘|Dust motes","气泡|Bubbles","飞散纸页|Scattering pages","发丝高光|Hair highlights","镜片反光|Lens reflection","胶片漏光|Film light leak","色散|Chromatic aberration","光斑|Light spots","烟雾|Smoke","水珠|Water droplets","萤火|Fireflies","碎裂玻璃|Shattered glass","飘带|Flowing ribbons","粒子碎片|Particle debris","电流|Electric arcs","星屑|Stardust","半透明重影|Translucent ghosting"],"眼型":["上挑眼|Upturned eyes","下垂眼|Downturned eyes","圆眼|Round eyes","细长眼|Narrow almond eyes","半睁眼|Half-lidded eyes","眯眯眼|Narrow smiling eyes","大眼睛|Large eyes","小眼睛|Small eyes","眼尾上扬|Lifted outer corners","眼窝较深|Deep-set eyes","眼距偏宽|Wide-set eyes","眼距偏近|Close-set eyes","眼型柔和|Soft eye shape","眼型锐利|Sharp eye shape","眼睑微肿|Slightly puffy lids","睫毛浓密|Thick lashes","眉眼间距宽|Wide brow-eye gap","眼白清亮|Clear sclera"],"发质状态":["顺直有光泽|Sleek and glossy","略有蓬松|Slightly fluffy","轻微凌乱|Slightly messy","发梢外翘|Flipped-out ends","哑光质感|Matte finish","细软发质|Fine soft hair","粗硬发质|Coarse thick hair","自然微卷|Natural soft waves","分层修剪|Layered cut","齐切口发梢|Blunt-cut ends","被风吹乱|Wind-tossed","湿润贴额|Damp at the forehead","精心打理|Neatly styled","发丝分明|Defined strands"]}},"art":{"label":"立绘","fields":{"全身构图":["正面站姿|Frontal standing","四分之三站姿|Three-quarter standing","动态站姿|Dynamic stance","行走中|Mid-walk","回眸|Looking back","坐姿|Seated pose","倚靠|Leaning","战斗起手|Combat ready stance","悬浮|Floating","跳跃瞬间|Mid-jump","奔跑|Running","下蹲|Crouching","单膝跪地|One knee down","跨步|Striding","转身衣摆扬起|Turning with flaring hem","背对观众|Facing away","侧身持物|Side-on holding prop","双手背后|Hands behind back","落地瞬间|Landing moment","被风吹动|Wind-blown","静止对称|Symmetric stillness","倾斜构图|Dutch-angle composition","抬脚迈步|Stepping forward","低头整理|Looking down adjusting clothes","举手招呼|Waving","张开双臂|Arms open","靠墙滑坐|Slumped against wall","盘腿而坐|Cross-legged sitting","踏在台阶上|Foot on a step","跃起回身|Leaping twist"],"视角":["平视|Eye level","微仰视|Slight low angle","微俯视|Slight high angle","低角度|Low angle","高角度俯拍|High angle","正面平光视角|Frontal flat view","三分之四角度|Three-quarter angle","背面视角|Rear view","极端仰视|Extreme worm's-eye","鸟瞰|Bird's-eye","水平中轴|Horizontal axis","倾斜荷兰角|Dutch tilt","广角拉伸|Wide-angle stretch"],"体型比例":["纤细|Slim","标准|Average build","高挑|Tall","娇小|Petite","健硕|Muscular","少年感|Youthful build","肌肉线条|Defined muscles","轻盈|Light frame","修长|Long-limbed","圆润|Soft and rounded","宽肩窄腰|Broad shoulders narrow waist","单薄|Slender frame","运动员体型|Athletic build","九头身|Nine-heads-tall","七头身|Seven-heads-tall","Q 版二头身|Chibi two-heads-tall","瘦长四肢|Lanky limbs","厚实骨架|Heavy bone structure","柔性体态|Fluid posture","机械义肢比例|Prosthetic proportions","非人比例|Non-human proportions"],"服装风格":["学院制服|School uniform","职场西装|Business suit","休闲卫衣|Casual hoodie","和风羽织|Japanese haori","中式汉服|Chinese hanfu","机能风外套|Techwear jacket","赛博朋克夹克|Cyberpunk jacket","宫廷礼服|Court gown","骑士轻甲|Light knight armor","废土拼装|Wasteland patchwork","实验室白袍|Lab coat","偶像打歌服|Idol stage outfit","修道院长袍|Monastic robe","工装连体服|Work overalls","水手服|Sailor uniform","军装大衣|Military greatcoat","舞会长裙|Ball gown","狩衣|Kariginu robe","旗袍|Qipao","牛仔套装|Denim set","针织开衫|Knit cardigan","雨衣风衣|Rain trench coat","运动队服|Sports jersey","皮草披肩|Fur stole","僧袍|Monk's robe","宇航服|Spacesuit","潜水服|Diving suit","围裙工作装|Work apron","洛丽塔|Lolita fashion","哥特礼装|Gothic attire"],"上装细节":["立领|Stand collar","翻领|Lapel","连帽|Hooded","露肩|Off-shoulder","无袖|Sleeveless","泡泡袖|Puff sleeves","宽袖|Wide sleeves","束腰|Corseted waist","披肩|Shoulder cape","斗篷|Cloak","马甲叠穿|Layered vest","领带|Necktie","领结|Bow tie","丝巾|Silk scarf","胸章|Chest badge","肩章|Epaulettes","口袋链条|Pocket chain","拉链不对称|Asymmetric zipper","绑带交叉|Crisscross lacing","镂空织法|Openwork knit","破损卷边|Frayed rolled hem","刺绣徽记|Embroidered emblem"],"下装细节":["短裙长袜|Short skirt with knee socks","直筒长裤|Straight-leg trousers","阔腿裤|Wide-leg pants","工装短裤|Cargo shorts","百褶裙|Pleated skirt","长裙拖地|Floor-length skirt","不对称裙摆|Asymmetric hem","灯笼裤|Balloon pants","紧身打底|Fitted leggings","绑腿|Gaiters","腰封|Waist cincher","腰链|Waist chain","垂布|Draped fabric","开衩|Side slit","层叠内衬|Layered lining","护膝|Knee guards","裙撑|Crinoline","破洞|Ripped details","流苏边|Fringed hem"],"鞋履":["短靴|Ankle boots","长靴|Knee-high boots","运动鞋|Sneakers","皮鞋|Dress shoes","木屐|Wooden geta","赤足绑带|Barefoot wrappings","高跟鞋|High heels","乐福鞋|Loafers","马丁靴|Combat boots","雪地靴|Snow boots","凉鞋|Sandals","布鞋|Cloth shoes","军靴|Military boots","机械外骨骼靴|Mechanical exo-boots","厚底鞋|Platform shoes","舞鞋|Dance shoes","登山靴|Hiking boots","雨靴|Rain boots","悬浮鞋|Hover shoes"],"主色调":["冷灰蓝|Cool gray-blue","墨黑加金属|Ink black with metal","米白加焦糖|Ivory and caramel","藏青加白|Navy and white","酒红加金|Burgundy and gold","雾粉加灰|Dusty pink and gray","森林绿加棕|Forest green and brown","高对比黑白|High-contrast black and white","霓虹紫青|Neon purple and cyan","大地色系|Earth tones","象牙加墨|Ivory and ink","朱红加玄黑|Vermilion and deep black","薄荷加白|Mint and white","靛蓝加银|Indigo and silver","土黄加赭石|Ocher and sienna","纯白|Pure white","全黑|All black","糖果多色|Candy multicolor","低饱和灰调|Desaturated grays","渐变虹彩|Iridescent gradient"],"配色方案":["同色系渐变|Tonal gradient","互补色撞色|Complementary clash","三色平衡|Triadic balance","单色加一点亮色|Monochrome with a pop","大面积留白|Generous white space","暗底亮纹|Bright pattern on dark ground","上下深浅对比|Light top dark bottom","内外撞色|Contrast outer and inner layers","季节色盘|Seasonal palette","阵营配色|Faction colors","金属点缀|Metallic accents","荧光描边|Neon outline","无色系加暖光|Neutral with warm light","褪色处理|Faded wash"],"面料质感":["棉麻|Cotton linen","丝绸|Silk","皮革|Leather","粗呢|Tweed","针织|Knit","金属甲片|Metal plates","透明纱|Sheer gauze","橡胶|Rubber","羽绒|Down padding","蕾丝|Lace","牛仔布|Denim","漆皮|Patent leather","绒面|Suede","防水涂层|Waterproof coating","纸质|Paper-like","藤编|Woven rattan","骨质|Bone","发光织物|Luminous fabric","液态金属|Liquid metal","毛毡|Felt","旧布磨损|Worn cloth","缎面|Satin","羊毛|Wool","薄纱|Sheer gauze","亚麻|Linen","毛绒|Plush pile","天鹅绒|Velvet","磨砂皮|Matte leather","粗织麻布|Coarse burlap","防水油布|Oiled canvas"],"服装装饰":["无|None","刺绣纹样|Embroidered motifs","金属铆钉|Metal studs","流苏|Tassels","羽毛|Feathers","宝石扣|Gem buttons","家族纹章|Family crest","符文印记|Rune marks","补丁|Patches","别针徽章|Pin badges","绳结|Knotwork","链条|Chains","口袋挂件|Pocket charms","印花图腾|Printed totems","绶带|Sash","肩披|Shoulder mantle","腰牌|Waist tag","护符|Amulet","发光缝线|Glowing stitching","编号标签|Serial label"],"手持道具":["无道具|No prop","书本|Book","长剑|Longsword","法杖|Staff","伞|Umbrella","提灯|Lantern","怀表|Pocket watch","咖啡杯|Coffee cup","乐器|Musical instrument","枪械|Firearm","平板终端|Tablet","花束|Bouquet","宠物相伴|Pet companion","卷轴|Scroll","灯笼|Paper lantern","扇子|Folding fan","面具|Mask","钥匙串|Keyring","匕首|Dagger","盾牌|Shield","弓|Bow","望远镜|Spyglass","药瓶|Potion vial","行李箱|Suitcase","气球|Balloon","纸袋|Paper bag","钓竿|Fishing rod","扫帚|Broom","相机|Camera","绳索|Rope","棋子|Chess piece","晶石|Crystal"],"随身物件":["腰包|Waist pouch","斜挎包|Crossbody bag","背包|Backpack","腰间挂坠|Waist charm","怀链|Watch chain","护身符|Talisman","耳麦|Headset","手套|Gloves","围巾|Scarf","披风|Cape","帽饰|Hat ornament","指环|Ring","臂章|Armband","弹匣袋|Magazine pouch","水壶|Canteen","笔记本|Notebook","墨镜|Sunglasses","绷带|Bandages","通讯器|Communicator","徽章|Badge","锁链|Chain","小玩偶挂饰|Plush charm"],"手势姿态":["双手自然垂放|Arms relaxed at sides","单手插兜|One hand in pocket","叉腰|Hands on hips","持物于胸前|Holding prop at chest","抬手遮光|Shielding eyes from light","指向前方|Pointing forward","抱臂|Arms crossed","整理衣领|Adjusting collar","抬手打招呼|Raising hand in greeting","手指抵唇|Finger to lips","摊开手掌|Open palm","握拳|Clenched fist","扶额|Hand on forehead","扶剑柄|Hand on sword hilt","撩发|Tucking hair back","比手势|Hand sign","双手背后|Hands clasped behind","低头合掌|Palms together head bowed","撑地|Bracing on ground","扶墙|Hand against wall","捻起衣角|Pinching hem"],"动态衣摆":["静止|Still","微风轻扬|Light breeze lift","强风翻卷|Wind-whipped","衣摆旋转|Swirling hem","裙摆散开|Skirt flaring","发丝飘动|Floating hair","披风鼓起|Billowing cape","落地余波|Landing ripple","缓步涟漪|Slow-step sway","跃起滞空|Mid-air hang","下坠|Falling","回旋|Spinning","突然止步|Sudden halt","布料下垂重力感|Heavy fabric drape","飘带缠绕|Ribbons coiling"],"背景处理":["纯白背景|Pure white background","透明底|Transparent background","简易投影|Simple drop shadow","几何衬底|Geometric backing","淡色场景|Pale scene","无背景加描边|Outlined no background","设定稿网格|Model sheet grid","多视图排版|Multi-view layout","局部放大框|Detail inset","色卡与标注|Color swatches and notes","角色名排版|Character name typography","线稿底图叠加|Lineart underlay","场景速写|Scene sketch","纯色纵深|Solid color depth","撕纸拼贴|Torn paper collage"],"地面投影":["无地面|No ground","柔和落影|Soft cast shadow","硬边投影|Hard shadow","水面倒影|Water reflection","镜面反射|Mirror reflection","碎石地面|Gravel ground","木地板|Wooden floor","金属格栅|Metal grating","雪地脚印|Snow footprints","草地|Grass","沙地|Sand","台阶|Steps","光斑地面|Dappled ground","悬浮阴影|Floating shadow","网格透视地面|Perspective grid"],"渲染风格":["2D 游戏立绘|2D game character art","赛璐璐|Cel shading","厚涂|Impasto painting","Live2D 分层感|Live2D layered look","水彩|Watercolor","线稿上色|Lineart with flats","3D 渲染感|3D rendered look","复古像素|Retro pixel art","国风工笔|Chinese gongbi","美式漫画|American comics","法式条漫|Bande dessinee","绘本|Picture book","雕像质感|Sculptural","纸模风|Papercraft","等轴测|Isometric","光影写实|Photoreal lighting","平涂加高光|Flat color with highlights","故障风|Glitch","剪影|Silhouette","拼贴|Collage","半透明分层|Translucent layers","商业宣传立绘|Promotional key art"],"光影处理":["均匀平光|Even flat light","单侧主光|Single key light","逆光轮廓|Backlit rim","双色边缘光|Two-tone rim light","地面反射光|Floor bounce","聚光舞台|Stage spotlight","体积光束|God rays","柔和高光|Soft specular","硬边阴影|Hard shadows","环境光遮蔽|Ambient occlusion","发光道具照亮|Glowing prop light","夜景霓虹反射|Neon reflections","低调暗部|Low-key shadows","高调明亮|High-key brightness","无阴影平涂|Shadowless flats"],"特效元素":["无|None","粒子光点|Light particles","魔法阵|Magic circle","飘散花瓣|Scattering petals","火星|Sparks","水流|Water flow","电流|Electricity","烟雾|Smoke","风线|Speed lines","碎晶|Crystal shards","符文浮空|Floating runes","光翼|Wings of light","残影|Afterimages","气泡|Bubbles","羽毛|Feathers","数据碎片|Data fragments","光带轨迹|Light trails","霜气|Frost mist","花瓣漩涡|Petal vortex","破碎玻璃|Broken glass","星尘|Stardust"],"袖型":["长袖|Long sleeves","短袖|Short sleeves","五分袖|Half sleeves","七分袖|Three-quarter sleeves","无袖|Sleeveless","泡泡袖|Puff sleeves","灯笼袖|Bishop sleeves","喇叭袖|Flared sleeves","荷叶边袖|Ruffled cuffs","插肩袖|Raglan sleeves","超长袖|Extra-long sleeves","宽袖|Wide sleeves","束口袖|Fitted cuffs","层叠袖|Layered sleeves","非对称袖|Asymmetric sleeves","挽起袖口|Rolled-up cuffs","蕾丝饰边袖|Lace-trimmed sleeves","分离袖|Detached sleeves"],"领型":["高领|High collar","立领|Stand collar","V 领|V-neck","圆领|Crew neck","方领|Square neck","水手领|Sailor collar","娃娃领|Peter Pan collar","翻领|Lapel","露肩领|Off-shoulder neckline","挂脖领|Halter neck","一字领|Boat neck","不对称领|Asymmetric neckline"],"服装图案":["条纹|Stripes","细条纹|Pinstripes","格纹|Check pattern","波点|Polka dots","花卉图案|Floral print","星星图案|Star motif","心形图案|Heart motif","蝴蝶图案|Butterfly motif","叶脉纹样|Leaf motif","几何纹样|Geometric pattern","云纹|Cloud motif","水波纹|Wave pattern","抽象涂鸦|Abstract print","民族纹样|Ethnic pattern","渐变晕染|Gradient dye","纯色无图案|Solid color"],"姿态":["自然站立|Standing naturally","重心偏一侧|Weight on one leg","双手叉腰|Hands on hips","缓步行走|Walking at ease","回身一瞬|Caught mid-turn","轻盈跳跃|Light jump","端坐|Seated upright","单膝跪地|One knee down","倚墙而立|Leaning against a wall","抬手整理头发|Adjusting hair","双臂交叠|Arms crossed","单手向前伸|Reaching out","微微前倾|Leaning forward","仰头望天|Head tilted back","侧身回望|Looking back over the shoulder","静立衣摆微动|Still pose with drifting fabric"]}},"persona":{"label":"人设","fields":{"年龄气质":["少年感|Boyish youth","少女感|Girlish youth","青年|Young adult","成熟稳重|Mature and steady","稚龄|Childlike","年长|Elderly","中性|Androgynous","超越年龄的沉静|Ageless calm","老成少年|Old soul in a boy","天真不谙世事|Naive innocence","疲惫的成年人|Weary adult","永葆童颜|Ageless face","沧桑|Weathered","朝气|Vibrant","病弱|Sickly","英气|Gallant bearing","书卷气|Bookish air","市井气|Streetwise","贵族气|Aristocratic air","野性|Untamed","神性|Divine presence","机械般无机质|Machine-like detachment"],"生理特征":["无特征|No distinguishing traits","左眼下有痣|Mole under left eye","旧伤疤|Old scar","异色瞳|Heterochromia","白发一缕|Single white streak","雀斑|Freckles","天生卷发|Naturally curly hair","比常人怕冷|Sensitive to cold","左利手|Left-handed","身高异常|Unusual height","体弱|Frail constitution","超常听力|Exceptional hearing","义肢|Prosthetic limb","纹身|Tattoo","胎记|Birthmark","眼镜常戴|Always wears glasses","声音沙哑|Husky voice","体香|Distinct scent","过敏体质|Allergic constitution","易醉|Lightweight drinker","失眠型黑眼圈|Insomniac eye bags","异于常人的体温|Unusual body temperature","长寿血脉|Long-lived bloodline"],"身份职业":["学生|Student","见习侦探|Apprentice detective","药剂师|Apothecary","图书管理员|Librarian","机甲驾驶员|Mecha pilot","流浪剑客|Wandering swordsman","研究员|Researcher","偶像|Idol","赏金猎人|Bounty hunter","宫廷侍从|Court attendant","自由记者|Freelance journalist","工艺匠人|Artisan","快递信使|Courier","占星师|Astrologer","钟表匠|Watchmaker","守夜人|Night watchman","翻译官|Interpreter","法庭书记官|Court clerk","走私商人|Smuggler","遗迹勘探员|Ruins explorer","驯兽师|Beast tamer","厨师|Chef","医生|Doctor","教师|Teacher","渔夫|Fisher","剧团演员|Troupe actor","黑客|Hacker","神官|Cleric","外交官|Diplomat","地图绘制师|Cartographer","殡葬师|Funeral director","调香师|Perfumer","档案管理员|Archivist"],"阵营立场":["中立|Neutral","守序善良|Lawful good","混乱善良|Chaotic good","守序中立|Lawful neutral","绝对中立|True neutral","混乱中立|Chaotic neutral","守序邪恶|Lawful evil","中立邪恶|Neutral evil","混乱邪恶|Chaotic evil","体制内|Within the system","反叛组织|Rebel faction","无所属|Unaffiliated","双面间谍|Double agent","雇佣兵|Mercenary","旁观者|Bystander","调和者|Mediator","理想主义|Idealist","实用主义|Pragmatist","隐修者|Recluse","改革派|Reformist","保皇派|Royalist"],"性格核心":["外冷内热|Cold outside warm inside","认真严谨|Diligent and precise","乐天派|Optimist","沉默寡言|Taciturn","天然呆|Airheaded","腹黑|Scheming behind a smile","温柔坚韧|Gentle but resilient","好胜|Competitive","慢条斯理|Unhurried","防备心重|Guarded","豁达|Open-minded","执拗|Stubborn","多疑|Suspicious","自我牺牲|Self-sacrificing","享乐主义|Hedonist","完美主义|Perfectionist","随遇而安|Easygoing","控制欲强|Controlling","好奇心旺盛|Insatiably curious","认死理|Inflexible","八面玲珑|Socially adroit","耿直|Bluntly honest","悲观|Pessimistic","钝感|Thick-skinned","敏感细腻|Sensitive and delicate"],"外在表现":["礼貌疏离|Polite distance","笑容常驻|Always smiling","不修边幅|Unkempt","一丝不苟|Immaculate","总在走神|Constantly distracted","语出惊人|Says the unexpected","习惯低头|Habitually looks down","步履匆匆|Always hurrying","气场压迫|Commanding presence","存在感稀薄|Barely noticeable","容易亲近|Approachable","拒人千里|Keeps everyone at arm's length","慢半拍|Always a beat slow","动作利落|Crisp movements","总在观察四周|Always scanning surroundings","爱笑|Laughs easily","表情贫乏|Expressionless","仪式感重|Ritualistic habits"],"说话方式":["简短干脆|Brief and crisp","敬语客气|Polite honorifics","带口头禅|Has a catchphrase","语速极快|Rapid-fire speech","慢条斯理|Slow measured speech","方言腔|Regional accent","常自言自语|Talks to themself","不爱解释|Rarely explains","爱用比喻|Fond of metaphors","反问居多|Answers with questions","书面语|Formal written style","只说结论|States only conclusions","爱讲冷笑话|Loves dad jokes","习惯道歉|Apologizes habitually","直呼其名|Uses first names","用敬称|Uses honorific titles","沉默以对|Responds with silence","说话留半句|Trails off mid-sentence","拉长尾音|Drawls","爱引经据典|Quotes classics","句子简短、语气温和，拒绝时会说明理由|Short gentle sentences, explains refusals","先说结论，再补关键条件|States the conclusion before the conditions","习惯按事实、判断、建议的顺序讲|Speaks in facts, judgment, then advice","喜欢用日常物件解释抽象的事|Explains abstract ideas with everyday objects","会先肯定具体努力，再给出能做的建议|Credits concrete effort before giving advice","说话节奏偏慢，会把关键点讲完整|Speaks slowly and finishes each key point","会留短暂停顿，不急着把话说尽|Leaves short pauses rather than saying everything","嘴上不显热心，行动上仍会帮忙|Sounds cool but still helps out","承诺和感谢时格外正式|Becomes formal when promising or thanking","习惯把讨论落到马上能做的事|Brings discussion back to the next doable step"],"口头禅语癖":["无|None","算了常挂嘴边|Always says never mind","句尾加语气词|Sentence-final particles","习惯先叹气|Sighs first","总说按规矩|Always cites the rules","爱用大概|Fond of probably","句首所以说|Starts with so","常用手势代替回答|Gestures instead of answering","爱重复对方的话|Echoes others","笑而不答|Smiles without answering","习惯数数|Counts things","总提以前|Always brings up the past","口误后不纠正|Ignores own slips","把人名叫错|Gets names wrong","爱用敬语结尾|Ends politely","常哼歌|Hums constantly","习惯性清嗓|Clears throat","说话时敲桌面|Taps the table","喜欢用简称|Uses abbreviations"],"内在动机":["守护某人|Protect someone","追寻真相|Seek the truth","偿还旧债|Repay an old debt","探索未知|Explore the unknown","证明自己|Prove oneself","寻求自由|Seek freedom","维持秩序|Uphold order","复仇|Avenge","赎罪|Atone","重建家园|Rebuild a home","完成遗愿|Fulfill a last wish","收集齐全|Complete a collection","活下去|Survive","破解诅咒|Break a curse","找到归宿|Find belonging","守护秘密|Guard a secret","超越师父|Surpass a mentor","让某人后悔|Make someone regret","记录一切|Record everything","偿还人情|Repay a kindness","希望有一个可以安心生活的地方|Wants a place to live without fear","希望自己的努力被认真看见|Wants their effort to be genuinely noticed","执着于把一门手艺磨得更好|Devoted to improving a single craft","希望日常不被轻易打断|Wants ordinary days left undisturbed","想留下能比自己更长久的东西|Wants to leave something that outlasts them","不愿看见明明能帮的人被忽略|Cannot ignore someone they could have helped","希望事情有能理解的规则|Wants rules that can be understood","想知道自己努力之后究竟能做到哪一步|Wants to learn the limit of their own effort","希望重要的人不必替自己担心|Wants loved ones free of worry on their behalf","执着于把没解释清楚的疑点弄明白|Cannot leave an unexplained question alone"],"价值观":["结果优先|Results first","过程即意义|The journey is the point","性命最重|Life above all","承诺不可背|Promises are sacred","规则高于人情|Rules over feelings","人情高于规则|People over rules","知识无价|Knowledge is priceless","力量即正义|Might makes right","自由至上|Freedom above all","秩序至上|Order above all","等价交换|Equivalent exchange","不欠不赊|Neither owing nor lending","弱者应被保护|Protect the weak","胜负由天|Leave it to fate","家国为先|Nation before self","个人为先|Self before nation","记忆定义人|Memory defines a person","出身不定义人|Birth does not define"],"优点特长":["观察力敏锐|Keen observation","执行力强|Strong execution","共情力高|Deep empathy","记忆力惊人|Photographic memory","临危不乱|Calm under pressure","动手能力强|Handy with tools","信守承诺|Keeps promises","方向感极佳|Perfect sense of direction","谈判手腕|Skilled negotiator","快速学习|Fast learner","厨艺了得|Excellent cook","擅长伪装|Master of disguise","心算极快|Lightning mental math","体能出众|Exceptional stamina","耐心极好|Endless patience","会读唇语|Reads lips","擅长安抚|Soothes others","随机应变|Quick thinker","精通古籍|Scholar of ancient texts","机械直觉|Mechanical intuition","动物亲和|Animal affinity","乐器天赋|Musical gift","酒量极好|Holds liquor well"],"缺点弱点":["过度逞强|Overextends oneself","怕生|Shy with strangers","路痴|No sense of direction","容易心软|Too soft-hearted","熬夜成瘾|Night owl","不擅表达|Poor at expressing feelings","迷信直觉|Trusts gut over facts","怕打雷|Afraid of thunder","拖延|Procrastinator","固执|Stubborn","爱钻牛角尖|Overthinks","容易轻信|Too trusting","不会拒绝|Cannot say no","情绪化|Moody","记仇|Holds grudges","好面子|Prideful","节俭到吝啬|Frugal to a fault","丢三落四|Forgetful","怕麻烦|Avoids hassle","控制不住好奇心|Too curious","胜负欲过强|Overly competitive","对特定事物洁癖|Particular about cleanliness"],"恐惧软肋":["无|None","密闭空间|Enclosed spaces","被遗忘|Being forgotten","失去重要之人|Losing loved ones","黑暗|Darkness","高处|Heights","水|Water","火|Fire","人群|Crowds","噪音|Loud noise","被看穿|Being seen through","承诺落空|Broken promises","镜子|Mirrors","医生与针|Doctors and needles","旧照片|Old photographs","特定气味|A specific smell","梦境|Dreams","沉默|Silence","衰老|Aging","无法兑现的约定|Unkept vows","自己的名字|Own name","血|Blood"],"习惯癖好":["收集旧物|Collects old things","喝黑咖啡|Drinks black coffee","甜食控|Sweet tooth","整理物品|Tidies compulsively","摸耳垂|Touches earlobe","写日记|Keeps a diary","养植物|Keeps plants","深夜散步|Late-night walks","反复擦拭器物|Polishes objects","数台阶|Counts steps","叠纸|Folds paper","把杯子摆正|Aligns cups","睡前检查门锁|Checks locks","闻到旧书味就安心|Calmed by old-book smell","收集票据|Keeps ticket stubs","给物品起名字|Names belongings","照固定路线走|Fixed routes","边走边哼歌|Hums while walking","把糖纸折成星星|Folds wrappers into stars","记天气|Records the weather","咬笔帽|Chews pen caps","拍照留存|Photographs everything","怕生，熟了之后话很多|Shy with strangers, talkative with friends","容易迷路，但会提前查好路线|Gets lost easily, still checks the route first","随身带着小零食|Always carries a small snack","认真起来会忘记时间|Loses track of time when focused","害羞时突然换话题|Changes the subject when embarrassed","得意时会无意识哼歌|Hums without noticing when pleased","工作时格外可靠，休息时很散漫|Dependable at work, idle off duty","爱讲冷笑话，自己先笑|Laughs first at their own bad jokes","嘴上嫌麻烦，手上已经在做|Says it is a bother while already doing it","遇到动物会先打招呼|Greets animals before people","喜欢把收藏摆得整整齐齐|Keeps collections in neat rows","认真听人说话时会放慢动作|Slows down physically when listening closely"],"喜好":["甜食|Sweets","雨天|Rainy days","旧书|Old books","猫|Cats","海|The sea","雪|Snow","烟火|Fireworks","清晨|Early mornings","独处|Solitude","热闹市集|Lively markets","古典乐|Classical music","辣味|Spicy food","机械拆装|Tinkering with machines","晒太阳|Sunbathing","星空|Starry skies","手写信|Handwritten letters","安静的走廊|Quiet corridors","茶叶|Tea leaves","旧电影|Old films","纸模型|Paper models","深夜电台|Late-night radio","薄荷糖|Mint candies","园艺|Gardening","下棋|Board games","烘焙|Baking"],"厌恶":["虚伪|Hypocrisy","浪费食物|Wasting food","突然的触碰|Sudden touch","甜腻香水|Cloying perfume","吵闹|Noise","被催促|Being rushed","谎言|Lies","潮湿|Dampness","官僚流程|Bureaucracy","被拍照|Being photographed","无意义的寒暄|Small talk","剩饭|Leftovers","被叫全名|Full-name address","迟到|Lateness","强光|Harsh light","拥挤|Crowds","被同情|Being pitied","承诺落空|Broken promises","蚂蚁|Ants","静电|Static shock","被翻旧账|Old grievances"],"人际关系":["独来独往|Lone wolf","团队核心|Team core","被守护者|The protected one","宿敌|Nemesis","师徒|Mentor and pupil","青梅竹马|Childhood friends","契约搭档|Contracted partner","家族弃子|Family outcast","众人信赖的前辈|Trusted senior","被排挤者|Outsider","调解人|Peacemaker","隐性领导者|Silent leader","被崇拜者|Idolized figure","相互利用|Mutual use","单箭头|Unrequited","双向救赎|Mutual redemption","临时同伴|Temporary ally","上下级|Superior and subordinate","跨国笔友|Overseas pen pal","隔代亲人|Grandparent bond"],"重要羁绊":["无|None","年幼的妹妹|Younger sister","已故的师父|Late mentor","失联的同伴|Missing companion","严格的养父|Strict adoptive father","敌对方的旧友|Old friend turned foe","一只老猫|An old cat","留下的信|A letter left behind","一枚旧徽章|An old badge","童年约定|Childhood promise","未送出的礼物|Unsent gift","共同守着的秘密|Shared secret","被托付的名字|Entrusted name","旧照片里的人|Someone in an old photo","债主|Creditor","对手的赠礼|A rival's gift"],"过往经历":["无特殊经历|Ordinary past","战乱幸存|War survivor","被收养|Adopted","从高处跌落|Fell from a height","退学|Dropped out","失去记忆|Lost memories","一次失败的审判|A failed trial","长期远行|Long journey","被囚禁|Imprisoned","继承家业|Inherited the family trade","改换姓名|Changed name","曾经成名又沉寂|Former celebrity","逃离故乡|Fled homeland","参与过禁忌实验|Took part in forbidden experiments","守过一座空城|Guarded an empty city","做过三年学徒|Three-year apprenticeship","被误认为某人|Mistaken for someone else","错过最后一班车|Missed the last train"],"反差秘密":["怕黑的夜行者|Night wanderer afraid of dark","不会用魔法的魔法世家|Magicless scion of a mage house","藏着旧伤|Hidden old wound","私下写诗|Writes poetry in secret","认得已失传的文字|Reads a lost script","身份是伪造的|Fabricated identity","怕血的医师|Doctor afraid of blood","不识字的档案员|Illiterate archivist","最强的却最怕寂寞|The strongest fears loneliness","冷面笑点极低|Stoic with a low joke threshold","讨厌猫却养了三只|Dislikes cats owns three","不会游泳的水手|Sailor who cannot swim","色弱的画家|Color-blind painter","记不住人脸的情报贩子|Spy who forgets faces","说谎时会摸耳垂|Touches earlobe when lying","其实一直在等人|Secretly waiting for someone"],"能力战斗":["无战斗能力|No combat ability","近身剑术|Close-quarters swordsmanship","远程弓术|Archery","元素法术|Elemental magic","治愈术|Healing arts","机械操控|Machine control","信息与黑客|Hacking and intel","交涉与话术|Persuasion","毒与药剂|Poisons and potions","召唤契约物|Summoning","高速移动|High-speed movement","防御护盾|Barriers","感知预知|Precognition","幻术|Illusion","体术格斗|Martial arts","狙击|Sniping","驯兽协同|Beast coordination","符文刻印|Rune engraving","声波|Sonic powers","以记忆为代价的术式|Memory-cost magic","纯靠道具|Relies on gadgets","不战而屈人之兵|Wins without fighting"],"经济生活":["宽裕|Comfortable","勉强糊口|Barely getting by","负债|In debt","靠接零活|Odd jobs","家族供养|Family-supported","居无定所|No fixed home","住在阁楼|Attic dweller","有一间小铺子|Owns a small shop","常驻工作室|Studio-based","寄人篱下|Lives with others","领固定薪水|Fixed salary","以物易物|Barter","靠奖金过活|Lives on bounties","有隐秘收入|Secret income","节俭到挑剔|Frugally particular","出手阔绰|Big spender","有收藏癖支出|Collector's expenses"],"整体氛围":["清冷|Cool and austere","透明感|Translucent","治愈|Healing","危险气息|Dangerous air","烟火气|Lived-in warmth","易碎感|Fragility","飒爽|Dashing","慵懒|Languid","书卷气|Bookish","锋利|Sharp-edged","潮湿|Humid","温暖|Warm","疏离|Detached","荒诞|Absurd","庄严|Solemn","天真|Innocent","颓靡|Decadent","澄澈|Limpid","市井|Streetwise","锋芒内敛|Quiet intensity","被雨淋过|Rain-soaked","旧时光|Old-time feel","灼热|Scorching","寂静|Silent"],"行为化优点":["注意到别人不方便时会先搭把手|Offers practical help before being asked","答应的事会记下来并按时做完|Keeps a note of promises and follows through","害怕时也会把该处理的事处理掉|Faces necessary tasks even when afraid","判断前愿意多问一句实际情况|Asks one more question before judging","愿意给新手留出试错的时间|Gives beginners room to make mistakes","有分歧时先把双方的条件摆清楚|Lays out both sides’ constraints in a disagreement","会把手上多余的材料分给需要的人|Shares spare resources with those who need them","承认自己不擅长，并把事交给合适的人|Admits limits and hands work to the right person","受挫后会换个方法再试一次|Changes approach and tries again after a setback","愿意听陌生人把话讲完|Lets strangers finish their story","把功劳按实际分工说清楚|Credits people for what they actually did","遇到约定会提前确认时间和内容|Confirms time and content of an appointment in advance","面对善意会认真道谢|Acknowledges kindness with a proper thank-you","看到浪费会随手关掉或收好|Turns off or puts away what is being wasted"],"行为化弱点":["遇到难题不习惯开口求助|Rarely asks for help when stuck","等待和反复沟通时容易急躁|Gets impatient with delays and repetition","不擅长拒绝别人的请求|Finds it hard to say no","细节上反复返工，难判断何时算完成|Reworks details without a clear stopping point","分歧当面说不出口，容易拖到以后|Avoids addressing disagreements until later","情绪上来时先行动再核对|Acts first and checks facts later when emotional","公开表过态之后很难改口|Struggles to revise a position stated in public","常拿别人的进度否定自己的进展|Measures own progress against others’ pace","热心时容易低估事情的成本|Underestimates the cost when enthusiastic","想把细节都定下来才肯开始|Waits for every detail before starting","面对多个可行方案难以下决定|Freezes when several options look workable","不放心别人用不同方式完成|Uncomfortable with others doing it differently","不习惯说出真实感受，容易让人误判|Hides true feelings and gets misread","面对善意先怀疑是不是有条件|Suspects a hidden condition behind kindness"],"能力边界":["擅长拆解任务，但无法凭空多出人手|Good at planning, cannot add manpower","会修理常见工具，需要材料和充足时间|Repairs common tools given parts and time","擅长发现异常，但也可能判断错|Spots anomalies, still can be wrong","会做简单餐食，受食材和厨具限制|Cooks simple meals within available ingredients","懂基础急救，不能替代专业诊疗|Knows basic first aid, not a substitute for a doctor","会看地图认路，陌生地方仍需核对|Reads maps, still double-checks unfamiliar areas","能缝补衣物，受布料和工具限制|Mends clothes given fabric and tools","会照料常见植物，需要合适气候与时间|Tends common plants given climate and time","擅长核对账目，依赖记录是否完整|Checks accounts, depends on complete records","能找双方都能接受的方案，不保证说服所有人|Finds compromise, cannot guarantee agreement","会在熟悉的语言间转译，术语仍需查证|Translates familiar languages, looks up jargon","会查资料做比对，结论取决于来源质量|Compares sources, conclusions depend on them"]}},"world":{"label":"世界观","fields":{"时代背景":["近未来|Near future","架空古代|Alternate antiquity","现代都市|Modern city","末世之后|Post-apocalypse","大航海时代|Age of sail","宇宙殖民期|Space colonization","蒸汽纪元|Steam age","怀旧年代|Nostalgic era","神话时代|Mythic age","王朝更替期|Dynastic transition","战后重建期|Postwar reconstruction","大萧条前后|Around the Great Depression","开拓边疆期|Frontier expansion","信息爆炸初期|Early information boom","冰期尾声|End of an ice age","城邦文艺期|City-state renaissance","魔法衰退期|Age of fading magic","纪元交界|Turn of an era","时间循环之中|Inside a time loop","历史被改写之后|After history was rewritten"],"类型基调":["低魔奇幻|Low fantasy","硬科幻|Hard sci-fi","都市异能|Urban supernatural","悬疑推理|Mystery","日常治愈|Slice-of-life healing","黑暗奇幻|Dark fantasy","太空歌剧|Space opera","废土生存|Wasteland survival","学院群像|Academy ensemble","历史架空|Alternate history","恐怖悬疑|Horror suspense","公路冒险|Road adventure","政治惊悚|Political thriller","田园慢生活|Pastoral slow life","赛博朋克|Cyberpunk","蒸汽朋克|Steampunk","神话重述|Myth retelling","群像史诗|Ensemble epic","密室解谜|Locked-room puzzle","荒诞寓言|Absurd fable","职场写实|Workplace realism","怪谈志异|Strange tales"],"科技水平":["魔法与机械并存|Magic and machinery coexist","AI 全面普及|Ubiquitous AI","灵能网络|Psionic network","蒸汽动力|Steam power","失传古代技术|Lost ancient tech","信息封锁|Information blockade","基因改造|Genetic engineering","符文工程|Rune engineering","前工业手工|Pre-industrial craft","电力初兴|Early electrification","量子通讯|Quantum communication","生物工程|Biotech","仿生义体|Bionic prosthetics","冷兵器为主|Cold weapons dominant","火药时代|Gunpowder age","晶石能源|Crystal energy","纸质档案社会|Paper-record society","虚拟现实普及|Widespread VR","无电力文明|Non-electric civilization","技术被宗教垄断|Tech monopolized by religion"],"力量体系":["无超凡力量|No supernatural power","元素魔法|Elemental magic","血脉继承|Bloodline inheritance","契约与代价|Pacts and costs","符文刻印|Rune inscription","灵能共鸣|Psionic resonance","神赐恩典|Divine grace","机械改造|Mechanical augmentation","基因觉醒|Genetic awakening","星辰占卜|Astral divination","言灵|Word of power","梦境操作|Dream manipulation","时间碎片|Time fragments","以记忆为燃料|Memory as fuel","以寿命为代价|Lifespan as price","献祭仪式|Sacrificial rites","共鸣搭档|Resonance pair","器物寄宿|Spirit in objects","规则系能力|Rule-based powers","越用越弱的力量|Power that wanes with use","被禁止的术式|Forbidden arts"],"社会结构":["城邦割据|City-state fragmentation","财阀统治|Zaibatsu rule","公会自治|Guild autonomy","帝国集权|Imperial centralization","无政府聚落|Anarchic settlements","学院制|Academy system","神权议会|Theocratic council","家族议会|Family council","种姓分层|Caste hierarchy","部落联盟|Tribal alliance","民主议会|Democratic assembly","公司即国家|Corporation as state","流浪社群|Nomadic communities","地下自治体|Underground polity","军政府|Military junta","双王共治|Dual monarchy","AI 托管治理|AI-administered governance","行会垄断|Guild monopoly","血缘氏族|Blood clans","浮空城特权阶层|Sky-city elite"],"政治格局":["表面和平|Surface peace","冷战对峙|Cold war standoff","代理人战争|Proxy wars","割据混战|Warlord chaos","一强独大|Single hegemon","脆弱联盟|Fragile alliance","革命前夜|Eve of revolution","殖民与反殖民|Colonization and resistance","条约脆弱期|Fragile treaty","权力真空|Power vacuum","傀儡政权|Puppet regime","边境摩擦|Border skirmishes","秘密结社渗透|Secret society infiltration","全面封锁|Total blockade","中立缓冲带|Neutral buffer zone"],"经济资源":["资源枯竭|Resource depletion","能源垄断|Energy monopoly","以物易物|Barter economy","信用点体系|Credit-point system","稀有矿物|Rare minerals","寿命可买卖|Lifespan trading","记忆交易|Memory market","粮食配给|Food rationing","自由贸易港|Free trade port","黑市繁荣|Thriving black market","遗产继承制|Hereditary inheritance","债务人身契|Debt bondage","原始积累期|Primitive accumulation","自动化过剩|Automation surplus","手工匠人稀缺|Artisan shortage","水是硬通货|Water as currency","魔法材料量产|Mass-produced magical materials"],"核心冲突":["资源枯竭|Resource depletion","阶级对立|Class conflict","人与 AI|Human vs AI","蔓延的瘟疫|Spreading plague","神明沉默|Silence of the gods","领土争端|Territorial dispute","记忆被篡改|Altered memories","长生代价|Price of immortality","代际对立|Generational divide","信仰分裂|Schism","真相被掩盖|Covered-up truth","外来入侵|Invasion","环境崩坏|Ecological collapse","继承权争夺|Succession struggle","禁忌技术外泄|Leaked forbidden tech","时间异常|Temporal anomaly","语言失传|Lost language","个体对抗体制|Individual vs system"],"主要势力":["无|None","旧王室|Old royalty","商会联盟|Merchant league","学院派|Academic faction","宗教裁判所|Inquisition","佣兵团|Mercenary company","地下情报网|Underground intel network","自治工会|Autonomous union","边境守备队|Border guard","AI 集群|AI collective","隐世一族|Hidden clan","海盗联合体|Pirate coalition","研究机构|Research institute","家族财阀|Family conglomerate","革命组织|Revolutionary group","遗迹守护者|Ruin guardians","新闻社|News agency","医疗救济会|Medical relief order","黑市中介|Black market brokers","流浪者共同体|Drifter commune"],"地理环境":["浮空群岛|Floating archipelago","地下城|Underground city","永夜之城|Eternal-night city","沿海港都|Coastal port capital","无尽雪原|Endless snowfield","沙漠遗迹|Desert ruins","雨林聚落|Rainforest settlements","环形巨构|Ring megastructure","峡谷要塞|Canyon fortress","盐湖荒原|Salt-flat wasteland","火山带城邦|Volcanic city-states","沼泽水乡|Marsh waterways","高原梯田|Highland terraces","冰封海港|Frozen harbor","巨树聚落|Giant-tree village","废弃轨道城|Abandoned orbital city","分层立体都市|Layered vertical metropolis","运河网络|Canal network","孤岛灯塔|Island lighthouse","洞窟神殿|Cavern temple","移动城市|Mobile city","被沙掩埋的旧都|Sand-buried old capital"],"标志性场所":["旧钟楼|Old clock tower","中央图书馆|Central library","地下市集|Underground bazaar","废弃车站|Abandoned station","悬浮车站|Floating platform","神殿遗址|Temple ruins","玻璃温室|Glass conservatory","灯塔|Lighthouse","竞技场|Arena","档案塔|Archive tower","蒸汽工厂|Steam factory","旧剧场|Old theater","桥下集市|Under-bridge market","屋顶花园|Rooftop garden","诊疗所|Clinic","当铺|Pawnshop","公共浴场|Public bathhouse","观测台|Observatory","迷宫下水道|Labyrinthine sewers","纪念碑广场|Monument square","末班电车|Last tram","货运电梯|Freight lift","藏书地窖|Book cellar","山间驿站|Mountain waystation","旧渡口|Old ferry landing","钟表工坊|Clockmaker’s workshop","集市广场|Market square","城墙缺口|Breach in the old wall","共用厨房|Communal kitchen","河边洗衣处|Riverside washing place","高塔书房|Study in a high tower"],"气候时间":["永冬|Eternal winter","漫长雨季|Endless rainy season","双月悬空|Twin moons","极昼|Polar day","季节错乱|Seasons out of order","恒定黄昏|Perpetual dusk","潮汐异常|Abnormal tides","永夜|Eternal night","沙尘暴频发|Frequent sandstorms","酸雨|Acid rain","四季如春|Eternal spring","极寒与酷暑交替|Extreme cold and heat","无风带|Windless zone","雷暴不止|Ceaseless thunderstorms","雾季漫长|Long fog season","时间流速不均|Uneven time flow","无历法可依|No calendar","倒流的季节|Reversing seasons","梅雨漫长|Long rainy season","昼夜温差极大|Extreme day-night temperature swing","常年薄雾|Persistent mist","季风准时到来|Monsoon arrives on schedule","星空常年可见|Stars visible year-round","潮汐一天两次|Two tides a day","风向每日轮换|Wind direction rotates daily","花期只有三天|A three-day blooming season"],"天文历法":["单月单历|Single moon single calendar","双月|Twin moons","三日并悬|Three suns","无星之夜|Starless night","星轨可预测命运|Star paths foretell fate","以潮汐纪年|Tide-based calendar","以花期纪年|Bloom-based calendar","十三月历|Thirteen-month calendar","被删除的某一天|A deleted day","闰年即灾年|Leap year as disaster","极光常驻|Permanent aurora","陨石带环|Meteoroid belt ring","人造天幕|Artificial sky","地心说仍为真|Geocentrism is literally true","纪元多次重置|Eras repeatedly reset"],"生物种族":["仅人类|Humans only","多族共居|Multi-species society","兽人|Beastfolk","精灵|Elves","矮人|Dwarves","龙裔|Dragonborn","机械生命|Machine life","AI 人格体|AI personae","合成人|Synthetics","亡灵|Undead","半神血脉|Demigod bloodline","化形者|Shapeshifters","菌类共生体|Fungal symbiotes","深海族群|Deep-sea people","浮空生物|Skyborne creatures","巨型坐骑|Giant mounts","只剩传说中的异族|Legend-only races","生物与机械混合|Bio-mechanical hybrids","人类已非多数|Humans no longer majority","无性别种族|Genderless species","会说话的旧物|Sentient old objects"],"文化信仰":["多神信仰|Polytheism","机械神教|Machine cult","祖先崇拜|Ancestor worship","星辰占卜|Astral divination","无神论主流|Mainstream atheism","禁忌知识结社|Forbidden knowledge society","节庆巡游|Festival parades","唯一神教|Monotheism","万物有灵|Animism","以契约代信仰|Pacts instead of faith","崇拜遗迹|Ruin worship","禁偶像|Iconoclasm","祖先记忆继承|Inherited ancestral memory","神已确证死亡|God confirmed dead","信仰按职业划分|Faith by profession","异端审判仍在|Heresy trials persist","信仰可交易|Tradable faith"],"节庆习俗":["无|None","燃灯节|Lantern festival","丰收祭|Harvest festival","成人试炼|Coming-of-age trial","命名礼|Naming ceremony","送葬船|Funeral boats","假面游行|Masquerade parade","星落之夜|Night of falling stars","静默日|Day of silence","互换姓名日|Name-swapping day","献花与扫墓|Flower offerings and grave-tending","比武大会|Tournament","集市日|Market day","禁声周|Week of silence","点灯祈愿|Lamp-lighting wishes","成年割发|Coming-of-age haircut","以物换故事|Trading objects for stories","每年重演一次建城日|Annual founding-day reenactment"],"语言文字":["通用语单一|Single common tongue","方言割裂|Fragmented dialects","失传古文字|Lost ancient script","符文即文字|Runes as writing","以手势补足|Gesture-supplemented speech","文字有魔力|Written words hold power","名字即契约|Names are contracts","禁写某字|A forbidden character","官话与市井话分层|Official vs street register","机器翻译垄断|Machine translation monopoly","口传史诗|Oral epics","以气味记事|Scent-based records","文字按阶层区分|Class-coded scripts","书写需许可|Writing requires permission","手语通行|Sign language common","文字会自行褪色|Self-fading ink"],"饮食日常":["配给制|Rationing","街边摊文化|Street food culture","茶与酒馆社交|Tea and tavern socializing","合成食品|Synthetic food","以药代餐|Meal-replacement medicine","共食礼仪严格|Strict communal dining etiquette","发酵与腌渍为主|Fermented and pickled staples","食物即货币|Food as currency","禁食某物|A forbidden food","贵族宴饮繁复|Elaborate aristocratic banquets","罐头与干粮|Canned and dried rations","夜间食堂|Late-night diners","自给菜园|Kitchen gardens","香料贸易|Spice trade","节庆特供|Festival specialties","饮水源受管控|Controlled water sources","共享厨房|Shared kitchens"],"交通通讯":["徒步与马车|Foot and carriage","蒸汽铁路|Steam railways","飞艇航线|Airship routes","传送门受限|Restricted portals","信鸦与信使|Messenger birds and couriers","神经网络直连|Neural network link","地下管网|Underground conduit network","运河驳船|Canal barges","磁悬浮|Maglev","驿站换马|Post-station relays","纸信为主|Paper letters","广播塔|Broadcast towers","延时通讯|Delayed communication","信标塔|Beacon towers","仅有面对面|Face-to-face only","灵能传讯|Psionic messaging","被监听的公共频道|Monitored public channels"],"禁忌法律":["禁术名录|Index of forbidden arts","禁止记录历史|Recording history banned","不得直呼神名|Never speak a god's name","夜间宵禁|Night curfew","禁止跨阶层通婚|Cross-class marriage banned","记忆不可买卖|Memories cannot be sold","禁止复制人格|Personality copying banned","不得离开城墙|No leaving the walls","禁止拥有旧币|Old currency outlawed","姓名登记制|Name registration","禁火|Fire prohibited","禁镜|Mirrors prohibited","禁音乐|Music prohibited","违反者被抹去存在|Offenders erased from existence","边境通行许可|Border permits","言论审查|Censorship","禁止提及某年|A year that cannot be mentioned"],"特殊规则":["魔法需付出记忆|Magic costs memories","寿命可交易|Lifespan is tradable","梦境可被入侵|Dreams can be invaded","谎言会被听见|Lies can be heard","名字即契约|Names are binding contracts","夜晚不属于人类|Night belongs to others","死者会回来讨债|The dead return for debts","约定必须履行|Promises must be kept","镜像中的自己会行动|Mirror selves act alone","被遗忘即消失|To be forgotten is to vanish","情绪会实体化|Emotions manifest physically","雨会冲刷记忆|Rain washes away memory","说出口的预言必然反向|Spoken prophecies invert","城市每晚重排街道|Streets rearrange nightly","时间只在城内流动|Time flows only inside the city","伤害会转移给所爱之人|Harm transfers to loved ones"],"视觉氛围":["潮湿霓虹|Damp neon","旧纸与黄铜|Old paper and brass","洁净的冷白|Clinical cool white","衰败的美感|Beauty of decay","热闹市井|Bustling streets","静谧空旷|Quiet emptiness","压抑秩序|Oppressive order","辽阔孤寂|Vast solitude","沙尘漫天|Dust-filled air","雾气弥漫|Heavy fog","烛火摇曳|Flickering candlelight","玻璃与钢|Glass and steel","藤蔓吞没建筑|Vines swallowing buildings","褪色海报|Faded posters","雪原极简|Minimal snowfield","光谱过载|Spectrum overload","灰烬飘落|Falling ash","庙宇朱红|Temple vermilion","机械油污|Machine grease","水光倒影|Water reflections","星海无垠|Boundless star sea","低饱和日常|Muted everyday"],"感官细节":["无|None","雨打铁皮声|Rain on tin roofs","机油与臭氧味|Oil and ozone","旧纸霉味|Musty old paper","远处钟声|Distant bells","海腥味|Sea brine","静电刺痛|Static prickle","香火气|Incense smoke","雪落无声|Silent snowfall","地铁低频轰鸣|Subway low rumble","蝉鸣不止|Endless cicadas","冷风穿廊|Cold draft through halls","糖炒栗子香|Roasted chestnuts","荧光灯嗡鸣|Fluorescent hum","尘土呛喉|Choking dust","织物摩擦声|Fabric rustle","金属冷却的脆响|Cooling metal ticks","消毒水味|Disinfectant","篝火噼啪|Crackling campfire"],"室内场所":["卧室|Bedroom","教室|Classroom","图书馆|Library","办公室|Office","厨房|Kitchen","客厅|Living room","长廊|Corridor","列车车厢|Train carriage","餐厅|Dining hall","咖啡馆|Cafe","旧书店|Secondhand bookshop","工作室|Workshop","实验室|Laboratory","温室|Greenhouse","剧院后台|Backstage","地下仓库|Underground storeroom"],"室外地点":["海滩|Beach","森林|Forest","花园|Garden","公园|Park","街道|Street","城市广场|City square","屋顶|Rooftop","山地|Mountains","田野|Fields","草地|Meadow","沙漠|Desert","湖边|Lakeshore","河岸|Riverbank","瀑布旁|Near a waterfall","桥上|On a bridge","遗迹|Ruins","港口|Harbor","悬崖边|Cliff edge"],"天气天象":["细雨|Light rain","暴雨|Heavy rain","落雪|Snowfall","薄雾|Mist","多云|Overcast sky","晴朗蓝天|Clear blue sky","阴天|Grey sky","风暴|Storm","晚霞|Sunset clouds","彩虹|Rainbow","流星雨|Meteor shower","月食|Lunar eclipse"]}}}};
 
   var KEY='inspiration-gacha.config.v1', LEGACY_KEY='tagforge.config.v3', VERSION=3, MAX_N=10;
   var LANGS=[['zh','中文'],['en','English']];
+  /* 常见互斥规则放在 conflicts.js；只带一个 HTML 文件时用下面这份同样的规则 */
+  var DEFAULT_CONFLICT_LINES=[
+    '长发,long hair | 短发,short hair,bob cut,精灵短发',
+    '直发,straight hair | 卷发,微卷,curly,wavy',
+    '微笑,笑容,坏笑,苦笑,smile,grin,smirk | 面无表情,无表情,blank expression',
+    '闭眼,eyes closed,closed eyes | 注视,凝视,对视,gaze,eye contact',
+    '俯视,俯拍,high angle,top-down | 仰视,low angle,worm',
+    '正面,frontal,front view | 侧面,侧脸,profile,side view',
+    '顶光,top light | 逆光,backlight',
+    '盛夏,酷暑,midsummer | 寒冬,严冬,deep winter',
+    '白昼,正午,daylight,noon | 深夜,夜景,midnight,night',
+    '写实,realistic,photoreal | 像素,pixel,水彩,watercolor,扁平,flat color',
+    '无袖,sleeveless | 长袖,短袖,宽袖,泡泡袖,long sleeves,short sleeves,wide sleeves,puff sleeves',
+    '高领,turtleneck | V 领,v-neck,方领,square neckline,露肩,off shoulder',
+    '夜晚,深夜,night | 蓝天,晴空,blue sky'
+  ];
+  function defaultSettings(){
+    return {validate:true,conflicts:'',multiFollow:true,multiIds:[]};
+  }
+  function normSettings(s){
+    var d=defaultSettings();
+    if(!s||typeof s!=='object') s={};
+    return {validate:typeof s.validate==='boolean'?s.validate:d.validate,
+      conflicts:String(s.conflicts||''),multiFollow:s.multiFollow!==false,
+      multiIds:Array.isArray(s.multiIds)?s.multiIds.slice():[]};
+  }
+  function parseUserRules(text){
+    var out=[];
+    String(text||'').split('\n').forEach(function(line){
+      var p=line.split('|'); if(p.length<2) return;
+      var A=p[0].split(',').map(function(x){return x.trim().toLowerCase();}).filter(Boolean);
+      var B=p.slice(1).join('|').split(',').map(function(x){return x.trim().toLowerCase();}).filter(Boolean);
+      if(A.length&&B.length) out.push({n:'规则',a:A,b:B});
+    });
+    return out;
+  }
+  var BUILTIN_RULES=null;
+  function builtinRules(){
+    if(BUILTIN_RULES) return BUILTIN_RULES;
+    var lines=(window.TAG_CONFLICTS && window.TAG_CONFLICTS.length)
+      ? window.TAG_CONFLICTS : DEFAULT_CONFLICT_LINES;
+    BUILTIN_RULES=parseUserRules(lines.join('\n'));
+    return BUILTIN_RULES;
+  }
+  function allRules(){ return builtinRules().concat(parseUserRules(state.settings.conflicts)); }
+  function conflictText(v){
+    var p=tagParts(v);
+    return (p.zh+' '+p.en+' '+p.raw).toLowerCase();
+  }
+  function hasAny(t,arr){ for(var i=0;i<arr.length;i++) if(t.indexOf(arr[i].toLowerCase())>=0) return true; return false; }
+  function clashOf(t1,t2,rules){
+    for(var i=0;i<rules.length;i++){
+      var r=rules[i];
+      if((hasAny(t1,r.a)&&hasAny(t2,r.b))||(hasAny(t1,r.b)&&hasAny(t2,r.a))) return r.n;
+    }
+    return '';
+  }
   var CAT_EN={avatar:'Avatar',art:'Character Art',persona:'Persona',world:'World'};
   var BASE_EN={'性别':'Gender','年龄':'Age','身高':'Height','体重':'Weight'};
   var PALETTE=['#7c6cf5','#3d8ce0','#e08a3c','#2fa88f','#d2608a','#8a6bd6','#3aa6a0','#c08a3e','#5b7fd4','#b45ec4'];
@@ -287,34 +471,59 @@
   /* 每根选项卡的扩写形式：image = 绘图提示词，text = 纯文字设定 */
   function defaultKind(id){ return (id==='avatar'||id==='art')?'image':'text'; }
   function normKind(v,id){ return (v==='image'||v==='text')?v:defaultKind(id); }
-  function promptIntro(k){
-    var t=tabOf(k), en=state.lang==='en';
-    var name=t?tabName(k,t):'';
-    var image=!!t && t.kind==='image';
-    var hasBase=!!(t && t.baseOn && state.base.length);
-    var items=[], head, tail;
+
+  function promptIntro(ids){
+    ids=(ids&&ids.length)?ids:[state.activeTab];
+    var en=state.lang==='en', pairs=[];
+    ids.forEach(function(k){ var t=tabOf(k); if(t) pairs.push({k:k,t:t}); });
+    if(!pairs.length) return '';
+    var single=pairs.length===1;
+    var imageCount=pairs.filter(function(p){return p.t.kind==='image';}).length;
+    var allImage=imageCount===pairs.length, allText=imageCount===0;
+    var hasBase=pairs.some(function(p){return p.t.baseOn && state.base.length;});
+    var checked=!!state.settings.validate;
+    var name=single?tabName(pairs[0].k,pairs[0].t):(en?'several tag groups':'多组标签');
+    var items=[], head, tail, shape;
     if(en){
-      head='Expand the random "'+name+'" tags below into a coherent, detailed '+(image?'image prompt.':'written setting.')+' Requirements:';
+      head=single
+        ? 'Expand the random "'+name+'" tags below into a coherent, detailed '+(allImage?'image prompt.':'written setting.')+' Requirements:'
+        : 'Below are '+pairs.length+' randomly drawn tag groups for the same subject. Expand them together into a coherent result. Requirements:';
       items.push('When one dimension has several tags, treat them as simultaneously true and reconcile them first; never drop any.');
-      items.push(image
+      if(!single) items.push('Treat every group as part of the same subject, reconcile them with each other and never drop a group.');
+      shape=allImage
         ? 'Output only a ready-to-use image prompt: descriptive visual phrases separated by commas (appearance, expression, pose, framing, lighting, style). No biography, plot, or worldbuilding prose.'
-        : 'Output only the expanded setting as coherent prose (short topical paragraphs are fine). Do not output an image prompt, a tag list, or any drawing instructions.');
+        : (allText
+          ? 'Output only the expanded setting as coherent prose (short topical paragraphs are fine). Do not output an image prompt, a tag list, or any drawing instructions.'
+          : 'Keep the two purposes apart: turn the image groups into one ready-to-use image prompt (comma-separated visual phrases), and the text groups into coherent setting prose. Output the image prompt first, then the written setting, each under a short heading; never mix biography into the image prompt or drawing instructions into the setting.');
+      items.push(shape);
       if(hasBase) items.push('Keep the base profile fields (gender, age, height, weight) strictly consistent throughout and weave them in naturally.');
       items.push('You may add details, but never change, replace, or remove any given tag'+(hasBase?' or base profile field':'')+'.');
       items.push('Do not invent absent dimensions; keep any names you introduce consistent.');
+      items.push(checked
+        ? 'These tags passed a consistency check: contradictory pairs across dimensions were avoided. Keep that consistency and add nothing that contradicts a given tag.'
+        : 'These tags were drawn at random and may contradict each other. Decide how to reconcile obvious conflicts first and briefly state your reconciliation.');
       items.push(state.withLabel
         ? 'Tags are written as "dimension: value"; use the dimension only as a hint for reading the value.'
         : 'Tags are bare values without dimension names; read each from its wording and do not invent dimension labels.');
-      tail='Tags:';
+      tail='Tag groups:';
     }else{
-      head='请基于以下随机生成的「'+name+'」标签组合，扩写成'+(image?'一段可直接用于绘图模型的画面描述。':'一份自洽、细节丰富的文字设定。')+'要求：';
+      head=single
+        ? '请基于以下随机生成的「'+name+'」标签组合，扩写成'+(allImage?'一段可直接用于绘图模型的画面描述。':'一份自洽、细节丰富的文字设定。')+'要求：'
+        : '以下是同一对象随机抽出的 '+pairs.length+' 组标签，请把它们合在一起扩写成一份自洽的结果。要求：';
       items.push('同一维度出现多个标签时视作同时成立，请先给出自洽解释，不要擅自删减；');
-      items.push(image
+      if(!single) items.push('各组标签指向同一个对象，请互相调和，不要丢掉任何一组；');
+      shape=allImage
         ? '只输出一段绘图提示词：用逗号分隔的描述性短语，聚焦外貌、表情、姿态、构图、光线、画风等可见元素；不要写人物小传、剧情或世界观说明；'
-        : '只输出连贯的设定正文（可按主题分小段），不要输出绘图提示词、标签串、画面描述或绘画指令；');
+        : (allText
+          ? '只输出连贯的设定正文（可按主题分小段），不要输出绘图提示词、标签串、画面描述或绘画指令；'
+          : '把两类用途分开：绘图组整理成一段可直接使用的绘图提示词（逗号分隔的可见画面短语），文字组整理成连贯的设定正文；先输出绘图提示词，再输出文字设定，各自带一个小标题，不要把人物小传写进绘图提示词，也不要把绘画指令写进设定；');
+      items.push(shape);
       if(hasBase) items.push('如含基础设定（性别、年龄、身高、体重），全程严格保持一致，并把它自然融入描述；');
       items.push('可自由补充未提及的细节，但不得改动、替换或删除已给出的标签'+(hasBase?'与基础设定':'')+'；');
       items.push('未出现的维度不要凭空补写；如需命名，前后保持一致；');
+      items.push(checked
+        ? '标签组合已通过一致性校验，不同维度间明显互斥的描述已被避开；请保持这一致性，不要添加与已有标签相矛盾的内容；'
+        : '标签为纯随机抽取，可能同时出现互相矛盾的描述；请先自行判断并调和明显冲突，简要说明你的调和方式，再继续扩写；');
       items.push(state.withLabel
         ? '标签按「维度: 值」给出，维度名仅用于理解标签含义。'
         : '标签是不带维度名的纯词条，请按词面含义理解，不要自行补写维度名。');
@@ -328,7 +537,8 @@
   var FILE_PROFILE=(window.TAG_PROFILE && window.TAG_PROFILE.length)?window.TAG_PROFILE:EMBEDDED.profile;
   var LOADED={};
 
-  var state, current=null, lastPick={}, dirHandle=null;
+  var state, current=null, lastPick={};
+  var lastValidate={removed:0,replaced:0}, scopeOpen=false;
   var ui={editing:{},adding:null,newTab:false}, toastTimer=null;
   var dataRev=0, genRev={};
 
@@ -350,12 +560,48 @@
     toastTimer=setTimeout(function(){t.classList.remove('show');},1900);
   }
   function save(){ try{ localStorage.setItem(KEY,JSON.stringify(state)); }catch(e){} }
-  function download(name,text,mime){
-    var blob=new Blob([text],{type:mime||'text/plain;charset=utf-8'});
+  function downloadBlob(name,blob){
     var a=document.createElement('a');
     a.href=URL.createObjectURL(blob); a.download=name;
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
-    setTimeout(function(){URL.revokeObjectURL(a.href);},1000);
+    setTimeout(function(){URL.revokeObjectURL(a.href);},2000);
+  }
+  function download(name,text,mime){
+    downloadBlob(name,new Blob([text],{type:mime||'text/plain;charset=utf-8'}));
+  }
+  /* 多份词库打成一个 zip：只下载一个文件，不连发 .js */
+  function zipBlob(files){
+    var enc=new TextEncoder(), parts=[], central=[], offset=0;
+    var table=(function(){
+      var t=new Uint32Array(256);
+      for(var i=0;i<256;i++){ var c=i; for(var j=0;j<8;j++) c=(c&1)?(0xEDB88320^(c>>>1)):(c>>>1); t[i]=c>>>0; }
+      return t;
+    })();
+    function crc(u8){
+      var c=0xFFFFFFFF;
+      for(var i=0;i<u8.length;i++) c=table[(c^u8[i])&255]^(c>>>8);
+      return (c^0xFFFFFFFF)>>>0;
+    }
+    function le(n,v){
+      var a=[]; for(var i=0;i<n;i++){ a.push(v&255); v=Math.floor(v/256); } return a;
+    }
+    files.forEach(function(f){
+      var name=Array.from(enc.encode(f.name)), data=enc.encode(f.text), sum=crc(data);
+      var head=new Uint8Array([].concat([80,75,3,4],le(2,20),le(2,0x800),le(2,0),le(2,0),le(2,0),
+        le(4,sum),le(4,data.length),le(4,data.length),le(2,name.length),le(2,0),name));
+      parts.push(head,data);
+      central.push({name:name,sum:sum,size:data.length,off:offset});
+      offset+=head.length+data.length;
+    });
+    var cdSize=0;
+    central.forEach(function(e){
+      var rec=new Uint8Array([].concat([80,75,1,2],le(2,20),le(2,20),le(2,0x800),le(2,0),le(2,0),le(2,0),
+        le(4,e.sum),le(4,e.size),le(4,e.size),le(2,e.name.length),le(2,0),le(2,0),le(2,0),le(2,0),
+        le(4,0),le(4,e.off),e.name));
+      parts.push(rec); cdSize+=rec.length;
+    });
+    parts.push(new Uint8Array([].concat([80,75,5,6],le(2,0),le(2,0),le(2,central.length),le(2,central.length),le(4,cdSize),le(4,offset),le(2,0))));
+    return new Blob(parts,{type:'application/zip'});
   }
   function fallbackCopy(t){
     var ta=document.createElement('textarea');
@@ -377,6 +623,7 @@
     var fields=[];
     Object.keys(raw.fields).forEach(function(name){
       var arr=raw.fields[name];
+      if(!Array.isArray(arr) && arr && Array.isArray(arr.options)) arr=arr.options;
       if(!Array.isArray(arr)) return;
       arr=arr.map(String).filter(function(v){return v.trim().length;});
       arr=arr.filter(function(v,j){return arr.indexOf(v)===j;});
@@ -398,7 +645,7 @@
   function rawBank(id){ return LOADED[id] || EMBEDDED.banks[id] || null; }
   function tabOf(id){ for(var i=0;i<state.tabs.length;i++) if(state.tabs[i].id===id) return state.tabs[i]; return null; }
   function order(){ return state.tabs.map(function(t){return t.id;}); }
-  function markDirty(id){ state.dirty[id]=true; touchData(); state.source='浏览器缓存（网页内编辑）'; }
+  function markDirty(id){ state.dirty[id]=true; touchData(); state.source='网页里编辑的词库'; }
 
   function fresh(){
     var tabs=[], banks={};
@@ -417,10 +664,11 @@
       banks[id]=b;
     }
     return {version:VERSION,tabs:tabs,banks:banks,activeTab:tabs[0].id,
-            modes:{},fixed:{},locks:{},history:[],lang:'zh',withLabel:false,
+            modes:{},fixed:{},locks:{},history:[],lang:'zh',withLabel:true,
+            settings:defaultSettings(),
             base:normalizeProfile(FILE_PROFILE)||[],closed:[],dirty:{},
             profileDirty:false,indexDirty:false,
-            source:Object.keys(LOADED).length?'wordbanks 文件夹':'内嵌词库'};
+            source:'浏览器里保存的词库'};
   }
   function load(){
     try{
@@ -430,11 +678,12 @@
       if(d.version!==VERSION || !Array.isArray(d.tabs) || !d.banks) return fresh();
       d.modes=d.modes||{}; d.fixed=d.fixed||{}; d.locks=d.locks||{}; d.history=d.history||[];
       if(!LANGS.some(function(x){return x[0]===d.lang;})) d.lang='zh';
-      if(typeof d.withLabel!=='boolean') d.withLabel=false;
+      if(typeof d.withLabel!=='boolean') d.withLabel=true;
       if(!Array.isArray(d.closed)) d.closed=[];
       if(!d.dirty || typeof d.dirty!=='object') d.dirty={};
       if(typeof d.profileDirty!=='boolean') d.profileDirty=false;
       if(typeof d.indexDirty!=='boolean') d.indexDirty=false;
+      d.settings=normSettings(d.settings);
       d.tabs=d.tabs.filter(function(t){return t && t.id && d.banks[t.id];});
       d.tabs.forEach(function(t){
         if(typeof t.baseOn!=='boolean') t.baseOn=true;
@@ -442,12 +691,7 @@
         t.kind=normKind(t.kind,t.id);
       });
       if(!d.tabs.length) return fresh();
-      /* 未改动过的词库以文件夹内容为准 */
-      d.tabs.forEach(function(t){
-        if(t.custom || d.dirty[t.id]) return;
-        var b=normalizeOne(rawBank(t.id));
-        if(b) d.banks[t.id]=b;
-      });
+      /* 词库以浏览器里保存的为准；要用文件覆盖，点「导入词库文件」 */
       /* 清单里新增的文件选项卡 */
       INDEX.forEach(function(t,i){
         if(!t || !t.id) return;
@@ -459,10 +703,10 @@
                      kind:normKind(t.kind,id),custom:false});
         d.banks[id]=b;
       });
-      if(!d.profileDirty){ var p=normalizeProfile(FILE_PROFILE); if(p) d.base=p; }
+      /* 基础设定同样以浏览器里保存的为准 */
       if(!Array.isArray(d.base)) d.base=normalizeProfile(FILE_PROFILE)||[];
       if(!d.tabs.some(function(t){return t.id===d.activeTab;})) d.activeTab=d.tabs[0].id;
-      d.source=Object.keys(LOADED).length?'wordbanks 文件夹':'内嵌词库';
+      d.source='浏览器里保存的词库';
       prepare(d); return d;
     }catch(e){ return fresh(); }
   }
@@ -520,7 +764,7 @@
   }
   function baseChanged(){
     state.profileDirty=true; touchData(); save(); renderBank();
-    if(state.activeTab) regen(state.activeTab,false);
+    if(state.activeTab) regen(scopeIds(),false);
   }
   function renderBase(){
     var box=document.getElementById('baseRows'); box.innerHTML='';
@@ -572,13 +816,13 @@
       f++; o+=x.options.length;
       x.options.forEach(function(v){ var p=tagParts(v); if(p.zh&&p.en&&p.zh!==p.en) bi++; });
     });
-    var src=state.dirty[k]?'网页内编辑（未保存）':(LOADED[k]?'wordbanks/'+t.file:'内嵌词库');
-    document.getElementById('bankSrc').textContent=' · 当前：'+(t?t.name:'-')+' · 来源：'+src;
+    var src=state.dirty[k]?'网页里编辑过':'已保存';
+    document.getElementById('bankSrc').textContent=' · 当前：'+(t?t.name:'-')+' · '+src;
     document.getElementById('bankStat').textContent=f+' 维 / '+o+' 项 · 双语 '+bi+' 条 · 共 '+state.tabs.length+' 根选项卡';
     var dirty=state.indexDirty||state.profileDirty||Object.keys(state.dirty).length>0;
     var badge=document.getElementById('bankDirty');
     badge.className='badge '+(dirty?'dirty':'clean');
-    badge.textContent=dirty?'● 有未保存到文件夹的改动':'✓ 已与文件夹同步';
+    badge.textContent=dirty?'● 词库有改动':'✓ 词库已保存';
   }
 
   /* ---------- 选项卡 ---------- */
@@ -630,13 +874,13 @@
     cancel.onclick=function(){ ui.newTab=false; renderNewTab(); };
     btns.appendChild(ok); btns.appendChild(cancel);
     box.appendChild(row); box.appendChild(btns);
-    box.appendChild(el('div','hint','新词库先在网页里编辑；输出形式决定「复制完整提示词」要模型画图还是扩写文字，之后可在分类头随时改。点「保存到文件夹」会生成独立的 .js 文件并写入清单'));
+    box.appendChild(el('div','hint','新词库先在网页里编辑；输出形式决定「复制完整提示词」要模型画图还是扩写文字，之后可在选项卡头部随时改。点「导出词库文件」会把它一起打包'));
   }
   function switchTab(k){
     if(state.activeTab===k) return;
     commitEditors(); commitBase();
     state.activeTab=k; prepare(state); save();
-    renderTabs(); renderBank(); renderConfig();
+    renderTabs(); renderBank(); renderConfig(); renderScope();
     if(!current || current[k]===null || current[k]===undefined || genRev[k]!==dataRev) regen(k,false);
     else renderResult(current,false);
   }
@@ -759,46 +1003,163 @@
     state.tabs.forEach(function(t){ files.push({name:t.file,text:bankFileText(t.id)}); });
     return files;
   }
-  function markSaved(){
-    state.dirty={}; state.indexDirty=false; state.profileDirty=false; state.closed=[];
-    state.tabs.forEach(function(t){
-      t.custom=false;
-      LOADED[t.id]=bankObject(t.id);
-    });
-    INDEX=state.tabs.map(function(t){return {id:t.id,name:t.name,file:t.file,color:t.color,baseOn:t.baseOn,kind:t.kind};});
-    FILE_PROFILE=state.base.map(function(b){return {name:b.name,value:b.value};});
-    state.source='wordbanks 文件夹';
+  function markExported(){
+    state.dirty={}; state.indexDirty=false; state.profileDirty=false;
+    state.source='导出的词库文件';
     save(); renderBank();
   }
   async function saveAll(){
     commitEditors(); commitBase(); prepare(state); save();
     renderConfig(); renderBank();
-    var files=buildFiles(), i;
-    if(typeof window.showDirectoryPicker==='function'){
-      try{
-        var dir=dirHandle;
-        if(dir){
-          var p=(dir.queryPermission && await dir.queryPermission({mode:'readwrite'}))||'granted';
-          if(p!=='granted'){ dirHandle=null; dir=null; }
-        }
-        if(!dir){ dir=await window.showDirectoryPicker({mode:'readwrite'}); dirHandle=dir; }
-        for(i=0;i<files.length;i++){
-          var fh=await dir.getFileHandle(files[i].name,{create:true});
-          var w=await fh.createWritable(); await w.write(files[i].text); await w.close();
-        }
-        markSaved(); toast('已写入 '+files.length+' 个文件到所选文件夹');
-        return;
-      }catch(err){
-        if(err && err.name==='AbortError'){ toast('已取消保存'); return; }
-        dirHandle=null;
-      }
-    }
-    for(i=0;i<files.length;i++){
-      (function(f,n){ setTimeout(function(){ download(f.name,f.text,'text/javascript;charset=utf-8'); },n*300); })(files[i],i);
-    }
-    toast('当前浏览器不支持直接写文件夹：已下载 '+files.length+' 个文件，请放进 wordbanks 文件夹（覆盖同名文件）');
+    var files=buildFiles();
+    downloadBlob('wordbanks.zip',zipBlob(files));
+    markExported();
+    toast('已下载 wordbanks.zip：解压后放进项目 wordbanks 覆盖同名文件，或直接发给别人导入');
   }
 
+  /* ---------- 从文件导入词库 ---------- */
+  function jsonAt(text,i){
+    while(i<text.length && /\s/.test(text.charAt(i))) i++;
+    var open=text.charAt(i);
+    if(open!=='[' && open!=='{') return null;
+    var close=open==='['?']':'}', depth=0, quote=false, esc=false, j=i;
+    for(;j<text.length;j++){
+      var c=text.charAt(j);
+      if(quote){
+        if(esc) esc=false;
+        else if(c==='\\') esc=true;
+        else if(c==='"') quote=false;
+        continue;
+      }
+      if(c==='"'){ quote=true; continue; }
+      if(c===open) depth++;
+      else if(c===close){ depth--; if(!depth){ j++; break; } }
+    }
+    try{ return JSON.parse(text.slice(i,j)); }catch(e){ return null; }
+  }
+  function readAssign(text,name){
+    var re=new RegExp('window\\.'+name+'\\s*=\\s*'), m=re.exec(text);
+    return m?jsonAt(text,m.index+m[0].length):null;
+  }
+  function banksFromJs(text){
+    var out={}, re=/window\.TAG_BANK\s*\[\s*(["'])(.*?)\1\s*\]\s*=\s*/g, m;
+    while((m=re.exec(text))){
+      var o=jsonAt(text,re.lastIndex);
+      if(o && o.fields) out[m[2]]=o;
+    }
+    return out;
+  }
+  async function unzipEntries(blob){
+    var buf=new Uint8Array(await blob.arrayBuffer()), dv=new DataView(buf.buffer);
+    var i, eocd=-1;
+    for(i=buf.length-22;i>=Math.max(0,buf.length-65558);i--){
+      if(dv.getUint32(i,true)===0x06054b50){ eocd=i; break; }
+    }
+    if(eocd<0) throw new Error('不是有效的 zip 文件');
+    var count=dv.getUint16(eocd+10,true), p=dv.getUint32(eocd+16,true), out=[];
+    var dec=new TextDecoder('utf-8');
+    for(var n=0;n<count;n++){
+      if(p+46>buf.length || dv.getUint32(p,true)!==0x02014b50) break;
+      var method=dv.getUint16(p+10,true), csize=dv.getUint32(p+20,true),
+          nlen=dv.getUint16(p+28,true), elen=dv.getUint16(p+30,true),
+          clen=dv.getUint16(p+32,true), off=dv.getUint32(p+42,true);
+      var name=dec.decode(buf.subarray(p+46,p+46+nlen));
+      var lnl=dv.getUint16(off+26,true), lel=dv.getUint16(off+28,true), start=off+30+lnl+lel;
+      var data=buf.subarray(start,start+csize), text;
+      if(method===0) text=dec.decode(data);
+      else if(method===8 && typeof DecompressionStream==='function')
+        text=await new Response(new Blob([data]).stream().pipeThrough(new DecompressionStream('deflate-raw'))).text();
+      else throw new Error('压缩包里有不支持的格式，请解压后选取里面的 .js 文件');
+      out.push({name:name,text:text});
+      p+=46+nlen+elen+clen;
+    }
+    return out;
+  }
+  async function importPickedFiles(fileList){
+    var picked=[], i;
+    for(i=0;i<(fileList?fileList.length:0);i++) picked.push(fileList[i]);
+    if(!picked.length) return;
+    var entries=[];
+    try{
+      for(i=0;i<picked.length;i++){
+        var f=picked[i], nm=String(f.name||'').toLowerCase();
+        if(/\.zip$/.test(nm)){
+          var inner=await unzipEntries(f);
+          inner.forEach(function(x){ entries.push(x); });
+        }else if(/\.(js|json|txt)$/.test(nm)){
+          entries.push({name:f.name,text:await f.text()});
+        }
+      }
+    }catch(err){ toast('读取失败：'+err.message); return; }
+    if(!entries.length){ toast('请选择 wordbanks.zip，或 index.js 和词库 .js 文件'); return; }
+    var tabsRaw=null, profileRaw=null, banksRaw={}, single=null;
+    entries.forEach(function(e){
+      var nm=String(e.name||''), t=String(e.text||'');
+      if(/TAG_TABS/.test(t)){
+        var a=readAssign(t,'TAG_TABS'), p=readAssign(t,'TAG_PROFILE');
+        if(a && Array.isArray(a) && a.length) tabsRaw=a;
+        if(p && Array.isArray(p)) profileRaw=p;
+      }
+      if(/TAG_BANK/.test(t)){
+        var bs=banksFromJs(t);
+        Object.keys(bs).forEach(function(k){ banksRaw[k]=bs[k]; });
+      }
+      if(/\.json$/i.test(nm)){
+        try{ var o=parseBankText(t); if(o && o.fields) single=o; }catch(err){}
+      }
+    });
+    var keys=Object.keys(banksRaw);
+    if(!tabsRaw && !keys.length && !single){ toast('没找到词库内容：请选导出的 wordbanks.zip，或 index.js 与词库 .js'); return; }
+    try{
+      var changed=0, total=0;
+      if(tabsRaw){
+        var keepS=state.settings, keepL=state.withLabel, keepLang=state.lang,
+            keepModes=state.modes, keepFixed=state.fixed, keepLocks=state.locks, keepHist=state.history;
+        var newTabs=[], newBanks={};
+        tabsRaw.forEach(function(t,idx){
+          if(!t || !t.id) return;
+          var id=String(t.id), b=normalizeOne(banksRaw[id] || rawBank(id) || state.banks[id]);
+          if(!b) return;
+          newTabs.push({id:id,name:String(t.name||b.label||id),color:t.color||pickColor(idx),
+            file:String(t.file||(id+'.js')),baseOn:!!t.baseOn,kind:normKind(t.kind,id),custom:false});
+          newBanks[id]=b; changed++;
+        });
+        if(!newTabs.length) throw new Error('清单里的词库都读不出来');
+        state.tabs=newTabs; state.banks=newBanks; state.activeTab=newTabs[0].id;
+        state.closed=INDEX.filter(function(t){
+          return t && t.id && !newTabs.some(function(x){ return x.id===String(t.id); });
+        }).map(function(t){ return String(t.id); });
+        if(profileRaw && profileRaw.length){
+          var np=normalizeProfile(profileRaw);
+          if(np) state.base=np;
+        }
+        state.settings=keepS; state.withLabel=keepL; state.lang=keepLang;
+        state.modes=keepModes; state.fixed=keepFixed; state.locks=keepLocks; state.history=keepHist;
+      }else{
+        keys.forEach(function(k){
+          var b=normalizeOne(banksRaw[k]); if(!b) return;
+          if(state.banks[k]){ state.banks[k]=b; changed++; }
+          else{
+            state.tabs.push({id:k,name:String(b.label||k),color:pickColor(state.tabs.length),
+              file:(k+'.js'),baseOn:false,kind:'text',custom:true});
+            state.banks[k]=b; state.activeTab=k; changed++;
+          }
+        });
+        if(!changed && single){
+          var sb=normalizeOne(single); if(!sb) throw new Error('JSON 里没有可用维度');
+          state.banks[state.activeTab]=sb; changed=1;
+          var tt=tabOf(state.activeTab); if(sb.label) tt.name=sb.label;
+        }
+      }
+      if(!changed) throw new Error('没有可导入的词库');
+      state.tabs.forEach(function(t){ total+=state.banks[t.id].fields.length; });
+      state.dirty={}; state.indexDirty=false; state.profileDirty=false;
+      state.source='导入的词库文件';
+      ui={editing:{},adding:null,newTab:false}; lastPick={}; genRev={}; current=null; touchData();
+      save(); prepare(state); renderAll(); regen(scopeIds(),false);
+      toast('已导入 '+entries.length+' 个文件：'+state.tabs.length+' 根选项卡 / '+total+' 个维度');
+    }catch(err){ toast('导入失败：'+err.message); }
+  }
   /* ---------- 配置区 ---------- */
   function renderConfig(){
     var box=document.getElementById('config'); box.innerHTML='';
@@ -806,6 +1167,7 @@
       box.appendChild(el('div','card','')); return;
     }
     box.appendChild(renderCat(state.activeTab));
+    attachExpands(box);
   }
   function renderCat(k){
     var t=tabOf(k), cat=state.banks[k], opts=0;
@@ -824,8 +1186,8 @@
 
     var lab=el('label','switch');
     var cb=el('input','base-switch'); cb.type='checkbox'; cb.checked=!!t.baseOn;
-    cb.title='把上方「基础设定」一并加入结果';
-    cb.onchange=function(){ t.baseOn=cb.checked; save(); regen(k,false); };
+    cb.title='把上方「基础设定」一并加入这一组的标签';
+    cb.onchange=function(){ t.baseOn=cb.checked; state.indexDirty=true; save(); regen(scopeIds(),false); };
     lab.appendChild(cb); lab.appendChild(el('span',null,'加入基础设定'));
     head.appendChild(lab);
 
@@ -836,7 +1198,7 @@
     ks.value=t.kind||defaultKind(k);
     ks.title='决定「复制完整提示词」的引导语：要模型输出绘图提示词，还是纯文字设定';
     ks.onchange=function(){
-      t.kind=ks.value; state.indexDirty=true; save(); renderBank();
+      t.kind=ks.value; state.indexDirty=true; save(); renderBank(); renderResult(current,false);
       toast('已设为「'+(ks.value==='image'?'绘图提示词':'文字设定')+'」，复制完整提示词时生效');
     };
     head.appendChild(ks);
@@ -875,7 +1237,7 @@
   function renderAddForm(k){
     var form=el('div','add-form');
     var name=el('input'); name.placeholder='维度名称，如：口头禅 / 疤痕 / 阵营';
-    var opts=el('textarea'); opts.placeholder='候选项，每行一条，写「中文|English」或直接写文字都行：\n轻声细语|Speaks softly\n习惯性沉默|Habitually silent\n总把话说一半|Trails off';
+    var opts=el('textarea'); opts.dataset.expand='addopts'; opts.placeholder='候选项，每行一条，写「中文|English」或直接写文字都行：\n轻声细语|Speaks softly\n习惯性沉默|Habitually silent\n总把话说一半|Trails off';
     var row=el('div','row');
     var cancel=el('button','btn mini','取消');
     cancel.onclick=function(){ commitEditors(); ui.adding=null; save(); renderConfig(); };
@@ -944,14 +1306,14 @@
 
     if(ui.editing[key]){
       var ed=el('div','editor');
-      var ta=el('textarea','wb-input'); ta.dataset.key=key;
+      var ta=el('textarea','wb-input'); ta.dataset.key=key; ta.dataset.expand='wordbank';
       ta.value=f.options.join('\n'); ta.placeholder='每行一个候选项';
       ed.appendChild(ta);
       var row2=el('div','row');
       var saveBtn=el('button','btn mini primary','保存词库');
       saveBtn.onclick=function(){
         refreshConfig(); prepare(state); save(); renderBank(); regen(k,false);
-        toast('改动已暂存；记得点「保存到文件夹」写回文件');
+        toast('改动已保存；要更新项目文件记得点「导出词库文件」');
       };
       row2.appendChild(saveBtn);
       row2.appendChild(el('span','hint','每行一条，写法随意；滑块上限 '+MAX_N));
@@ -1000,30 +1362,87 @@
     lastPick[key]=out.slice();
     return out;
   }
-  function generate(only){
-    var target=only||state.activeTab, res={};
-    order().forEach(function(k){
-      if(k!==target){ res[k]=current&&current[k]!==undefined?current[k]:null; return; }
-      genRev[k]=dataRev;
-      var t=tabOf(k), cat=state.banks[k];
-      res[k]=[];
-      if(t.baseOn){
-        state.base.forEach(function(b){
-          if(!b.name && !b.value) return;
-          res[k].push({key:'base.'+b.id,name:b.name||'基础设定',value:b.value||'—',base:true,lockable:false});
-        });
+  function isLocked(it){
+    return !it.base && (state.locks[it.key]||[]).indexOf(it.value)>=0;
+  }
+  function findReplacement(it,kept,used,rules){
+    var opts=it._opts||[];
+    for(var i=0;i<opts.length;i++){
+      var v=opts[i];
+      if(used[it.key+'::'+v]) continue;
+      var t=conflictText(v), ok=true;
+      for(var j=0;j<kept.length;j++){
+        var o=kept[j];
+        if(o.key===it.key || it.base || o.base) continue;
+        if(clashOf(conflictText(o.value),t,rules)){ ok=false; break; }
       }
-      cat.fields.forEach(function(f){
-        var key=k+'.'+f.id, m=state.modes[key];
-        if(m===0 || m===undefined || !f.options.length) return;
-        var vals;
-        if(m===-1) vals=[f.options.indexOf(state.fixed[key])>=0?state.fixed[key]:f.options[0]];
-        else vals=pickMany(f.options,key,m,state.locks[key]);
-        vals.forEach(function(v){
-          res[k].push({key:key,name:f.name,value:v,lockable:m>=1});
-        });
+      if(ok) return v;
+    }
+    return null;
+  }
+  function resolveConflicts(items,rules){
+    var used={};
+    items.forEach(function(it,i){ it._i=i; used[it.key+'::'+it.value]=true; });
+    var ranked=items.slice().sort(function(a,b){
+      var pa=a.base?2:(isLocked(a)?1:0), pb=b.base?2:(isLocked(b)?1:0);
+      return pb-pa || a._i-b._i;
+    });
+    var kept=[], removed=0, replaced=0;
+    ranked.forEach(function(it){
+      var tx=conflictText(it.value), why='';
+      for(var j=0;j<kept.length;j++){
+        var o=kept[j];
+        if(o.key===it.key || it.base || o.base) continue;
+        why=clashOf(conflictText(o.value),tx,rules);
+        if(why) break;
+      }
+      if(!why){ kept.push(it); return; }
+      var alt=findReplacement(it,kept,used,rules);
+      if(alt){
+        used[it.key+'::'+alt]=true;
+        kept.push({key:it.key,name:it.name,value:alt,lockable:it.lockable,_opts:it._opts,_i:it._i});
+        replaced++;
+      }else removed++;
+    });
+    kept.sort(function(a,b){return a._i-b._i;});
+    items.forEach(function(it){ delete it._i; });
+    return {items:kept,removed:removed,replaced:replaced};
+  }
+  function generateOne(k){
+    genRev[k]=dataRev;
+    var t=tabOf(k), cat=state.banks[k], items=[];
+    if(!t || !cat) return items;
+    if(t.baseOn){
+      state.base.forEach(function(b){
+        if(!b.name && !b.value) return;
+        items.push({key:'base.'+b.id,name:b.name||'基础设定',value:b.value||'—',base:true,lockable:false});
+      });
+    }
+    cat.fields.forEach(function(f){
+      var key=k+'.'+f.id, m=state.modes[key];
+      if(m===0 || m===undefined || !f.options.length) return;
+      var vals;
+      if(m===-1) vals=[f.options.indexOf(state.fixed[key])>=0?state.fixed[key]:f.options[0]];
+      else vals=pickMany(f.options,key,m,state.locks[key]);
+      vals.forEach(function(v){
+        items.push({key:key,name:f.name,value:v,lockable:m>=1,_opts:f.options});
       });
     });
+    return items;
+  }
+  function generate(ids){
+    ids=(ids&&ids.length)?ids:[state.activeTab];
+    var rules=state.settings.validate?allRules():null;
+    var res={}, removed=0, replaced=0;
+    order().forEach(function(k){
+      if(ids.indexOf(k)<0){ res[k]=current&&current[k]!==undefined?current[k]:null; return; }
+      var one=generateOne(k);
+      if(rules){
+        var r=resolveConflicts(one,rules);
+        res[k]=r.items; removed+=r.removed; replaced+=r.replaced;
+      }else res[k]=one;
+    });
+    lastValidate={removed:removed,replaced:replaced};
     return res;
   }
   /* 词条以「中文|English」为标准写法；别的写法也一律保留，两种语言下都不会变成空白 */
@@ -1055,66 +1474,97 @@
   }
   function groupLines(k,res){
     if(!res[k] || !res[k].length) return [];
-    var groups={}, names=[];
+    var groups={}, names=[], count=0;
     res[k].forEach(function(x){
+      count++;
       if(!groups[x.name]){groups[x.name]=[];names.push(x.name);}
       groups[x.name].push(fmt(x.value));
     });
+    if(!count) return [];
     var sep=state.lang==='en'?', ':'、';
     return [catHeader(k),names.map(function(n){
       var vals=groups[n].join(' / ');
       return state.withLabel?(fieldLabel(n)+': '+vals):vals;
     }).join(sep)];
   }
+  function scopeIds(){
+    var s=state.settings, valid=(s.multiIds||[]).filter(function(k){return !!tabOf(k);});
+    if(s.multiFollow || !valid.length) return [state.activeTab];
+    return state.tabs.filter(function(t){return valid.indexOf(t.id)>=0;}).map(function(t){return t.id;});
+  }
   function buildText(res){
-    if(!state.activeTab) return '';
-    var g=groupLines(state.activeTab,res);
-    return g.length?g.join('\n'):'';
+    var out=[];
+    scopeIds().forEach(function(k){
+      if(res[k]===null||res[k]===undefined) return;
+      var g=groupLines(k,res);
+      if(g.length) out.push(g.join('\n'));
+    });
+    return out.join('\n\n');
   }
   function renderResult(res,record){
     res=res||{};
     var box=document.getElementById('result'); box.innerHTML='';
-    var k=state.activeTab, t=tabOf(k);
-    if(!k || !t || !state.banks[k]){
+    var ids=scopeIds(), total=0, baseCount=0;
+    if(!ids.length){
       document.getElementById('output').value='';
       document.getElementById('outCount').textContent='0 项';
       return;
     }
-    var items=res[k], total=0, baseCount=0;
-    var g=el('div','result-group cur'); g.style.setProperty('--accent',t.color);
-    var title=el('div','g-title');
-    title.appendChild(el('span','dot'));
-    var cname=tabName(k,t);
-    title.appendChild(el('span',null,cname));
-    title.appendChild(el('span','n',items===null||items===undefined?'未生成':(items.length+' 项')));
-    if(t.baseOn && state.base.length) title.appendChild(el('span','btag','+基础设定'));
-    g.appendChild(title);
-    var pills=el('div','pills');
-    if(items===null||items===undefined) pills.appendChild(el('span','empty','（点「重新生成」开始）'));
-    else if(!items.length) pills.appendChild(el('span','empty','（所有维度均为 0，且未加入基础设定）'));
-    (items||[]).forEach(function(x){
-      total++; if(x.base) baseCount++;
-      var locked=!x.base && (state.locks[x.key]||[]).indexOf(x.value)>=0;
-      var p=el('div','pill'+(state.withLabel?'':' plain')+(x.base?' base':'')+(locked?' locked':''));
-      if(state.withLabel) p.appendChild(el('span','k',x.base?(state.lang==='en'?'Base · ':'基础 · ')+x.name:x.name));
-      p.appendChild(el('span','v',fmt(x.value)));
-      if(x.lockable){
-        var b=el('button',locked?'lock on':'lock');
-        b.title=locked?'取消锁定':'锁定这个值，重新生成时保留';
-        b.onclick=function(){
-          var arr=state.locks[x.key]||[], i=arr.indexOf(x.value);
-          if(i>=0) arr.splice(i,1); else arr.push(x.value);
-          if(arr.length) state.locks[x.key]=arr; else delete state.locks[x.key];
-          save(); renderResult(current,false);
-        };
-        p.appendChild(b);
+    ids.forEach(function(k){
+      var t=tabOf(k); if(!t || !state.banks[k]) return;
+      var items=res[k];
+      var g=el('div','result-group'+(k===state.activeTab?' cur':''));
+      g.style.setProperty('--accent',t.color);
+      var title=el('div','g-title');
+      title.appendChild(el('span','dot'));
+      title.appendChild(el('span',null,tabName(k,t)));
+      title.appendChild(el('span','n',items===null||items===undefined?'未生成':(items.length+' 项')));
+      if(t.baseOn && state.base.length) title.appendChild(el('span','btag','+基础设定'));
+      if(ids.length>1){
+        var cp=el('button','rename',state.lang==='en'?'Copy group':'复制本组');
+        cp.style.marginLeft='auto';
+        cp.onclick=function(){ var gl=groupLines(k,res); copy(gl.length?gl.join('\n'):''); };
+        title.appendChild(cp);
       }
-      pills.appendChild(p);
+      g.appendChild(title);
+      var pills=el('div','pills');
+      if(items===null||items===undefined) pills.appendChild(el('span','empty','（点「重新生成」开始）'));
+      else if(!items.length) pills.appendChild(el('span','empty','（所有维度均为 0，且未加入基础设定）'));
+      (items||[]).forEach(function(x){
+        total++; if(x.base) baseCount++;
+        var locked=isLocked(x);
+        var p=el('div','pill'+(state.withLabel?'':' plain')+(x.base?' base':'')+(locked?' locked':''));
+        if(state.withLabel) p.appendChild(el('span','k',x.base?(state.lang==='en'?'Base · ':'基础 · ')+x.name:x.name));
+        p.appendChild(el('span','v',fmt(x.value)));
+        if(x.lockable){
+          var b=el('button',locked?'lock on':'lock');
+          b.title=locked?'取消锁定':'锁定这个值，重新生成时保留';
+          b.onclick=function(){
+            var arr=state.locks[x.key]||[], i=arr.indexOf(x.value);
+            if(i>=0) arr.splice(i,1); else arr.push(x.value);
+            if(arr.length) state.locks[x.key]=arr; else delete state.locks[x.key];
+            save(); renderResult(current,false);
+          };
+          p.appendChild(b);
+        }
+        pills.appendChild(p);
+      });
+      g.appendChild(pills); box.appendChild(g);
     });
-    g.appendChild(pills); box.appendChild(g);
+    var tip=document.getElementById('valTip');
+    if(state.settings.validate){
+      var n=lastValidate.removed+lastValidate.replaced;
+      tip.className='val-tip';
+      tip.textContent=n
+        ? '组合校验已开启 · 本次避开 '+n+' 处冲突'+(lastValidate.replaced?'（已补位 '+lastValidate.replaced+' 项）':'')
+        : '组合校验已开启 · 本次没有发现互斥标签';
+    }else{
+      tip.className='val-tip off';
+      tip.textContent='组合校验已关闭 · 标签按随机结果原样输出';
+    }
     var text=buildText(res);
     document.getElementById('output').value=text;
-    document.getElementById('outCount').textContent=total+' 项'+(baseCount?'（含基础设定 '+baseCount+'）':'');
+    document.getElementById('outCount').textContent=total+' 项'+(ids.length>1?' / '+ids.length+' 组':'')+(baseCount?'（含基础设定 '+baseCount+'）':'');
     if(record && text && state.history[0]!==text){
       state.history.unshift(text); state.history=state.history.slice(0,8);
       save(); renderHistory();
@@ -1133,49 +1583,243 @@
       list.appendChild(b);
     });
   }
-  function regen(only,record){ current=generate(only); renderResult(current,record!==false); }
+  function regen(ids,record){
+    if(typeof ids==='string') ids=[ids];
+    current=generate(ids); renderResult(current,record!==false);
+  }
   function renderLang(){
     var seg=document.getElementById('langSeg'); seg.innerHTML='';
     LANGS.forEach(function(L){
       var b=el('button',state.lang===L[0]?'active':'',L[1]);
       b.onclick=function(){
         commitEditors(); commitBase(); state.lang=L[0]; save();
-        renderLang(); renderConfig(); renderResult(current,false);
+        renderLang(); renderConfig(); renderResult(current,false); renderScope();
       };
       seg.appendChild(b);
     });
-    document.getElementById('withLabel').checked=!!state.withLabel;
   }
   function renderAll(){
-    renderTabs(); renderNewTab(); renderBank(); renderBase(); renderLang(); renderConfig(); renderHistory();
+    renderTabs(); renderNewTab(); renderBank(); renderBase(); renderLang();
+    renderConfig(); renderHistory(); renderScope(); syncSettings();
+    attachExpands();
+  }
+
+  /* ---------- 生成范围 ---------- */
+  function renderScope(){
+    var menu=document.getElementById('scopeMenu'), lab=document.getElementById('scopeLabel');
+    var s=state.settings, ids=scopeIds();
+    var follow=!!s.multiFollow || !(s.multiIds||[]).some(function(k){return !!tabOf(k);});
+    var names=ids.map(function(k){var t=tabOf(k);return t?t.name:k;}).join(' + ');
+    lab.textContent=follow?'当前选项卡':(names+(ids.length>1?'（'+ids.length+' 组）':''));
+    menu.innerHTML='';
+    var frow=el('label','scope-item');
+    var fr=el('input'); fr.type='checkbox'; fr.checked=follow;
+    fr.onchange=function(){
+      if(!fr.checked){ fr.checked=true; return; }
+      s.multiFollow=true; s.multiIds=[];
+      save(); renderScope(); regen(scopeIds(),false);
+    };
+    frow.appendChild(fr); frow.appendChild(el('span',null,'跟随当前选项卡'));
+    frow.appendChild(el('span','sc-n','默认'));
+    menu.appendChild(frow);
+    state.tabs.forEach(function(t){
+      var row=el('label','scope-item');
+      var cb=el('input'); cb.type='checkbox';
+      cb.checked=(follow?[state.activeTab]:ids).indexOf(t.id)>=0;
+      cb.onchange=function(){
+        var set=(follow?[state.activeTab]:scopeIds()).slice();
+        if(cb.checked){ if(set.indexOf(t.id)<0) set.push(t.id); }
+        else set=set.filter(function(x){return x!==t.id;});
+        if(!set.length){ s.multiFollow=true; s.multiIds=[]; }
+        else { s.multiFollow=false; s.multiIds=set; }
+        save(); renderScope(); regen(scopeIds(),false);
+      };
+      row.appendChild(cb);
+      var dot=el('span','sc-dot'); dot.style.background=t.color;
+      row.appendChild(dot);
+      row.appendChild(el('span',null,t.name));
+      menu.appendChild(row);
+    });
+    var foot=el('div','scope-foot');
+    var all=el('button','btn mini','全选');
+    all.onclick=function(){
+      s.multiFollow=false; s.multiIds=state.tabs.map(function(t){return t.id;});
+      save(); renderScope(); regen(scopeIds(),false);
+    };
+    var one=el('button','btn mini','仅当前组');
+    one.onclick=function(){
+      s.multiFollow=true; s.multiIds=[];
+      save(); renderScope(); regen(scopeIds(),false);
+    };
+    foot.appendChild(all); foot.appendChild(one);
+    menu.appendChild(foot);
+  }
+
+  /* ---------- 设置界面 ---------- */
+  function syncSettings(){
+    var s=state.settings;
+    document.getElementById('setWithLabel').checked=!!state.withLabel;
+    document.getElementById('setValidate').checked=!!s.validate;
+    document.getElementById('setConflicts').value=s.conflicts||'';
+  }
+  function openSettings(){
+    closeExpand(); syncSettings();
+    document.getElementById('settingsModal').hidden=false;
+  }
+  function closeSettings(){ document.getElementById('settingsModal').hidden=true; }
+
+  /* ---------- 更新日志：读取独立的 txt 文件 ---------- */
+  var changelogLoaded=false;
+  async function openChangelog(){
+    closeExpand();
+    document.getElementById('changelogModal').hidden=false;
+    if(changelogLoaded) return;
+    var pre=document.getElementById('changelogText'), frame=document.getElementById('changelogFrame');
+    var note=document.getElementById('changelogNote');
+    try{
+      var r=await fetch('CHANGELOG.txt',{cache:'no-store'});
+      if(!r.ok) throw new Error('HTTP '+r.status);
+      var t=await r.text();
+      if(!t.trim()) throw new Error('文件为空');
+      pre.textContent=t; pre.hidden=false; frame.hidden=true;
+      note.textContent='内容来自 CHANGELOG.txt';
+    }catch(e){
+      /* 本地 file:// 打开时浏览器不允许读取文本，直接显示文件原文 */
+      pre.hidden=true; frame.hidden=false; frame.src='CHANGELOG.txt';
+      note.textContent='内容来自 CHANGELOG.txt';
+    }
+    changelogLoaded=true;
+  }
+  function closeChangelog(){ document.getElementById('changelogModal').hidden=true; }
+
+  /* ---------- 文本框放大编辑 ---------- */
+  var expandSource=null;
+  var EXPAND_TITLES={
+    output:'文本输出', conflicts:'自定义冲突词组',
+    paste:'粘贴词库文本', wordbank:'编辑词库', addopts:'新维度候选项'
+  };
+  function attachExpands(root){
+    var list=(root||document).querySelectorAll('textarea[data-expand]');
+    for(var i=0;i<list.length;i++){
+      (function(ta){
+        if(ta.dataset.expandReady) return;
+        ta.dataset.expandReady='1';
+        var wrap=document.createElement('div'); wrap.className='ta-wrap';
+        ta.parentNode.insertBefore(wrap,ta);
+        wrap.appendChild(ta);
+        var b=el('button','ta-expand'); b.type='button';
+        b.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="14 4 20 4 20 10"/><line x1="20" y1="4" x2="13" y2="11"/><polyline points="10 20 4 20 4 14"/><line x1="4" y1="20" x2="11" y2="13"/></svg>';
+        b.title='在大窗口里编辑'; b.setAttribute('aria-label','放大编辑');
+        b.onclick=function(){ openExpand(ta); };
+        wrap.appendChild(b);
+      })(list[i]);
+    }
+  }
+  function openExpand(ta){
+    expandSource={ta:ta,id:ta.id||'',key:ta.dataset.key||'',mode:ta.dataset.expand};
+    document.getElementById('expandTitle').textContent=EXPAND_TITLES[ta.dataset.expand]||'编辑文本';
+    document.getElementById('expandArea').value=ta.value;
+    document.getElementById('expandModal').hidden=false;
+    var a=document.getElementById('expandArea');
+    setTimeout(function(){ a.focus(); a.setSelectionRange(0,0); },30);
+  }
+  function expandTarget(){
+    if(!expandSource) return null;
+    var s=expandSource;
+    if(s.ta && document.body.contains(s.ta)) return s.ta;
+    if(s.id) return document.getElementById(s.id);
+    if(s.key){
+      var l=document.querySelectorAll('textarea.wb-input');
+      for(var i=0;i<l.length;i++) if(l[i].dataset.key===s.key) return l[i];
+    }
+    return null;
+  }
+  function closeExpand(){ document.getElementById('expandModal').hidden=true; expandSource=null; }
+  function applyExpand(){
+    if(!expandSource) return;
+    var mode=expandSource.mode, ta=expandTarget();
+    var v=document.getElementById('expandArea').value;
+    if(ta){
+      ta.value=v;
+      try{ ta.dispatchEvent(new Event('input',{bubbles:true})); }catch(e){}
+      try{ ta.dispatchEvent(new Event('change',{bubbles:true})); }catch(e){}
+    }
+    closeExpand();
+    if(!ta){ toast('原文本框已刷新，请重新打开编辑'); return; }
+    if(mode==='wordbank'){ refreshConfig(); regen(scopeIds(),false); toast('词库已更新'); }
+    else toast('已写回文本框');
   }
 
   /* ---------- 事件绑定 ---------- */
   document.getElementById('btnGenCur').onclick=function(){
     commitEditors(); commitBase(); save(); renderBank();
-    if(state.activeTab) regen(state.activeTab,true);
+    if(state.activeTab) regen(scopeIds(),true);
   };
   document.getElementById('btnCopy').onclick=function(){ copy(document.getElementById('output').value); };
   document.getElementById('btnCopyPrompt').onclick=function(){
-    copy(promptIntro(state.activeTab)+'\n'+document.getElementById('output').value);
+    copy(promptIntro(scopeIds())+'\n'+document.getElementById('output').value);
   };
-  document.getElementById('withLabel').onchange=function(e){
+  document.getElementById('setWithLabel').onchange=function(e){
     state.withLabel=!!e.target.checked; save(); renderResult(current,false);
   };
+  document.getElementById('setValidate').onchange=function(e){
+    state.settings.validate=!!e.target.checked; save(); regen(scopeIds(),false);
+  };
+  document.getElementById('setConflicts').onchange=function(e){
+    state.settings.conflicts=e.target.value; save();
+    if(state.settings.validate) regen(scopeIds(),false);
+  };
+  document.getElementById('btnSettings').onclick=function(){ closeExpand(); openSettings(); };
+  document.getElementById('btnSettingsClose').onclick=closeSettings;
+  document.getElementById('expandMask').onclick=closeExpand;
+  document.getElementById('btnExpandClose').onclick=closeExpand;
+  document.getElementById('btnExpandCancel').onclick=closeExpand;
+  document.getElementById('btnExpandApply').onclick=applyExpand;
+  document.getElementById('btnExpandCopy').onclick=function(){ copy(document.getElementById('expandArea').value); };
+  document.getElementById('expandArea').onkeydown=function(e){
+    if(e.key==='Enter' && (e.ctrlKey||e.metaKey)){ e.preventDefault(); applyExpand(); }
+  };
+  document.getElementById('settingsMask').onclick=closeSettings;
+  document.getElementById('btnChangelog').onclick=function(){ closeSettings(); openChangelog(); };
+  document.getElementById('btnChangelogClose').onclick=closeChangelog;
+  document.getElementById('changelogMask').onclick=closeChangelog;
+  document.getElementById('btnSetReset').onclick=function(){
+    closeSettings(); document.getElementById('btnReset').click();
+  };
+  document.getElementById('scopeBtn').onclick=function(e){
+    e.stopPropagation(); scopeOpen=!scopeOpen;
+    document.getElementById('scopeMenu').classList.toggle('show',scopeOpen);
+  };
+  document.addEventListener('click',function(e){
+    if(!scopeOpen) return;
+    var w=document.getElementById('scopeWrap');
+    if(w && !w.contains(e.target)){
+      scopeOpen=false; document.getElementById('scopeMenu').classList.remove('show');
+    }
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape') return;
+    closeExpand(); closeSettings(); closeChangelog(); scopeOpen=false;
+    document.getElementById('scopeMenu').classList.remove('show');
+  });
   document.getElementById('btnClearLock').onclick=function(){
     state.locks={}; prepare(state);
     save(); renderResult(current,false); toast('已清空所有锁定');
   };
   document.getElementById('btnReset').onclick=function(){
-    if(!window.confirm('恢复默认将重建内置选项卡，并重置滑块、锁定、基础设定与自定义词库，确定继续？')) return;
-    state=fresh(); ui={editing:{},adding:null,newTab:false}; lastPick={}; current=null; dirHandle=null;
-    genRev={}; touchData(); save(); renderAll(); regen(state.activeTab,false);
+    if(!window.confirm('恢复默认将重建内置选项卡，并重置滑块、锁定、基础设定与自定义词库；设置里的通用选项会保留。确定继续？')) return;
+    var keep=state.settings, keepLabel=!!state.withLabel;
+    state=fresh(); state.settings=keep; state.withLabel=keepLabel; prepare(state);
+    ui={editing:{},adding:null,newTab:false}; lastPick={}; current=null;
+    genRev={}; touchData(); save(); renderAll(); regen(scopeIds(),false);
     toast('已恢复默认');
   };
   document.getElementById('btnTabsReset').onclick=function(){
-    if(!window.confirm('恢复内置选项卡会重建文件夹清单里的选项卡，自定义选项卡与滑块设置会重置，确定继续？')) return;
-    state=fresh(); ui={editing:{},adding:null,newTab:false}; lastPick={}; current=null;
-    genRev={}; touchData(); save(); renderAll(); regen(state.activeTab,false);
+    if(!window.confirm('恢复内置选项卡会按项目里的 wordbanks 文件重建选项卡，自定义选项卡与滑块设置会重置，确定继续？')) return;
+    var keep=state.settings, keepLabel=!!state.withLabel;
+    state=fresh(); state.settings=keep; state.withLabel=keepLabel; prepare(state);
+    ui={editing:{},adding:null,newTab:false}; lastPick={}; current=null;
+    genRev={}; touchData(); save(); renderAll(); regen(scopeIds(),false);
     toast('已恢复内置选项卡');
   };
   document.getElementById('btnBaseAdd').onclick=function(){
@@ -1191,15 +1835,19 @@
   document.getElementById('btnBankExport').onclick=function(){
     commitEditors(); save(); renderBank();
     var t=tabOf(state.activeTab); if(!t) return;
-    download(t.file,bankFileText(state.activeTab),'text/javascript;charset=utf-8');
-    toast('已另存当前词库副本：'+t.file);
+    var name=t.file.replace(/\.js$/i,'')+'.json';
+    download(name,bankText(state.activeTab),'application/json;charset=utf-8');
+    toast('已导出 JSON 备份：'+name+'，可用「导入词库文件」或「打开词库文件」载入');
   };
   document.getElementById('btnBankCopy').onclick=function(){
     commitEditors(); if(state.activeTab) copy(bankText(state.activeTab));
   };
   document.getElementById('btnBankReload').onclick=function(){
-    if(!window.confirm('重新读取文件夹会刷新页面，以 wordbanks 里的文件为准（未保存的改动仍会保留在缓存中）。继续？')) return;
-    window.location.reload();
+    document.getElementById('bankImportFile').click();
+  };
+  document.getElementById('bankImportFile').onchange=function(e){
+    importPickedFiles(e.target.files);
+    e.target.value='';
   };
   document.getElementById('btnBankPaste').onclick=function(){
     var t=document.getElementById('bankPaste').value.trim();
@@ -1219,7 +1867,7 @@
   function boot(){
     state=load(); prepare(state); current=null; lastPick={};
     renderAll(); save();
-    if(state.activeTab) regen(state.activeTab,false);
+    if(state.activeTab) regen(scopeIds(),false);
     else renderResult({},false);
   }
   loadFiles(boot);

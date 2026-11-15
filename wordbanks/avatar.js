@@ -218,7 +218,15 @@ window.TAG_BANK["avatar"] = {
       "双眼皮|Double eyelid",
       "内双|Hidden double eyelid",
       "下颌线清晰|Defined jawline",
-      "眉骨旧疤|Old scar on brow bone"
+      "眉骨旧疤|Old scar on brow bone",
+      "面部线条柔和|Soft facial contours",
+      "面部线条硬朗|Angular facial contours",
+      "额头较高|High forehead",
+      "圆润下颌|Rounded jaw",
+      "眉骨明显|Prominent brow bone",
+      "鼻尖微翘|Slightly upturned nose",
+      "唇线清晰|Well-defined lip line",
+      "两侧脸颊不对称|Asymmetric cheeks"
     ],
     "妆容": [
       "素颜|Bare face",
@@ -268,7 +276,15 @@ window.TAG_BANK["avatar"] = {
       "低调布光|Low-key lighting",
       "高调布光|High-key lighting",
       "环形补光|Ring light",
-      "黄昏金光|Golden hour glow"
+      "黄昏金光|Golden hour glow",
+      "可见光束|Visible light rays",
+      "光粒子|Floating light particles",
+      "硬边阴影|Hard-edged shadows",
+      "边缘发光|Edge glow",
+      "高光溢出|Bloom",
+      "微粒尘埃|Dust motes in light",
+      "水面碎光|Dappled water reflection",
+      "暗部保留细节|Detailed shadows"
     ],
     "光影方向": [
       "正面平光|Frontal flat light",
@@ -520,6 +536,42 @@ window.TAG_BANK["avatar"] = {
       "电流|Electric arcs",
       "星屑|Stardust",
       "半透明重影|Translucent ghosting"
+    ],
+    "眼型": [
+      "上挑眼|Upturned eyes",
+      "下垂眼|Downturned eyes",
+      "圆眼|Round eyes",
+      "细长眼|Narrow almond eyes",
+      "半睁眼|Half-lidded eyes",
+      "眯眯眼|Narrow smiling eyes",
+      "大眼睛|Large eyes",
+      "小眼睛|Small eyes",
+      "眼尾上扬|Lifted outer corners",
+      "眼窝较深|Deep-set eyes",
+      "眼距偏宽|Wide-set eyes",
+      "眼距偏近|Close-set eyes",
+      "眼型柔和|Soft eye shape",
+      "眼型锐利|Sharp eye shape",
+      "眼睑微肿|Slightly puffy lids",
+      "睫毛浓密|Thick lashes",
+      "眉眼间距宽|Wide brow-eye gap",
+      "眼白清亮|Clear sclera"
+    ],
+    "发质状态": [
+      "顺直有光泽|Sleek and glossy",
+      "略有蓬松|Slightly fluffy",
+      "轻微凌乱|Slightly messy",
+      "发梢外翘|Flipped-out ends",
+      "哑光质感|Matte finish",
+      "细软发质|Fine soft hair",
+      "粗硬发质|Coarse thick hair",
+      "自然微卷|Natural soft waves",
+      "分层修剪|Layered cut",
+      "齐切口发梢|Blunt-cut ends",
+      "被风吹乱|Wind-tossed",
+      "湿润贴额|Damp at the forehead",
+      "精心打理|Neatly styled",
+      "发丝分明|Defined strands"
     ]
   }
 };

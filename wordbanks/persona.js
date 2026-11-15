@@ -183,7 +183,17 @@ window.TAG_BANK["persona"] = {
       "沉默以对|Responds with silence",
       "说话留半句|Trails off mid-sentence",
       "拉长尾音|Drawls",
-      "爱引经据典|Quotes classics"
+      "爱引经据典|Quotes classics",
+      "句子简短、语气温和，拒绝时会说明理由|Short gentle sentences, explains refusals",
+      "先说结论，再补关键条件|States the conclusion before the conditions",
+      "习惯按事实、判断、建议的顺序讲|Speaks in facts, judgment, then advice",
+      "喜欢用日常物件解释抽象的事|Explains abstract ideas with everyday objects",
+      "会先肯定具体努力，再给出能做的建议|Credits concrete effort before giving advice",
+      "说话节奏偏慢，会把关键点讲完整|Speaks slowly and finishes each key point",
+      "会留短暂停顿，不急着把话说尽|Leaves short pauses rather than saying everything",
+      "嘴上不显热心，行动上仍会帮忙|Sounds cool but still helps out",
+      "承诺和感谢时格外正式|Becomes formal when promising or thanking",
+      "习惯把讨论落到马上能做的事|Brings discussion back to the next doable step"
     ],
     "口头禅语癖": [
       "无|None",
@@ -226,7 +236,17 @@ window.TAG_BANK["persona"] = {
       "超越师父|Surpass a mentor",
       "让某人后悔|Make someone regret",
       "记录一切|Record everything",
-      "偿还人情|Repay a kindness"
+      "偿还人情|Repay a kindness",
+      "希望有一个可以安心生活的地方|Wants a place to live without fear",
+      "希望自己的努力被认真看见|Wants their effort to be genuinely noticed",
+      "执着于把一门手艺磨得更好|Devoted to improving a single craft",
+      "希望日常不被轻易打断|Wants ordinary days left undisturbed",
+      "想留下能比自己更长久的东西|Wants to leave something that outlasts them",
+      "不愿看见明明能帮的人被忽略|Cannot ignore someone they could have helped",
+      "希望事情有能理解的规则|Wants rules that can be understood",
+      "想知道自己努力之后究竟能做到哪一步|Wants to learn the limit of their own effort",
+      "希望重要的人不必替自己担心|Wants loved ones free of worry on their behalf",
+      "执着于把没解释清楚的疑点弄明白|Cannot leave an unexplained question alone"
     ],
     "价值观": [
       "结果优先|Results first",
@@ -343,7 +363,19 @@ window.TAG_BANK["persona"] = {
       "把糖纸折成星星|Folds wrappers into stars",
       "记天气|Records the weather",
       "咬笔帽|Chews pen caps",
-      "拍照留存|Photographs everything"
+      "拍照留存|Photographs everything",
+      "怕生，熟了之后话很多|Shy with strangers, talkative with friends",
+      "容易迷路，但会提前查好路线|Gets lost easily, still checks the route first",
+      "随身带着小零食|Always carries a small snack",
+      "认真起来会忘记时间|Loses track of time when focused",
+      "害羞时突然换话题|Changes the subject when embarrassed",
+      "得意时会无意识哼歌|Hums without noticing when pleased",
+      "工作时格外可靠，休息时很散漫|Dependable at work, idle off duty",
+      "爱讲冷笑话，自己先笑|Laughs first at their own bad jokes",
+      "嘴上嫌麻烦，手上已经在做|Says it is a bother while already doing it",
+      "遇到动物会先打招呼|Greets animals before people",
+      "喜欢把收藏摆得整整齐齐|Keeps collections in neat rows",
+      "认真听人说话时会放慢动作|Slows down physically when listening closely"
     ],
     "喜好": [
       "甜食|Sweets",
@@ -541,6 +573,52 @@ window.TAG_BANK["persona"] = {
       "旧时光|Old-time feel",
       "灼热|Scorching",
       "寂静|Silent"
+    ],
+    "行为化优点": [
+      "注意到别人不方便时会先搭把手|Offers practical help before being asked",
+      "答应的事会记下来并按时做完|Keeps a note of promises and follows through",
+      "害怕时也会把该处理的事处理掉|Faces necessary tasks even when afraid",
+      "判断前愿意多问一句实际情况|Asks one more question before judging",
+      "愿意给新手留出试错的时间|Gives beginners room to make mistakes",
+      "有分歧时先把双方的条件摆清楚|Lays out both sides’ constraints in a disagreement",
+      "会把手上多余的材料分给需要的人|Shares spare resources with those who need them",
+      "承认自己不擅长，并把事交给合适的人|Admits limits and hands work to the right person",
+      "受挫后会换个方法再试一次|Changes approach and tries again after a setback",
+      "愿意听陌生人把话讲完|Lets strangers finish their story",
+      "把功劳按实际分工说清楚|Credits people for what they actually did",
+      "遇到约定会提前确认时间和内容|Confirms time and content of an appointment in advance",
+      "面对善意会认真道谢|Acknowledges kindness with a proper thank-you",
+      "看到浪费会随手关掉或收好|Turns off or puts away what is being wasted"
+    ],
+    "行为化弱点": [
+      "遇到难题不习惯开口求助|Rarely asks for help when stuck",
+      "等待和反复沟通时容易急躁|Gets impatient with delays and repetition",
+      "不擅长拒绝别人的请求|Finds it hard to say no",
+      "细节上反复返工，难判断何时算完成|Reworks details without a clear stopping point",
+      "分歧当面说不出口，容易拖到以后|Avoids addressing disagreements until later",
+      "情绪上来时先行动再核对|Acts first and checks facts later when emotional",
+      "公开表过态之后很难改口|Struggles to revise a position stated in public",
+      "常拿别人的进度否定自己的进展|Measures own progress against others’ pace",
+      "热心时容易低估事情的成本|Underestimates the cost when enthusiastic",
+      "想把细节都定下来才肯开始|Waits for every detail before starting",
+      "面对多个可行方案难以下决定|Freezes when several options look workable",
+      "不放心别人用不同方式完成|Uncomfortable with others doing it differently",
+      "不习惯说出真实感受，容易让人误判|Hides true feelings and gets misread",
+      "面对善意先怀疑是不是有条件|Suspects a hidden condition behind kindness"
+    ],
+    "能力边界": [
+      "擅长拆解任务，但无法凭空多出人手|Good at planning, cannot add manpower",
+      "会修理常见工具，需要材料和充足时间|Repairs common tools given parts and time",
+      "擅长发现异常，但也可能判断错|Spots anomalies, still can be wrong",
+      "会做简单餐食，受食材和厨具限制|Cooks simple meals within available ingredients",
+      "懂基础急救，不能替代专业诊疗|Knows basic first aid, not a substitute for a doctor",
+      "会看地图认路，陌生地方仍需核对|Reads maps, still double-checks unfamiliar areas",
+      "能缝补衣物，受布料和工具限制|Mends clothes given fabric and tools",
+      "会照料常见植物，需要合适气候与时间|Tends common plants given climate and time",
+      "擅长核对账目，依赖记录是否完整|Checks accounts, depends on complete records",
+      "能找双方都能接受的方案，不保证说服所有人|Finds compromise, cannot guarantee agreement",
+      "会在熟悉的语言间转译，术语仍需查证|Translates familiar languages, looks up jargon",
+      "会查资料做比对，结论取决于来源质量|Compares sources, conclusions depend on them"
     ]
   }
 };
