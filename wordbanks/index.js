@@ -6,8 +6,8 @@
  *             baseOn 是否把基础设定一起放进结果；
  *             kind 是「复制完整提示词」的引导语：image = 绘图提示词，text = 文字设定。
  *             加、删、排序、改名都在这里改，保存后刷新网页生效。
- * TAG_PROFILE 角色基础设定，写 {"name":"名称","value":"值"}，
- *             值可以写 "中文|English"，也可以只写一段文字。
+ * TAG_PROFILE 角色基础设定，写自己需要的一整段话，
+ *             可以写 "中文|English" 在两种语言下显示不同内容，也可以只写一种语言。
  * 文件必须是合法 JSON：英文双引号、逗号分隔，最后一项后不加逗号。
  */
 window.TAG_TABS = [
@@ -45,21 +45,4 @@ window.TAG_TABS = [
   }
 ];
 
-window.TAG_PROFILE = [
-  {
-    "name": "性别",
-    "value": "女|Female"
-  },
-  {
-    "name": "年龄",
-    "value": "18 岁|18 years old"
-  },
-  {
-    "name": "身高",
-    "value": "165 cm|165 cm"
-  },
-  {
-    "name": "体重",
-    "value": "48 kg|48 kg"
-  }
-];
+window.TAG_PROFILE = "女，18 岁，165 cm，48 kg|Female, 18, 165 cm, 48 kg";
