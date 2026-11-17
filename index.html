@@ -1504,7 +1504,7 @@
     pool.forEach(function(o){ var op=el('option',null,fmt(o)); op.value=o; sel.appendChild(op); });
     sel.value=pool.indexOf(state.fixed[key])>=0?state.fixed[key]:pool[0];
     state.fixed[key]=sel.value;
-    sel.onchange=function(){ state.fixed[key]=sel.value; save(); regen(k,false); };
+    sel.onchange=function(){ state.fixed[key]=sel.value; save(); rerollField(k,f); };
     var hint=el('span','hint');
     var editBtn=el('button','link',ui.editing[key]?'收起词库':'编辑词库');
     editBtn.onclick=function(){
@@ -1543,7 +1543,7 @@
     function apply(v){
       if(v==='' || v===null || isNaN(Number(v))) return;
       v=Math.max(-1,Math.min(maxFor(f,state),Math.round(Number(v))));
-      state.modes[key]=v; save(); updateRow(refs); regen(k,false);
+      state.modes[key]=v; save(); updateRow(refs); rerollField(k,f);
     }
     range.oninput=function(){ apply(range.value); };
     num.oninput=function(){ if(num.value!=='' && num.value!=='-') apply(num.value); };
@@ -1647,25 +1647,28 @@
     });
     return items;
   }
-  /* 只重抽一个维度：其余标签原样保留 */
+  /* 只更新一个维度（滑块、固定值、单抽共用）：其余维度保持当前值不变 */
   function rerollField(k,f){
     var key=k+'.'+f.id, m=state.modes[key];
     if(!current || !current[k] || m===undefined){ regen(k,false); return; }
-    if(m===0) return;
-    var pool=poolOf(f,state), vals;
+    var pool=poolOf(f,state), vals=[];
     if(m===-1) vals=[pool.indexOf(state.fixed[key])>=0?state.fixed[key]:pool[0]];
-    else vals=pickMany(pool,key,m,state.locks[key]);
+    else if(m>=1) vals=pickMany(pool,key,m,state.locks[key]);
+    /* m===0 时 vals 为空，该维度会被移出结果 */
     var fresh=vals.map(function(v){return {key:key,name:f.name,value:v,lockable:m>=1,_opts:pool};});
-    var cur=current[k], out=[], vi=0;
-    cur.forEach(function(x){
-      if(x.key===key && vi<fresh.length) out.push(fresh[vi++]);
-      else if(x.key!==key) out.push(x);
+    var out=[], inserted=false;
+    current[k].forEach(function(x){
+      if(x.key===key){
+        if(!inserted){ fresh.forEach(function(nv){ out.push(nv); }); inserted=true; }
+        return;
+      }
+      out.push(x);
     });
-    while(vi<fresh.length) out.push(fresh[vi++]);
+    if(!inserted) fresh.forEach(function(nv){ out.push(nv); });
     if(state.settings.validate){
       var r=resolveConflicts(out,allRules());
       current[k]=r.items;
-      lastValidate.removed+=r.removed; lastValidate.replaced+=r.replaced;
+      lastValidate.removed=r.removed; lastValidate.replaced=r.replaced;
     }else current[k]=out;
     renderResult(current,false);
   }
